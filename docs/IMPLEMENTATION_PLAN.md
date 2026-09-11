@@ -95,6 +95,7 @@ IoTMart3.0:
 - working tree: dirty
 - two modified Apex files were reported
 - bridge PoC must not touch these files
+- Phase 1 read-only validation passed through Agent Bridge task `20260911091629-read-only-inspection-only-3261`; branch and both modified-file names were identical before and after, and ledger telemetry recorded zero file changes
 
 Magnolia:
 
@@ -104,6 +105,7 @@ Magnolia:
   - `/Users/yoozayang/Magnolia/base` — `main`, dirty (five untracked files), origin `ssh://git@gitlab.advantech.ap-southeast.magnolia-platform.asia:9022/magnolia/base.git`
   - `/Users/yoozayang/Magnolia/light-modules` — `Matthew/bugfix/46919_Referral_Click_Tracking_UAT_Gap_A`, dirty (one modified file), origin `ssh://git@gitlab.advantech.ap-southeast.magnolia-platform.asia:9022/magnolia/light-modules.git`
   - `/Users/yoozayang/Magnolia/.wt_PhushyaMithra_43494_Bundle_Product_Light_A` — `Matthew/deploy/PhushyaMithra_43494_Bundle_Product_Light_A`, clean worktree, origin `ssh://git@gitlab.advantech.ap-southeast.magnolia-platform.asia:9022/magnolia/light-modules.git`
+- Phase 1 selected `light-modules` and passed read-only validation through Agent Bridge task `20260911091717-read-only-inspection-only-4ff4`; branch and its one modified-file name were identical before and after, and ledger telemetry recorded zero file changes
 
 ### MacBook B
 
@@ -144,7 +146,7 @@ Exit criteria:
 
 ### Phase 1 — Validate upstream Agent Bridge unchanged
 
-Status: **IN PROGRESS**
+Status: **COMPLETE**
 
 Use upstream behavior before custom code.
 
@@ -160,9 +162,9 @@ Then run read-only inspection against each configured target repository.
 
 Acceptance criteria:
 
-- Codex can report IoTMart3.0 branch/status without modifying it
-- Codex can report Magnolia repository status without modifying it
-- Agent Bridge task ledger accurately records both runs
+- Codex reported IoTMart3.0 branch/status without modifying it — complete
+- Codex reported Magnolia `light-modules` branch/status without modifying it — complete
+- Agent Bridge recorded both runs with complete, internally consistent durable ledgers — complete
 
 ### Phase 2 — Add ChatGPT-facing MCP surface
 
@@ -244,10 +246,9 @@ Only after explicit approval, consider narrow write tools or workspace-write tas
 
 The next local-machine handoff should do only these things:
 
-1. have ChatGPT select the Magnolia Git root to use for the first target-repository inspection
-2. use `codex exec --json` through Agent Bridge for read-only inspection of IoTMart3.0 and that selected Magnolia root
-3. confirm each resulting task ledger and target working tree remain unchanged
-4. do not introduce `mcp-server` or `app-server` for this PoC
+1. have ChatGPT review the completed Phase 1 evidence and provide the next Phase 2 task
+2. preserve `codex exec --json` as the internal PoC transport; do not introduce `mcp-server` or `app-server`
+3. keep both target repositories read-only until explicit approval changes the plan
 
 Once Phase 0 succeeds, ChatGPT should review the result and design the MCP wrapper against the actual current Agent Bridge code.
 

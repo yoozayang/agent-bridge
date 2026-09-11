@@ -36,6 +36,7 @@ As of 2026-09-11:
 - Codex CLI is repaired at `/opt/homebrew/bin/codex` (`codex-cli 0.154.0`) and authenticated using ChatGPT
 - Current Codex CLI has no `mcp-server` command; the PoC transport is the upstream `codex exec --json` fallback (do not downgrade Codex or use `app-server`)
 - A temporary read-only `codex exec --json` smoke test passed and produced the full Agent Bridge durable ledger with zero file changes
+- Phase 1 read-only inspections of IoTMart3.0 and Magnolia `light-modules` passed; both target working trees remained unchanged and both task ledgers were complete
 - IoTMart3.0 is a valid Git repo and currently dirty; keep it read-only
 - `/Users/yoozayang/Magnolia` is not itself a Git repo; its `base`, `light-modules`, and `light-modules` worktree roots have been identified and remain read-only
 
