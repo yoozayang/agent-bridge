@@ -1,5 +1,7 @@
 # Next Local Task — MacBook A
 
+> Superseded on 2026-09-11: Phase 0 completed with the upstream `codex exec --json` fallback. Do not perform the tasks below; await ChatGPT's next Phase 1 task selecting a Magnolia Git root for read-only inspection.
+
 Owner: local agent on MacBook A
 Planner/reviewer: ChatGPT
 

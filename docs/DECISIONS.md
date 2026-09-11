@@ -55,3 +55,9 @@ Shared architecture, plan, decisions, configuration examples, and takeover instr
 Status: Accepted
 
 Upstream supports Antigravity, but the current project is specifically ChatGPT ↔ Codex. Missing `agy` must not block the PoC.
+
+## ADR-008 — Use the upstream `codex exec --json` fallback for the read-only PoC
+
+Status: Accepted
+
+The current official Codex CLI does not expose `codex mcp-server`. The PoC will use Agent Bridge's existing `codex exec --json` process transport, which preserves the task ledger and telemetry without downgrading Codex. Do not use `mcp-server` or `app-server` in this PoC.

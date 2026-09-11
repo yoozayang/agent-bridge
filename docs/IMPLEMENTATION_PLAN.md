@@ -34,7 +34,7 @@ Agent Bridge control plane
 Codex transport adapter
   |
   v
-codex mcp-server
+codex exec --json (PoC)
   |
   v
 IoTMart3.0 or Magnolia
@@ -47,7 +47,7 @@ Important: ChatGPT must call Agent Bridge, not Codex directly, so task/status/re
 Upstream already provides the parts we want to preserve:
 
 - filesystem task ledger (`task.md`, `status.md`, `result.md`, events/telemetry)
-- Codex MCP transport
+- Codex CLI `exec --json` fallback transport for the PoC
 - named session continuity via Codex `threadId`
 - read-only/workspace-write sandbox modes
 - warm Codex MCP support
@@ -71,7 +71,7 @@ Environment observed on 2026-09-11:
 | GitHub auth | authenticated as `yoozayang` |
 | Codex CLI | repaired: `/opt/homebrew/bin/codex`, `codex-cli 0.154.0` |
 | Codex auth | logged in using ChatGPT |
-| Codex MCP server | BLOCKED: `codex mcp-server` is not a subcommand in 0.154.0 |
+| PoC transport | `codex exec --json`, verified read-only with durable task ledger |
 | `agy` | not installed; optional and not needed for this PoC |
 
 Bridge working copy:
@@ -111,13 +111,11 @@ Not set up yet. It must be able to clone this fork and follow `docs/HANDOFF.md` 
 
 ## 5. Current blockers
 
-### Blocker A — Current Codex CLI no longer exposes `mcp-server`
+### Phase 0 blocker — resolved with the upstream exec fallback
 
-The broken global `@openai/codex@0.77.0` install was repaired with the current official package, `@openai/codex@0.154.0`. `codex --version` works and `codex login status` reports ChatGPT authentication.
+The current official CLI (`@openai/codex@0.154.0`) does not expose `codex mcp-server`. Per ChatGPT's PoC decision, do not downgrade Codex or use `mcp-server`/`app-server`; Agent Bridge now uses its existing `codex exec --json` transport for the read-only PoC.
 
-However, `codex --help` has no `mcp-server` command. Running `codex mcp-server` is treated as an interactive prompt rather than starting a stdio MCP server; it was stopped before trusting the repository and no process was left running. Upstream Agent Bridge currently depends on that command, so its Codex MCP transport cannot yet be validated with the repaired CLI.
-
-ChatGPT must decide the next architecture-compatible path (for example, a supported legacy Codex version or a documented adaptation to the current Codex interface) before bridge source changes begin.
+On 2026-09-11, a temporary read-only workspace and isolated `AGENT_BRIDGE_HOME` completed task `20260911091147-smoke-test-for-agent-a53d` with exit code 0 and result `AGENT_BRIDGE_CODEX_EXEC_SMOKE_OK`. Its durable ledger contains `task.md`, `status.md`, `result.md`, `events.jsonl`, `telemetry.jsonl`, and `telemetry.json`; telemetry recorded zero commands and zero file changes.
 
 ### Non-blocker — `agy` missing
 
@@ -127,13 +125,13 @@ Antigravity is unrelated to the first ChatGPT ↔ Codex PoC. Do not install it m
 
 ### Phase 0 — Stabilize local prerequisites
 
-Status: **PARTIALLY COMPLETE / BLOCKED**
+Status: **COMPLETE**
 
 Tasks:
 
 - repair Codex CLI on MacBook A — complete (`codex-cli 0.154.0`)
 - verify Codex account login without creating a new API key — complete (ChatGPT login)
-- verify `codex mcp-server` starts — blocked; removed from current CLI
+- select and validate a supported Codex transport — complete (`codex exec --json`, read-only smoke passed)
 - identify Magnolia Git repo root(s) — complete; three roots recorded above
 - leave IoTMart3.0 untouched
 
@@ -141,12 +139,12 @@ Exit criteria:
 
 - `codex --version` works
 - authentication status is known
-- read-only Codex smoke test works outside project repos
+- read-only Codex smoke test works outside project repos — complete
 - Magnolia repo mapping is known
 
 ### Phase 1 — Validate upstream Agent Bridge unchanged
 
-Status: **PENDING**
+Status: **IN PROGRESS**
 
 Use upstream behavior before custom code.
 
@@ -246,10 +244,10 @@ Only after explicit approval, consider narrow write tools or workspace-write tas
 
 The next local-machine handoff should do only these things:
 
-1. have ChatGPT select a supported Codex transport compatible with Agent Bridge's durable ledger; the current CLI no longer provides `codex mcp-server`
-2. after that decision, validate the chosen transport with a read-only smoke test outside project repositories
-3. configure the appropriate discovered Magnolia Git root only after ChatGPT selects the target repository
-4. do not modify either target repo
+1. have ChatGPT select the Magnolia Git root to use for the first target-repository inspection
+2. use `codex exec --json` through Agent Bridge for read-only inspection of IoTMart3.0 and that selected Magnolia root
+3. confirm each resulting task ledger and target working tree remain unchanged
+4. do not introduce `mcp-server` or `app-server` for this PoC
 
 Once Phase 0 succeeds, ChatGPT should review the result and design the MCP wrapper against the actual current Agent Bridge code.
 

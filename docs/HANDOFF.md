@@ -34,7 +34,8 @@ As of 2026-09-11:
 - origin/upstream are configured
 - local branch exists
 - Codex CLI is repaired at `/opt/homebrew/bin/codex` (`codex-cli 0.154.0`) and authenticated using ChatGPT
-- Current Codex CLI no longer exposes the upstream-required `codex mcp-server` command; ChatGPT must select a compatible supported transport before implementation
+- Current Codex CLI has no `mcp-server` command; the PoC transport is the upstream `codex exec --json` fallback (do not downgrade Codex or use `app-server`)
+- A temporary read-only `codex exec --json` smoke test passed and produced the full Agent Bridge durable ledger with zero file changes
 - IoTMart3.0 is a valid Git repo and currently dirty; keep it read-only
 - `/Users/yoozayang/Magnolia` is not itself a Git repo; its `base`, `light-modules`, and `light-modules` worktree roots have been identified and remain read-only
 
