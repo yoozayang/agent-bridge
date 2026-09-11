@@ -1,0 +1,164 @@
+{
+  "id": "chatgpt-47122-search-wei-20260911",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-11T19:55:00+08:00",
+  "completed_at": "2026-09-11T12:32:11.220Z",
+  "ledger_task_id": "20260911123204-github-relay-deterministic-task-f625",
+  "result": {
+    "project": "iotmart",
+    "query": "为",
+    "results": [
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_Estimate_Epoints.cls",
+        "line": 73,
+        "excerpt": "                // amount为去除产品优惠的产品总价，已经涵盖configurable产品"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 160,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M IsPriceAdjustment:' + oAdjustmentInfo.IsPriceAdjustment);//判断是否是item级别优惠，是为true"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 164,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M IsTransation:' + oAdjustmentInfo.IsTransation);//判断是否购物车级别优惠，是为true"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 169,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M nUnitAdjustment_Price:' + oAdjustmentInfo.nUnitAdjustment_Price);//针对item级别优惠，单个产品的优惠金额；其他情况为0"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 170,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M iMaxAllow_Adjustment_Quantity:' + oAdjustmentInfo.iMaxAllow_Adjustment_Quantity);//针对item级别优惠，根据nUnitAdjustment_Price重新计算的最大优惠数量；其他情况为0"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 175,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M iApply_Promotion_PD2_Quantity:' + oAdjustmentInfo.iApply_Promotion_PD2_Quantity);//针对item级别优惠，总的可套用Promotion數量, 有可能有限制也許, 所以這個數量會先給單品, 若單品扣除完畢則, 再分配給組裝品；其他情况为0"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 186,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M nITP_TotalPrice:' + oAdjustmentInfo.nITP_TotalPrice);//如果有ITP则为：标准品数量*ITP,如果没有ITP则为：标准品数量 * UnitAdjustedPrice"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 192,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M nITP_Transationd_Percentage_TotalAmount:' + oAdjustmentInfo.nITP_Transationd_Percentage_TotalAmount); //单购物车级别优惠类型为百分比时，同 nITP_TotalPrice"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 196,
+        "excerpt": "                Sum_ITP_WithoutItemized_TotalAmount     += Lib_Number.ToDecimal(oAdjustmentInfo.nITP_WithoutItemized_TotalAmount); //如果有ITP则为：标准品数量*ITP,如果没有ITP则为：标准品数量*UnitAdjustedPrice. 同nITP_TotalPrice"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_ConfigurableCartItems.cls",
+        "line": 6,
+        "excerpt": "     * 同一个sCartItemId可以对应多个sBTo_GUID，因为每加入一次configurable，就会生产一个新的sBTo_GUID"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_ConfigurableCartItems.cls",
+        "line": 114,
+        "excerpt": "                        // 为更新cartItem数量，准备数据"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_ConfigurableCartItems.cls",
+        "line": 123,
+        "excerpt": "                    // 为删除旧的CC_BTO_CartItemData__c数据，准备数据"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_ConfigurableCartItems_Guest.cls",
+        "line": 55,
+        "excerpt": "     * 同一个sCartItemId可以对应多个sBTo_GUID，因为每加入一次configurable，就会生产一个新的sBTo_GUID"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_ConfigurableOrder.cls",
+        "line": 423,
+        "excerpt": "                    //oDataInfo.TotalTaxAmount                = oOrderItem.TotalTaxAmount             ; //这个税费不能加上去，因为configurable的item会单独成行"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_Simulation_Model.cls",
+        "line": 437,
+        "excerpt": "                            // 替换base item的料号为虚拟产品料号"
+      },
+      {
+        "relative_path": ".venv/lib/python3.13/site-packages/charset_normalizer/constant.py",
+        "line": 553,
+        "excerpt": "COMMON_CHINESE_CHARACTERS = \"的一是在不了有和人这中大为上个国我以要他时来用们生到作地于出就分对成会可主发年动同工也能下过子说产种面而方后多定行学法所民得经十三之进着等部度家电力里如水化高自二理起小物现实加量都两体制机当使点从业本去把性好应开它合还因由其些然前外天政四日那社义事平形相全表间样与关各重新线内数正心反你明看原又么利比或但质气第向道命此变条只没结解问意建月公无系军很情者最立代想已通并提直题党程展五果料象员革位入常文总次品式活设及管特件长求老头基资边流路级少图山统接知较将组见计别她手角期根论运农指几九区强放决西被干做必战先回则任取据处队南给色光门即保治北造百规热领七海口东导器压志世金增争济阶油思术"
+      },
+      {
+        "relative_path": ".venv/lib/python3.13/site-packages/charset_normalizer/constant.py",
+        "line": 1204,
+        "excerpt": "        \"为\","
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_Estimate_Epoints.cls",
+        "line": 73,
+        "excerpt": "                // amount为去除产品优惠的产品总价，已经涵盖configurable产品"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 160,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M IsPriceAdjustment:' + oAdjustmentInfo.IsPriceAdjustment);//判断是否是item级别优惠，是为true"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 164,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M IsTransation:' + oAdjustmentInfo.IsTransation);//判断是否购物车级别优惠，是为true"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 169,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M nUnitAdjustment_Price:' + oAdjustmentInfo.nUnitAdjustment_Price);//针对item级别优惠，单个产品的优惠金额；其他情况为0"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 170,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M iMaxAllow_Adjustment_Quantity:' + oAdjustmentInfo.iMaxAllow_Adjustment_Quantity);//针对item级别优惠，根据nUnitAdjustment_Price重新计算的最大优惠数量；其他情况为0"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 175,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M iApply_Promotion_PD2_Quantity:' + oAdjustmentInfo.iApply_Promotion_PD2_Quantity);//针对item级别优惠，总的可套用Promotion數量, 有可能有限制也許, 所以這個數量會先給單品, 若單品扣除完畢則, 再分配給組裝品；其他情况为0"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 186,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M nITP_TotalPrice:' + oAdjustmentInfo.nITP_TotalPrice);//如果有ITP则为：标准品数量*ITP,如果没有ITP则为：标准品数量 * UnitAdjustedPrice"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 192,
+        "excerpt": "                System.debug('**** CC_API_Headless_Adjustment_Info.getPD2_Adjustment_M nITP_Transationd_Percentage_TotalAmount:' + oAdjustmentInfo.nITP_Transationd_Percentage_TotalAmount); //单购物车级别优惠类型为百分比时，同 nITP_TotalPrice"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_API_Headless_Adjustment_Info.cls",
+        "line": 196,
+        "excerpt": "                Sum_ITP_WithoutItemized_TotalAmount     += Lib_Number.ToDecimal(oAdjustmentInfo.nITP_WithoutItemized_TotalAmount); //如果有ITP则为：标准品数量*ITP,如果没有ITP则为：标准品数量*UnitAdjustedPrice. 同nITP_TotalPrice"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_ConfigurableCartItems.cls",
+        "line": 6,
+        "excerpt": "     * 同一个sCartItemId可以对应多个sBTo_GUID，因为每加入一次configurable，就会生产一个新的sBTo_GUID"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_ConfigurableCartItems.cls",
+        "line": 114,
+        "excerpt": "                        // 为更新cartItem数量，准备数据"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_ConfigurableCartItems.cls",
+        "line": 123,
+        "excerpt": "                    // 为删除旧的CC_BTO_CartItemData__c数据，准备数据"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_ConfigurableCartItems_Guest.cls",
+        "line": 55,
+        "excerpt": "     * 同一个sCartItemId可以对应多个sBTo_GUID，因为每加入一次configurable，就会生产一个新的sBTo_GUID"
+      }
+    ]
+  }
+}
