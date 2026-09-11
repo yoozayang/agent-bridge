@@ -1,6 +1,8 @@
 {
   "id": "chatgpt-live-ping-20260911-1833",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-11T11:32:46.327Z",
-  "task_type": "bridge_ping"
+  "task_type": "bridge_ping",
+  "completed_at": "2026-09-11T11:32:49.073Z",
+  "ledger_task_id": "20260911113247-github-relay-deterministic-task-e13f"
 }
