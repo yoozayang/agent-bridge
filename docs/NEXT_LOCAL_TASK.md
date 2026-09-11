@@ -12,97 +12,175 @@ Read first:
 
 ## Objective
 
-Connect the already-working local stdio ChatGPT-facing MCP server to ChatGPT using OpenAI Secure MCP Tunnel.
+Implement a **GitHub-relay PoC** so ChatGPT can hand work to the user's Mac without requiring ChatGPT custom MCP / Developer Mode availability and without using the user as a copy/paste relay after initial startup.
 
-This task is about connectivity only. Do not modify IoTMart3.0 or Magnolia, do not add write-capable MCP tools, and do not investigate Azure work item 47122 yet.
+This task replaces the blocked ChatGPT custom-MCP connection as the immediate transport PoC. Keep the existing local MCP/tunnel work intact; do not remove it.
 
-The desired first end-to-end proof is:
+Target flow:
 
-`ChatGPT -> Secure MCP Tunnel -> local agent-bridge MCP -> bridge_ping()`
+`ChatGPT -> GitHub relay files -> local bridge watcher -> Agent Bridge/local deterministic handler -> GitHub result files -> ChatGPT`
 
-Once that works, stop. ChatGPT will then drive the first real PoC (Azure work item 47122) through the connected bridge.
+ChatGPT already has authenticated read/write access to `yoozayang/agent-bridge`. MacBook A already has authenticated Git/GitHub access. Use that fact rather than introducing another hosted service for this PoC.
 
-## Current local MCP entrypoint
+## Why this route
 
-Use the MCP server already implemented in this branch:
+The selected upstream `teamnebula-ai/agent-bridge` is intentionally filesystem-ledger based and does not provide ChatGPT-web connectivity by itself. The local MCP adapter and Secure MCP Tunnel were validated locally, but the user's current ChatGPT UI does not expose the custom connector entry required to complete that route.
 
-`bin/agent-bridge-mcp.js`
+Other projects confirm that GitHub can act as a control plane for local coding agents, and upstream Agent Bridge already proves the value of durable file-based task state. For this PoC, implement the smallest safe GitHub-backed mailbox around the existing Agent Bridge rather than replacing the ledger or adding a new remote service.
 
-Preserve its current read-only tool surface and `codex exec --json` internal transport.
+## Human-interaction rule
 
-## Task A — Install / verify official tunnel client
+Do not ask the user anything except for unavoidable authentication/login/SSO/MFA/permission actions.
 
-Use the current official OpenAI Secure MCP Tunnel client and documentation. Do not invent flags from old examples if the installed version differs.
+Do not ask the user to inspect ChatGPT settings, choose architecture, paste logs, decide filenames, or approve normal implementation details. Record implementation facts in the repo and let ChatGPT review them.
 
-On macOS, prefer the official Homebrew installation path if not already installed:
+If authentication is required, ask for one minimal action only, then resume automatically if possible.
 
-`brew install openai/tools/tunnel-client`
+## Scope
 
-Verify the installed version and inspect its current help/quickstart before configuring anything.
+### A. Add a GitHub relay inbox/outbox contract
 
-Do not commit credentials, tokens, tunnel IDs, generated secrets, or machine-local auth state.
+Create a narrow, auditable relay format in this repository. Prefer a dedicated path such as:
 
-## Task B — Configure the local stdio MCP behind the tunnel
+- `relay/inbox/<task-id>.json`
+- `relay/outbox/<task-id>.json`
+- optional `relay/processed/<task-id>.json` or local dedup state
 
-Configure a tunnel/profile that launches this repository's stdio MCP entrypoint from the Agent Bridge working copy.
+The exact layout may differ if the codebase has a cleaner convention, but the contract must provide:
 
-Working copy on MacBook A:
+- unique task ID
+- task type
+- logical project ID
+- bounded payload
+- created timestamp
+- status/result/error
+- deduplication / at-most-once local execution protection
 
-`/Users/yoozayang/Development/ChatGPT-CodexAgent-Bridge`
+Do not put secrets, credentials, arbitrary absolute paths, or unrestricted shell strings in relay payloads.
 
-MCP command should ultimately launch:
+### B. Implement a local watcher/worker
 
-`node /Users/yoozayang/Development/ChatGPT-CodexAgent-Bridge/bin/agent-bridge-mcp.js`
+Add a local command/service that:
 
-Use the current tunnel-client syntax discovered from its own help/current official documentation.
+1. polls or fetches the branch of record for new relay tasks at a conservative interval
+2. claims/deduplicates a task safely
+3. executes only allowlisted task types
+4. writes a compact result to the outbox
+5. commits/pushes only relay/result state and bridge documentation/code as appropriate
+6. continues watching without requiring the user to relay each task
 
-If creating/authorizing the tunnel requires the user to perform an OpenAI/ChatGPT web UI action, STOP at that exact point and return the shortest possible user instruction: what screen/action is needed and what non-secret identifier (if any) must be provided back to the local agent. Do not try to bypass interactive authorization.
+For the first PoC, a foreground process is acceptable. If the repository already has a safe service/autostart mechanism, document but do not overbuild it.
 
-## Task C — Local diagnostics only
+Use authenticated `git`/`gh` already present on the machine. Do not create a GitHub App, webhook server, Redis service, or new cloud dependency for the first PoC.
 
-Before asking ChatGPT to connect, run the tunnel client's supported diagnostics/doctor checks and confirm:
+Handle GitHub races conservatively. Fetch/rebase/retry narrowly; never force-push.
 
-- tunnel client can launch the local stdio MCP server
-- MCP initialization succeeds
-- `bridge_ping` is discoverable through the tunnel-facing MCP connection if the diagnostic tooling supports tool discovery
-- no target repository is modified
+### C. Initial allowlisted task types
 
-Do not run a target-repository Codex task merely to validate the tunnel.
+Implement only enough deterministic functionality to prove ChatGPT-to-Mac round trip without spending a Codex model turn.
 
-## Stop conditions
+Required initial task types:
 
-Stop and report instead of improvising if:
+1. `bridge_ping`
+   - returns bridge/watcher health, version/commit, and current mode
 
-- ChatGPT/OpenAI account UI must create or authorize the tunnel
-- the user's current ChatGPT plan/account does not expose the required MCP/tunnel connection UI
-- tunnel-client reports an auth/reconnect loop
-- the current official tunnel flow differs materially from the expected stdio-local setup
-- any step would require exposing a credential or secret in Git
+2. `project_git_status`
+   - input: configured logical project ID (`iotmart` or `magnolia`)
+   - output: branch + porcelain/status summary
+   - strictly read-only
 
-When stopped for an interactive action, return only the minimum action the user must perform. ChatGPT will decide the next step.
+3. `azure_work_item_read`
+   - input: work item numeric ID only
+   - use the machine's existing authenticated Azure DevOps CLI/API capability if available
+   - return a compact normalized payload containing at least title, state, description/acceptance criteria or equivalent relevant fields, plus URL/ID metadata if available
+   - this is deterministic local retrieval; do NOT invoke Codex merely to read the work item
 
-## After successful local tunnel setup
+Do not implement arbitrary shell, write/edit, deploy, or target-repo modification yet.
 
-Do not start Azure 47122 yet.
+### D. Azure 47122 is the real PoC target
 
-Update:
+After the worker implementation is validated locally, prove `azure_work_item_read` against work item **47122**.
 
-- `docs/IMPLEMENTATION_PLAN.md` with tunnel setup/diagnostic status
-- `docs/HANDOFF.md` with reproducible MacBook-B setup steps, excluding secrets and machine-specific credentials
-- `docs/DECISIONS.md` only if a material architecture decision changed
+Important:
 
-Commit and push Agent Bridge documentation/config-template changes only if they are safe and portable. Keep generated local tunnel config/auth ignored/uncommitted.
+- If Azure auth is already valid, read it without asking the user anything.
+- If Azure requires login/SSO/MFA, ask the user for only that authentication action; then continue.
+- Do not ask the user to copy the Azure task content manually.
+- Do not modify the Azure work item.
+- Do not modify IoTMart or Magnolia.
 
-Then stop and return:
+The result for 47122 should be written through the relay outbox in the same format ChatGPT will later read.
 
-- tunnel-client version
-- tunnel/profile setup status
-- local diagnostic result
-- whether user UI action is required
-- exact next user action, if required
-- Agent Bridge commit SHA if anything was pushed
-- blocker, if any
+### E. Preserve Agent Bridge / Codex role separation
 
-## Safety
+This PoC should establish that deterministic local operations do not need a Codex model turn.
 
-IoTMart3.0 and Magnolia remain read-only and must be byte-for-byte untouched by this connectivity task.
+Codex should remain available behind Agent Bridge for future tasks that require:
+
+- broad local codebase exploration where bounded reads are inefficient
+- reasoning across substantial uncommitted local-only state
+- iterative edit/test/fix loops
+- other genuinely model-driven local work
+
+Do not route `bridge_ping`, `project_git_status`, or `azure_work_item_read` through `codex exec`.
+
+## Local validation
+
+Required checks:
+
+1. relay worker starts and remains alive in foreground without user interaction
+2. a test `bridge_ping` inbox task produces exactly one outbox result
+3. re-reading/restarting does not execute the same task twice
+4. `project_git_status` for `iotmart` returns the existing state without changing it
+5. IoTMart Git status before/after remains byte-identical
+6. `azure_work_item_read` can retrieve 47122, or stops only for unavoidable Azure authentication
+7. no Codex model turn is used for the three deterministic task types
+8. no secrets/tokens are committed
+
+## Documentation / architecture update
+
+Update `docs/IMPLEMENTATION_PLAN.md` to reflect:
+
+- ChatGPT custom-MCP route remains a future optional route, not the immediate dependency
+- GitHub relay is the current Plus-compatible PoC transport
+- deterministic local tools precede Codex delegation
+- Azure 47122 retrieval result/status
+
+Update `docs/HANDOFF.md` with exact commands needed on MacBook B to start the relay worker after clone/config/auth.
+
+Update `docs/DECISIONS.md` with an ADR for the transport decision:
+
+- why GitHub relay is used for the PoC
+- why it does not replace the Agent Bridge durable local ledger
+- security/race/latency tradeoffs
+- when Secure MCP Tunnel may be revisited
+
+## Do not overbuild
+
+The purpose is to prove the communication loop, not build a production distributed queue.
+
+Avoid:
+
+- new hosted databases
+- GitHub App/webhook setup
+- public HTTP servers
+- arbitrary command execution
+- target-repo writes
+- Codex turns for deterministic reads
+
+## Before stopping
+
+Commit and push Agent Bridge changes on `feature/chatgpt-codex-bridge`.
+
+Return only:
+
+- GitHub relay implementation result
+- watcher command/startup status
+- task types implemented
+- dedup/race handling summary
+- Azure 47122 retrieval status
+- IoTMart safety confirmation
+- whether any human authentication action was required
+- files/modules changed
+- pushed commit SHA
+- remaining blocker, if any
