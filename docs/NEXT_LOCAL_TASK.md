@@ -12,175 +12,183 @@ Read first:
 
 ## Objective
 
-Implement a **GitHub-relay PoC** so ChatGPT can hand work to the user's Mac without requiring ChatGPT custom MCP / Developer Mode availability and without using the user as a copy/paste relay after initial startup.
+Extend the already-working GitHub relay just enough for ChatGPT to complete Azure work item **47122** end-to-end without a Codex model turn for the project operation itself.
 
-This task replaces the blocked ChatGPT custom-MCP connection as the immediate transport PoC. Keep the existing local MCP/tunnel work intact; do not remove it.
+47122 requirement already retrieved through the relay:
 
-Target flow:
+- title: `[Matthew][test] 註解簡體轉繁體`
+- description: `找出任何一個檔案，有簡體註解的，修改成繁體註解，不可影響任何其他程式碼`
 
-`ChatGPT -> GitHub relay files -> local bridge watcher -> Agent Bridge/local deterministic handler -> GitHub result files -> ChatGPT`
+The desired flow is:
 
-ChatGPT already has authenticated read/write access to `yoozayang/agent-bridge`. MacBook A already has authenticated Git/GitHub access. Use that fact rather than introducing another hosted service for this PoC.
+`ChatGPT -> relay search/read -> ChatGPT selects one safe candidate -> relay exact comment edit -> relay diff/status -> ChatGPT reviews`
 
-## Why this route
-
-The selected upstream `teamnebula-ai/agent-bridge` is intentionally filesystem-ledger based and does not provide ChatGPT-web connectivity by itself. The local MCP adapter and Secure MCP Tunnel were validated locally, but the user's current ChatGPT UI does not expose the custom connector entry required to complete that route.
-
-Other projects confirm that GitHub can act as a control plane for local coding agents, and upstream Agent Bridge already proves the value of durable file-based task state. For this PoC, implement the smallest safe GitHub-backed mailbox around the existing Agent Bridge rather than replacing the ledger or adding a new remote service.
+This is the first intentionally write-capable target-repository PoC, but the write surface must be extremely narrow and deterministic.
 
 ## Human-interaction rule
 
-Do not ask the user anything except for unavoidable authentication/login/SSO/MFA/permission actions.
+Do not ask the user anything except unavoidable authentication/login/SSO/MFA/permission actions.
 
-Do not ask the user to inspect ChatGPT settings, choose architecture, paste logs, decide filenames, or approve normal implementation details. Record implementation facts in the repo and let ChatGPT review them.
+Do not ask the user to choose files, inspect diffs, decide implementation details, paste logs, or restart things manually unless there is no safe way for the local agent to do so. Record facts in the repo; ChatGPT will review them.
 
-If authentication is required, ask for one minimal action only, then resume automatically if possible.
+## Current relay
 
-## Scope
+Keep the existing GitHub inbox/outbox/processed contract and durable local ledger.
 
-### A. Add a GitHub relay inbox/outbox contract
+Existing task types remain unchanged:
 
-Create a narrow, auditable relay format in this repository. Prefer a dedicated path such as:
+- `bridge_ping`
+- `project_git_status`
+- `azure_work_item_read`
 
-- `relay/inbox/<task-id>.json`
-- `relay/outbox/<task-id>.json`
-- optional `relay/processed/<task-id>.json` or local dedup state
+The current foreground watcher is expected to be running as:
 
-The exact layout may differ if the codebase has a cleaner convention, but the contract must provide:
+`node bin/agent-bridge-relay.js --interval 30`
 
-- unique task ID
-- task type
-- logical project ID
-- bounded payload
-- created timestamp
-- status/result/error
-- deduplication / at-most-once local execution protection
+After implementing the new handlers, restart the watcher yourself so it loads the new code. Do not ask the user to restart it unless process ownership/permissions make that impossible.
 
-Do not put secrets, credentials, arbitrary absolute paths, or unrestricted shell strings in relay payloads.
+## Add four bounded task types
 
-### B. Implement a local watcher/worker
+### 1. `project_text_search`
 
-Add a local command/service that:
+Purpose: read-only search for candidate Simplified-Chinese comments.
 
-1. polls or fetches the branch of record for new relay tasks at a conservative interval
-2. claims/deduplicates a task safely
-3. executes only allowlisted task types
-4. writes a compact result to the outbox
-5. commits/pushes only relay/result state and bridge documentation/code as appropriate
-6. continues watching without requiring the user to relay each task
+Input:
 
-For the first PoC, a foreground process is acceptable. If the repository already has a safe service/autostart mechanism, document but do not overbuild it.
+- `project`: allowlisted logical project ID; this PoC needs `iotmart`
+- `query`: bounded UTF-8 literal string only, no shell/regex injection
+- optional bounded `max_results`
 
-Use authenticated `git`/`gh` already present on the machine. Do not create a GitHub App, webhook server, Redis service, or new cloud dependency for the first PoC.
+Behavior:
 
-Handle GitHub races conservatively. Fetch/rebase/retry narrowly; never force-push.
+- search only inside the configured project root
+- no arbitrary absolute path
+- return relative path, line number, and a short line/context excerpt
+- skip `.git`, generated/build/vendor dependency directories where practical
+- must not modify the repository
+- do not invoke Codex
 
-### C. Initial allowlisted task types
+This primitive may be called several times by ChatGPT with likely Simplified-Chinese characters/phrases. Do not try to make the worker itself semantically decide Chinese variants.
 
-Implement only enough deterministic functionality to prove ChatGPT-to-Mac round trip without spending a Codex model turn.
+### 2. `project_file_read`
 
-Required initial task types:
+Purpose: let ChatGPT inspect a selected candidate before editing.
 
-1. `bridge_ping`
-   - returns bridge/watcher health, version/commit, and current mode
+Input:
 
-2. `project_git_status`
-   - input: configured logical project ID (`iotmart` or `magnolia`)
-   - output: branch + porcelain/status summary
-   - strictly read-only
+- `project`
+- `relative_path`
+- bounded start/end line or equivalent bounded context window
 
-3. `azure_work_item_read`
-   - input: work item numeric ID only
-   - use the machine's existing authenticated Azure DevOps CLI/API capability if available
-   - return a compact normalized payload containing at least title, state, description/acceptance criteria or equivalent relevant fields, plus URL/ID metadata if available
-   - this is deterministic local retrieval; do NOT invoke Codex merely to read the work item
+Behavior:
 
-Do not implement arbitrary shell, write/edit, deploy, or target-repo modification yet.
+- resolve strictly beneath the configured project root
+- reject traversal, absolute paths, and symlink escape
+- bounded output only
+- read-only, no Codex
 
-### D. Azure 47122 is the real PoC target
+### 3. `project_comment_replace`
 
-After the worker implementation is validated locally, prove `azure_work_item_read` against work item **47122**.
+Purpose: one exact comment-only replacement selected by ChatGPT.
 
-Important:
+Input:
 
-- If Azure auth is already valid, read it without asking the user anything.
-- If Azure requires login/SSO/MFA, ask the user for only that authentication action; then continue.
-- Do not ask the user to copy the Azure task content manually.
-- Do not modify the Azure work item.
-- Do not modify IoTMart or Magnolia.
+- `project`
+- `relative_path`
+- `old_text`
+- `new_text`
+- `expected_count`: must be exactly `1`
 
-The result for 47122 should be written through the relay outbox in the same format ChatGPT will later read.
+Required safety gates before writing:
 
-### E. Preserve Agent Bridge / Codex role separation
+1. path resolves strictly beneath configured project root; reject traversal/absolute path/symlink escape
+2. target file must be **clean before this relay edit** (`git status --porcelain -- <path>` empty); this prevents touching either of IoTMart's two pre-existing modified Apex files
+3. `old_text` must occur exactly once in the file
+4. replacement must be same-line / comment-only: old and new values must preserve the same recognizable comment prefix/context (`//`, `/*`, `*`, `#`, `<!--`/`-->`, or another explicitly implemented safe comment form). If this cannot be proved deterministically, reject rather than guess
+5. no newline-count change
+6. write only that exact occurrence; no formatter, no whole-file normalization, no line-ending conversion
+7. immediately obtain `git diff -- <path>` and verify exactly one target file changed
+8. if any safety check fails after write, restore only this worker's exact edit to the pre-write bytes; never reset/checkout unrelated files
 
-This PoC should establish that deterministic local operations do not need a Codex model turn.
+Return:
 
-Codex should remain available behind Agent Bridge for future tasks that require:
+- relative path
+- replacement count
+- before/after hashes
+- compact diff
+- repository porcelain/status summary
 
-- broad local codebase exploration where bounded reads are inefficient
-- reasoning across substantial uncommitted local-only state
-- iterative edit/test/fix loops
-- other genuinely model-driven local work
+Do not commit the IoTMart change. Leave the single reviewed working-tree comment change uncommitted for ChatGPT/user review.
 
-Do not route `bridge_ping`, `project_git_status`, or `azure_work_item_read` through `codex exec`.
+### 4. `project_git_diff`
 
-## Local validation
+Purpose: deterministic review after the edit.
 
-Required checks:
+Input:
 
-1. relay worker starts and remains alive in foreground without user interaction
-2. a test `bridge_ping` inbox task produces exactly one outbox result
-3. re-reading/restarting does not execute the same task twice
-4. `project_git_status` for `iotmart` returns the existing state without changing it
-5. IoTMart Git status before/after remains byte-identical
-6. `azure_work_item_read` can retrieve 47122, or stops only for unavoidable Azure authentication
-7. no Codex model turn is used for the three deterministic task types
-8. no secrets/tokens are committed
+- `project`
+- optional `relative_path`
 
-## Documentation / architecture update
+Behavior:
 
-Update `docs/IMPLEMENTATION_PLAN.md` to reflect:
+- bounded `git diff` output
+- read-only
+- no Codex
 
-- ChatGPT custom-MCP route remains a future optional route, not the immediate dependency
-- GitHub relay is the current Plus-compatible PoC transport
-- deterministic local tools precede Codex delegation
-- Azure 47122 retrieval result/status
+## 47122 execution strategy
 
-Update `docs/HANDOFF.md` with exact commands needed on MacBook B to start the relay worker after clone/config/auth.
+Do **not** autonomously choose and edit a candidate during implementation.
 
-Update `docs/DECISIONS.md` with an ADR for the transport decision:
+Implement/test the new relay handlers using safe bridge fixtures or non-target temporary data where possible. Then restart the live watcher and stop.
 
-- why GitHub relay is used for the PoC
-- why it does not replace the Agent Bridge durable local ledger
-- security/race/latency tradeoffs
-- when Secure MCP Tunnel may be revisited
+ChatGPT will drive the actual 47122 sequence through inbox tasks:
 
-## Do not overbuild
+1. search for likely Simplified-Chinese comment text
+2. read candidate context
+3. select a clean, low-risk file that is not one of the two pre-existing modified IoTMart files
+4. issue one exact comment replacement
+5. request diff/status and review it
 
-The purpose is to prove the communication loop, not build a production distributed queue.
+This separation is intentional: ChatGPT owns the engineering decision; the Mac worker is the deterministic execution layer.
 
-Avoid:
+## Security / validation
 
-- new hosted databases
-- GitHub App/webhook setup
-- public HTTP servers
-- arbitrary command execution
-- target-repo writes
-- Codex turns for deterministic reads
+- no arbitrary shell task
+- no arbitrary command strings in relay payloads
+- payload size remains bounded
+- logical project IDs only
+- strict path containment
+- target write only through `project_comment_replace`
+- no Codex model turn for search/read/edit/diff
+- existing dedup/claim behavior remains intact
+- preserve the two pre-existing IoTMart modified files byte-for-byte
+- do not commit/push IoTMart or Magnolia
+
+Add focused tests for validation, path traversal rejection, dirty-target rejection, exact-count rejection, and a successful comment-only fixture replacement.
+
+## Documentation
+
+Update:
+
+- `relay/README.md` with the four new task contracts
+- `docs/IMPLEMENTATION_PLAN.md` with the controlled-write PoC status
+- `docs/HANDOFF.md` if watcher startup/restart instructions change
+- `docs/DECISIONS.md` only if a material architecture decision changed
+
+Commit and push only the Agent Bridge repository changes on `feature/chatgpt-codex-bridge`.
 
 ## Before stopping
 
-Commit and push Agent Bridge changes on `feature/chatgpt-codex-bridge`.
+Restart the foreground relay watcher with the new code and confirm a new `bridge_ping` works after restart.
 
 Return only:
 
-- GitHub relay implementation result
-- watcher command/startup status
-- task types implemented
-- dedup/race handling summary
-- Azure 47122 retrieval status
-- IoTMart safety confirmation
-- whether any human authentication action was required
-- files/modules changed
-- pushed commit SHA
-- remaining blocker, if any
+- new deterministic task types implemented
+- tests/results
+- watcher restart/health
+- confirmation that IoTMart was not modified during implementation
+- confirmation the two existing dirty files remain byte-identical
+- pushed Agent Bridge commit SHA
+- blocker, if any
+
+Then stop. ChatGPT will issue the actual 47122 search/edit/review tasks through the relay.
