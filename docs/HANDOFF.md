@@ -37,6 +37,7 @@ As of 2026-09-11:
 - Current Codex CLI has no `mcp-server` command; the PoC transport is the upstream `codex exec --json` fallback (do not downgrade Codex or use `app-server`)
 - A temporary read-only `codex exec --json` smoke test passed and produced the full Agent Bridge durable ledger with zero file changes
 - Phase 1 read-only inspections of IoTMart3.0 and Magnolia `light-modules` passed; both target working trees remained unchanged and both task ledgers were complete
+- Phase 2 local stdio MCP validation passed; its five read-only tools reuse the normal Agent Bridge dispatcher and ledger
 - IoTMart3.0 is a valid Git repo and currently dirty; keep it read-only
 - `/Users/yoozayang/Magnolia` is not itself a Git repo; its `base`, `light-modules`, and `light-modules` worktree roots have been identified and remain read-only
 
@@ -75,6 +76,25 @@ magnolia -> select one of the read-only discovered roots: `base`, `light-modules
 ```
 
 MacBook B should provide its own equivalents.
+
+## Local MCP PoC
+
+Install dependencies, then create the ignored machine-local mapping from the committed example:
+
+```bash
+npm install
+cp config/projects.json.example config/projects.json
+# edit the two paths for this Mac
+node bin/agent-bridge-mcp.js
+```
+
+The MCP server communicates only over stdio. `AGENT_BRIDGE_PROJECTS_FILE` may override the default `config/projects.json` path. Validate it with:
+
+```bash
+AGENT_BRIDGE_HOME="$(mktemp -d)/ledger" node test/mcp-smoke.js
+```
+
+The smoke test requires a valid local project mapping and a logged-in Codex CLI. It runs a read-only IoTMart status inspection and must leave that target unchanged.
 
 ## Safety
 

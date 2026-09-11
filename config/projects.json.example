@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "iotmart": "/path/to/IoTMart3.0",
+    "magnolia": "/path/to/Magnolia/light-modules"
+  }
+}

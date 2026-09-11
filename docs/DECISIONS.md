@@ -61,3 +61,9 @@ Upstream supports Antigravity, but the current project is specifically ChatGPT â
 Status: Accepted
 
 The current official Codex CLI does not expose `codex mcp-server`. The PoC will use Agent Bridge's existing `codex exec --json` process transport, which preserves the task ledger and telemetry without downgrading Codex. Do not use `mcp-server` or `app-server` in this PoC.
+
+## ADR-009 â€” Phase 2 MCP is a local stdio adapter
+
+Status: Accepted
+
+The first ChatGPT-facing surface is a local stdio MCP server using the standard MCP SDK. It exposes only the five explicit read-only bridge tools and resolves target paths through ignored machine-local configuration. Secure MCP Tunnel and remote HTTP transport remain out of scope.

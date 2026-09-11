@@ -168,7 +168,7 @@ Acceptance criteria:
 
 ### Phase 2 — Add ChatGPT-facing MCP surface
 
-Status: **PENDING**
+Status: **COMPLETE**
 
 Add the smallest possible MCP server that wraps existing Agent Bridge operations.
 
@@ -176,10 +176,9 @@ Initial proposed tool surface:
 
 - `bridge_ping()`
 - `bridge_projects()`
-- `bridge_run_readonly(project, prompt, session?)`
-- `bridge_task_status(task_id|latest)`
-- `bridge_task_result(task_id|latest)`
-- `bridge_sessions()`
+- `bridge_run_readonly(project, prompt)`
+- `bridge_task_status(task_id)`
+- `bridge_task_result(task_id)`
 
 Design requirements:
 
@@ -191,9 +190,16 @@ Design requirements:
 
 Acceptance criteria:
 
-- a local MCP client can call `bridge_ping`
-- a local MCP client can ask for read-only investigation in IoTMart3.0/Magnolia
-- resulting work appears in the normal Agent Bridge ledger
+- a local stdio MCP client called all five tools successfully
+- `bridge_projects` exposes only the configured `iotmart` and `magnolia` IDs; `bridge_run_readonly` resolves the target through the ignored local config file
+- `bridge_run_readonly("iotmart", ...)` completed task `20260911092600-read-only-inspection-only-9610` through the existing `dispatch()` lifecycle with `transport: exec` and `sandbox: read-only`
+- resulting ledger contains the normal six files, and telemetry recorded `fileChanges: 0`; IoTMart Git status was byte-identical before and after
+
+Implementation:
+
+- added `bin/agent-bridge-mcp.js` (stdio MCP entry point), `lib/projects.js` (logical project resolver), `config/projects.json.example`, and `test/mcp-smoke.js`
+- added the standard `@modelcontextprotocol/sdk` dependency
+- `bridge_run_readonly` is the only execution tool; it fixes agent, transport, and sandbox to `codex`, `exec`, and `read-only`
 
 ### Phase 3 — Cross-machine configuration
 
@@ -246,7 +252,7 @@ Only after explicit approval, consider narrow write tools or workspace-write tas
 
 The next local-machine handoff should do only these things:
 
-1. have ChatGPT review the completed Phase 1 evidence and provide the next Phase 2 task
+1. have ChatGPT review the completed Phase 2 local MCP evidence and provide the next task
 2. preserve `codex exec --json` as the internal PoC transport; do not introduce `mcp-server` or `app-server`
 3. keep both target repositories read-only until explicit approval changes the plan
 

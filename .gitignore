@@ -3,3 +3,4 @@ node_modules/
 relay.db*
 .agent-bridge/
 .demo*/
+config/projects.json
