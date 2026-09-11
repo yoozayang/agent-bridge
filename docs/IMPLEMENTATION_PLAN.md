@@ -18,17 +18,15 @@ The bridge must be easy to set up on MacBook A and MacBook B from the same Git r
 ```text
 ChatGPT
   |
-  | custom MCP connector
+  | GitHub relay files (current PoC)
   v
-OpenAI Secure MCP Tunnel
+local bridge watcher
   |
   v
-ChatGPT-facing MCP server (this fork)
+deterministic handler / Agent Bridge control plane
   |
   v
-Agent Bridge control plane
-  |
-  +--> durable task ledger / sessions / telemetry
+durable task ledger / sessions / telemetry
   |
   v
 Codex transport adapter
@@ -40,7 +38,7 @@ codex exec --json (PoC)
 IoTMart3.0 or Magnolia
 ```
 
-Important: ChatGPT must call Agent Bridge, not Codex directly, so task/status/result/session history remains available.
+The local stdio MCP adapter and Secure MCP Tunnel remain optional future transport work. GitHub relay is the current Plus-compatible path. Important: ChatGPT reaches Agent Bridge rather than Codex directly, so task/status/result/session history remains available.
 
 ## 3. Why this fork
 
@@ -53,7 +51,7 @@ Upstream already provides the parts we want to preserve:
 - warm Codex MCP support
 - task status/result inspection
 
-The gap is that upstream is directional from Claude Code to Agent Bridge. This fork needs a small ChatGPT-facing MCP server in front of the existing bridge control plane.
+The gap is that upstream is directional from Claude Code to Agent Bridge. This fork adds narrow ChatGPT-facing transports in front of the existing bridge control plane; the current PoC uses a GitHub-backed mailbox because it does not depend on custom-MCP account access.
 
 ## 4. Current repositories and machine state
 
@@ -251,7 +249,26 @@ Local setup evidence (2026-09-11):
 - this is an observed UI blocker, not a conclusion about plan entitlement; ChatGPT or the workspace administrator must verify whether custom MCP connectors are available
 - the managed runtime was stopped after the UI check; no target repository tool was invoked
 
-### Phase 5 — Controlled write mode
+### Phase 5 — GitHub relay PoC
+
+Status: **COMPLETE**
+
+GitHub is the current ChatGPT-to-Mac transport. The watcher reads bounded inbox files, creates a remote claim before execution, writes an outbox result, and creates a local Agent Bridge ledger task for each deterministic operation.
+
+Implemented allowlist:
+
+- `bridge_ping`
+- `project_git_status` for configured `iotmart` or `magnolia`
+- `azure_work_item_read` for numeric work item IDs
+
+Acceptance evidence (2026-09-11):
+
+- smoke tasks for all three types produced one outbox result each; a second worker pass skipped the already-completed ping task
+- `azure_work_item_read(47122)` succeeded through the relay with existing Azure CLI authentication
+- no Codex model turn was used, and IoTMart Git status was byte-identical before and after `project_git_status`
+- foreground watcher started and continued polling the branch without user interaction
+
+### Phase 6 — Controlled write mode
 
 Status: **OUT OF SCOPE UNTIL READ-ONLY POC ACCEPTED**
 
@@ -261,8 +278,8 @@ Only after explicit approval, consider narrow write tools or workspace-write tas
 
 The next local-machine handoff should do only these things:
 
-1. have ChatGPT or the workspace administrator verify custom MCP connector availability; if available, restart the managed `agent-bridge` runtime, create the connector, then call `bridge_ping`
-2. preserve `codex exec --json` as the internal PoC transport; do not introduce `mcp-server` or `app-server`
+1. use the GitHub relay for the next bounded read-only task; the foreground watcher polls `feature/chatgpt-codex-bridge`
+2. preserve `codex exec --json` for future model-driven work; do not introduce `mcp-server` or `app-server`
 3. keep both target repositories read-only until explicit approval changes the plan
 
 Once Phase 0 succeeds, ChatGPT should review the result and design the MCP wrapper against the actual current Agent Bridge code.

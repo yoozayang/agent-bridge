@@ -73,3 +73,9 @@ The first ChatGPT-facing surface is a local stdio MCP server using the standard 
 Status: Accepted
 
 The ChatGPT connection uses the official outbound Secure MCP Tunnel client to launch the existing local stdio adapter. Its runtime API key and tunnel ID are machine-local state; no secret, tunnel identifier, or generated profile is committed. The read-only MCP tool surface and `codex exec --json` transport remain unchanged.
+
+## ADR-011 — Use GitHub relay for the immediate ChatGPT-to-Mac PoC
+
+Status: Accepted
+
+The current ChatGPT account does not expose the custom connector UI needed to finish the tunnel path. GitHub relay uses the already-authenticated repository as a bounded mailbox: inbox tasks are allowlisted, a GitHub file-create claim prevents another worker from executing the same task, and outbox results are committed back to the branch. This adds polling latency and is not a replacement for the local Agent Bridge ledger; every deterministic relay task still creates a local ledger record. No webhook, public server, GitHub App, or arbitrary command payload is used. Revisit Secure MCP Tunnel when custom connector access is available.

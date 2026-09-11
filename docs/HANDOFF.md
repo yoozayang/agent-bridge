@@ -117,6 +117,22 @@ Confirm `tunnel-client runtimes status agent-bridge --json` reports `process_run
 
 If ChatGPT Settings shows only preconfigured apps and no custom-connector add action, do not enable an unrelated app. Record that observed UI blocker for ChatGPT or the workspace administrator to verify. Stop the managed runtime until connector access is confirmed.
 
+## GitHub relay PoC
+
+The current ChatGPT-to-Mac transport is GitHub relay, not the optional MCP tunnel. With `gh auth status`, Azure DevOps authentication (only for work-item reads), and `config/projects.json` ready, start the foreground worker:
+
+```bash
+node bin/agent-bridge-relay.js --interval 30
+```
+
+ChatGPT writes bounded files under `relay/inbox/`; the worker creates `relay/processed/` claim records and `relay/outbox/` results through authenticated GitHub commits. Run the real smoke check with an isolated local ledger:
+
+```bash
+AGENT_BRIDGE_HOME="$(mktemp -d)/ledger" node test/github-relay-smoke.js
+```
+
+The allowlist is `bridge_ping`, read-only `project_git_status`, and numeric `azure_work_item_read`. No payload may contain paths, shell commands, or secrets.
+
 ## Safety
 
 Until `docs/IMPLEMENTATION_PLAN.md` says otherwise:

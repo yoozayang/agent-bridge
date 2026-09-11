@@ -4,7 +4,8 @@
   "description": "Claude plans, agents execute. A bridge that delegates coding tasks from Claude Code to Codex or Antigravity, with a plain-Markdown filesystem work-log Claude reads anytime.",
   "bin": {
     "agent-bridge": "bin/agent-bridge.js",
-    "agent-bridge-mcp": "bin/agent-bridge-mcp.js"
+    "agent-bridge-mcp": "bin/agent-bridge-mcp.js",
+    "agent-bridge-relay": "bin/agent-bridge-relay.js"
   },
   "files": [
     "bin/",
