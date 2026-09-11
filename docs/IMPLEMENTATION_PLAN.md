@@ -264,7 +264,7 @@ Implemented allowlist:
 Acceptance evidence (2026-09-11):
 
 - smoke tasks for all three types produced one outbox result each; a second worker pass skipped the already-completed ping task
-- `azure_work_item_read(47122)` succeeded through the relay with existing Azure CLI authentication
+- `azure_work_item_read(47122)` succeeded through the relay with existing Azure CLI authentication and returned its ID, title, `Task` type, `To Do` state, and description
 - no Codex model turn was used, and IoTMart Git status was byte-identical before and after `project_git_status`
 - foreground watcher started and continued polling the branch without user interaction
 
