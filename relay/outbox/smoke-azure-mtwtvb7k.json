@@ -1,0 +1,19 @@
+{
+  "id": "smoke-azure-mtwtvb7k",
+  "type": "azure_work_item_read",
+  "status": "done",
+  "created_at": "2026-09-11T10:43:28.067Z",
+  "completed_at": "2026-09-11T10:43:35.217Z",
+  "ledger_task_id": "20260911104333-github-relay-deterministic-task-880d",
+  "result": {
+    "id": 47122,
+    "title": "[Matthew][test] 註解簡體轉繁體",
+    "state": "To Do",
+    "work_item_type": "Task",
+    "project": "IoTMart 3.0",
+    "description": "找出任何一個檔案，有簡體註解的，修改成繁體註解，不可影響任何其他程式碼",
+    "acceptance_criteria": "",
+    "api_url": "https://advantech-curation.visualstudio.com/fba1009c-5ccd-4fc8-bbb6-d23ba5ffa143/_apis/wit/workItems/47122",
+    "web_url": "https://dev.azure.com/advantech-curation/IoTMart%203.0/_workitems/edit/47122"
+  }
+}
