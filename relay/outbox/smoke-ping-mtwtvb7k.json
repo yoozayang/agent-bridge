@@ -1,0 +1,14 @@
+{
+  "id": "smoke-ping-mtwtvb7k",
+  "type": "bridge_ping",
+  "status": "done",
+  "created_at": "2026-09-11T10:43:05.256Z",
+  "completed_at": "2026-09-11T10:43:11.222Z",
+  "ledger_task_id": "20260911104311-github-relay-deterministic-task-7635",
+  "result": {
+    "ok": true,
+    "mode": "github-relay",
+    "version": "0.1.0",
+    "commit": "e6950fe4f7cbdb9021337ed79ebcb13796a83ad2"
+  }
+}
