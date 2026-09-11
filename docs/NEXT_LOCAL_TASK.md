@@ -1,7 +1,5 @@
 # Next Local Task — MacBook A
 
-> Superseded on 2026-09-11: Phase 0 completed with the upstream `codex exec --json` fallback. Do not perform the tasks below; await ChatGPT's next Phase 1 task selecting a Magnolia Git root for read-only inspection.
-
 Owner: local agent on MacBook A
 Planner/reviewer: ChatGPT
 
@@ -13,94 +11,97 @@ Read first:
 
 ## Objective
 
-Clear Phase 0 blockers only. Do not implement the ChatGPT-facing MCP server yet.
+Complete Phase 1 target-repository read-only validation using the already-verified `codex exec --json` transport through Agent Bridge.
 
-## Task A — Repair Codex CLI
+Do not implement the ChatGPT-facing MCP server yet.
 
-Current failure:
+## Selected Magnolia target
 
-The installed Codex launcher expects:
+Use:
 
-`/opt/homebrew/lib/node_modules/@openai/codex/vendor/aarch64-apple-darwin/codex/codex`
+`/Users/yoozayang/Magnolia/light-modules`
 
-but that native binary is missing.
+Reason: this is the active Magnolia source repository on branch `Matthew/bugfix/46919_Referral_Click_Tracking_UAT_Gap_A`, matching the current IoTMart 46919 work context. Do not use the clean deployment worktree or `base` for this first target validation.
 
-Investigate the current installation and repair/reinstall the official Codex CLI using the safest supported local method.
+## Task A — Read-only IoTMart inspection
 
-After repair, verify:
-
-```bash
-which codex
-codex --version
-```
-
-Then verify the current authentication/login state using commands supported by the installed version. Do not create a new OpenAI API key. If interactive account login is required, stop and tell the user exactly what to do.
-
-Verify that the MCP server command is present/startable:
-
-```bash
-codex mcp-server
-```
-
-Do not leave an orphaned background process; a short startup/protocol sanity check is sufficient.
-
-## Task B — Find Magnolia Git roots, read-only
-
-`/Users/yoozayang/Magnolia` is a workspace but not a Git repository at its root.
-
-Perform a read-only inventory beneath that directory to identify relevant `.git` roots/repositories. Keep the search bounded and avoid changing files.
-
-Report for each likely Magnolia repository:
-
-- absolute path
-- current branch
-- clean/dirty status
-- origin remote if available
-
-Do not checkout, reset, clean, stash, branch, commit, or push.
-
-## Task C — Preserve IoTMart working tree
-
-Do not alter:
+Target:
 
 `/Users/yoozayang/Development/IoTMart3.0`
 
-It was observed dirty on:
+Use Agent Bridge with `codex exec --json` in read-only mode.
 
-`Matthew/bugfix/46919_Referral_Click_Tracking_UAT_Gap`
+Ask Codex only to report:
 
-with two modified Apex files.
+- current branch
+- concise Git working-tree status
+- names of currently modified/untracked files
+- confirmation that no files were changed by the task
 
-You may only re-check branch/status read-only if needed.
+Do not ask Codex to analyze or change the business logic yet.
+
+Before and after the task, capture read-only Git status so the pre-existing dirty state can be compared.
+
+Do not checkout, reset, clean, stash, branch, commit, push, or edit anything in IoTMart.
+
+## Task B — Read-only Magnolia inspection
+
+Target:
+
+`/Users/yoozayang/Magnolia/light-modules`
+
+Use Agent Bridge with `codex exec --json` in read-only mode.
+
+Ask Codex only to report:
+
+- current branch
+- concise Git working-tree status
+- names of currently modified/untracked files
+- confirmation that no files were changed by the task
+
+Before and after the task, capture read-only Git status so the pre-existing dirty state can be compared.
+
+Do not checkout, reset, clean, stash, branch, commit, push, or edit anything in Magnolia.
+
+## Task C — Validate Agent Bridge ledger
+
+For both target runs, verify the durable ledger records exist and are internally consistent, including:
+
+- `task.md`
+- `status.md`
+- `result.md`
+- `events.jsonl`
+- `telemetry.jsonl`
+- `telemetry.json`
+
+Confirm each task completed successfully and telemetry shows no target file changes.
 
 ## Before stopping
 
 Update `docs/IMPLEMENTATION_PLAN.md` with:
 
-- repaired Codex version/path
-- Codex auth status
-- whether `codex mcp-server` starts
-- Magnolia repository root(s)
-- any remaining blocker
-- updated Phase 0 status
+- IoTMart read-only validation result
+- Magnolia `light-modules` read-only validation result
+- before/after working-tree safety confirmation
+- ledger validation result
+- Phase 1 status
+- any remaining blocker before Phase 2
 
-Update `docs/HANDOFF.md` if setup instructions changed.
+Update `docs/HANDOFF.md` only if setup/continuation instructions materially changed.
 
-Commit and push only changes in the Agent Bridge repository on:
+Commit and push only Agent Bridge documentation changes on:
 
 `feature/chatgpt-codex-bridge`
 
-Do not commit or modify either target repository.
+Do not modify or commit either target repository.
 
 ## Final response
 
 Return only:
 
-- Codex repair result
-- Codex version/path
-- auth status
-- MCP server status
-- Magnolia Git roots found
-- target repo safety check
+- IoTMart inspection result
+- Magnolia inspection result
+- target repository before/after safety confirmation
+- Agent Bridge ledger result
 - Agent Bridge commit SHA pushed
 - remaining blocker, if any
