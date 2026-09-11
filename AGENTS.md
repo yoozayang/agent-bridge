@@ -49,11 +49,20 @@ Target repositories on MacBook A:
 
 Paths are machine-specific. New bridge code must not hard-code `/Users/yoozayang`; use configuration/environment overrides.
 
-## Safety until explicitly changed
+## Target-repository and deployment safety
 
-IoTMart3.0 and Magnolia are READ ONLY during the bridge PoC.
+Target-repository writes are allowed only when the current ChatGPT-authored task explicitly opens a narrow write scope. Otherwise treat IoTMart3.0 and Magnolia as read-only.
 
-Do not modify, commit, push, reset, clean, stash, create branches, or change checkout state in either target repository.
+Never commit, push, reset, clean, stash, create branches, change checkout state, or deploy merely because a local default/alias/branch suggests that action. Each capability must be explicitly requested in the current task.
+
+Deployment has an additional hard gate:
+
+- If the user has not explicitly named a deployment environment/org for the current work item, do **not** deploy anywhere. Stop after local edit/review/validation.
+- Never infer a deployment target from Salesforce CLI defaults, environment variables, current aliases, branch names, prior tasks, or convention.
+- Every deployment command must pass the intended target org/environment explicitly; do not rely on a default target org.
+- A named non-production target may be carried through the current work item after ChatGPT reviews the diff and opens the deploy step.
+- Production or production-like deployment requires a separate explicit user approval that names that production target after the change has been reviewed. A generic instruction such as `deploy`, `finish it`, or `ship it` is not sufficient for production.
+- If there is any ambiguity about whether an environment is production, treat it as production and stop for explicit approval.
 
 The bridge fork itself may be modified on `feature/chatgpt-codex-bridge`.
 
@@ -74,5 +83,7 @@ Stop and report instead of improvising if work requires:
 - creating or changing OpenAI credentials/API keys
 - destructive commands
 - force-push
-- write access to target repositories before the read-only PoC is accepted
+- target-repository writes outside the narrow scope explicitly opened by the current task
+- any deployment without an explicitly named target environment/org
+- any production or production-like deployment without separate explicit user approval naming that target
 - architecture changes that discard the Agent Bridge durable ledger without a documented reason
