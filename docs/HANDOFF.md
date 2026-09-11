@@ -96,6 +96,25 @@ AGENT_BRIDGE_HOME="$(mktemp -d)/ledger" node test/mcp-smoke.js
 
 The smoke test requires a valid local project mapping and a logged-in Codex CLI. It runs a read-only IoTMart status inspection and must leave that target unchanged.
 
+## Secure MCP Tunnel
+
+Install the official client, then create an organization tunnel and a separate Runtime API key with Tunnel Read + Use. Keep the key in a local `600`-permission file; never put it in Git or chat.
+
+```bash
+brew install openai/tools/tunnel-client
+tunnel-client init --sample sample_mcp_stdio_local --profile agent-bridge \
+  --tunnel-id tunnel_<your-id> \
+  --mcp-command "node $PWD/bin/agent-bridge-mcp.js" \
+  --control-plane-api-key-ref file:$HOME/.config/tunnel-client/control-plane-api-key
+tunnel-client doctor --profile agent-bridge --explain
+tunnel-client runtimes connect --alias agent-bridge --profile agent-bridge \
+  --tunnel-id tunnel_<your-id> \
+  --mcp-command "node $PWD/bin/agent-bridge-mcp.js" \
+  --runtime-api-key file:$HOME/.config/tunnel-client/control-plane-api-key
+```
+
+Confirm `tunnel-client runtimes status agent-bridge --json` reports `process_running`, `healthy`, and `ready` as true. Only then create or verify the ChatGPT connector in Settings → Connectors, while the runtime remains running.
+
 ## Safety
 
 Until `docs/IMPLEMENTATION_PLAN.md` says otherwise:

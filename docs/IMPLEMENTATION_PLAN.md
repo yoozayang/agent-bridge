@@ -224,7 +224,7 @@ Acceptance criteria:
 
 ### Phase 4 — Secure MCP Tunnel / ChatGPT connection
 
-Status: **PENDING**
+Status: **IN PROGRESS**
 
 After the local ChatGPT-facing MCP server works:
 
@@ -242,6 +242,13 @@ ChatGPT can invoke:
 4. read-only Magnolia investigation
 5. task status/result retrieval
 
+Local setup evidence (2026-09-11):
+
+- official `tunnel-client` 0.0.14 was installed and its `doctor --profile agent-bridge --explain` checks passed
+- managed runtime health, readiness, and a successful control-plane poll passed; the runtime launches `bin/agent-bridge-mcp.js` over stdio
+- a local MCP client completed initialization and `bridge_ping`; the tunnel client has no tunnel-facing tool-discovery probe for this stdio target
+- ChatGPT connector creation and the first `ChatGPT -> tunnel -> bridge_ping` call remain pending required user UI action
+
 ### Phase 5 — Controlled write mode
 
 Status: **OUT OF SCOPE UNTIL READ-ONLY POC ACCEPTED**
@@ -252,7 +259,7 @@ Only after explicit approval, consider narrow write tools or workspace-write tas
 
 The next local-machine handoff should do only these things:
 
-1. have ChatGPT review the completed Phase 2 local MCP evidence and provide the next task
+1. create or verify the ChatGPT connector while the managed `agent-bridge` tunnel runtime is running, then call `bridge_ping`
 2. preserve `codex exec --json` as the internal PoC transport; do not introduce `mcp-server` or `app-server`
 3. keep both target repositories read-only until explicit approval changes the plan
 

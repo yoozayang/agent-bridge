@@ -66,4 +66,10 @@ The current official Codex CLI does not expose `codex mcp-server`. The PoC will 
 
 Status: Accepted
 
-The first ChatGPT-facing surface is a local stdio MCP server using the standard MCP SDK. It exposes only the five explicit read-only bridge tools and resolves target paths through ignored machine-local configuration. Secure MCP Tunnel and remote HTTP transport remain out of scope.
+The first ChatGPT-facing surface is a local stdio MCP server using the standard MCP SDK. It exposes only the five explicit read-only bridge tools and resolves target paths through ignored machine-local configuration. Remote HTTP transport remains out of scope; ADR-010 adds Secure MCP Tunnel connectivity.
+
+## ADR-010 — Connect the local adapter through OpenAI Secure MCP Tunnel
+
+Status: Accepted
+
+The ChatGPT connection uses the official outbound Secure MCP Tunnel client to launch the existing local stdio adapter. Its runtime API key and tunnel ID are machine-local state; no secret, tunnel identifier, or generated profile is committed. The read-only MCP tool surface and `codex exec --json` transport remain unchanged.
