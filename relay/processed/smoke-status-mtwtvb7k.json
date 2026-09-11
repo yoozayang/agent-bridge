@@ -1,6 +1,8 @@
 {
   "id": "smoke-status-mtwtvb7k",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-11T10:43:23.285Z",
-  "task_type": "project_git_status"
+  "task_type": "project_git_status",
+  "completed_at": "2026-09-11T10:43:26.511Z",
+  "ledger_task_id": "20260911104324-github-relay-deterministic-task-f1b8"
 }
