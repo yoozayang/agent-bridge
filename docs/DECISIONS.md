@@ -79,3 +79,9 @@ The ChatGPT connection uses the official outbound Secure MCP Tunnel client to la
 Status: Accepted
 
 The current ChatGPT account does not expose the custom connector UI needed to finish the tunnel path. GitHub relay uses the already-authenticated repository as a bounded mailbox: inbox tasks are allowlisted, a GitHub file-create claim prevents another worker from executing the same task, and outbox results are committed back to the branch. This adds polling latency and is not a replacement for the local Agent Bridge ledger; every deterministic relay task still creates a local ledger record. No webhook, public server, GitHub App, or arbitrary command payload is used. Revisit Secure MCP Tunnel when custom connector access is available.
+
+## ADR-012 — One exact clean-file comment replacement is the first write surface
+
+Status: Accepted
+
+The first target-repository write is not a generic edit tool. `project_comment_replace` accepts one exact, complete same-line recognizable comment replacement on a clean IoTMart file only. The worker proves path containment, rejects symlinks and pre-existing target-file dirtiness, requires exactly one old-text occurrence, verifies a single-file diff, and restores only its own bytes if verification fails. The actual candidate and wording remain ChatGPT's decision. Commit and deployment, including the later `ccdev01` sandbox deployment, require separately gated work.

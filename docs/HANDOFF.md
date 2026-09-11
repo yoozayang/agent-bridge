@@ -131,7 +131,13 @@ ChatGPT writes bounded files under `relay/inbox/`; the worker creates `relay/pro
 AGENT_BRIDGE_HOME="$(mktemp -d)/ledger" node test/github-relay-smoke.js
 ```
 
-The allowlist is `bridge_ping`, read-only `project_git_status`, and numeric `azure_work_item_read`. No payload may contain paths, shell commands, or secrets.
+The allowlist is `bridge_ping`, read-only `project_git_status`/`azure_work_item_read`, plus bounded `project_text_search`, `project_file_read`, `project_git_diff`, and the IoTMart-only `project_comment_replace`. The latter requires a clean regular file below the configured project root, an exact once-only same-line comment replacement, and post-write diff verification; it never commits the target repository. Validate the write gates without touching a target repo:
+
+```bash
+node test/github-relay-write.test.js
+```
+
+No payload may contain absolute paths, shell commands, or secrets. Salesforce deployment is separately gated and is not part of the relay comment-edit primitive.
 
 ## Safety
 

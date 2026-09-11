@@ -268,19 +268,21 @@ Acceptance evidence (2026-09-11):
 - no Codex model turn was used, and IoTMart Git status was byte-identical before and after `project_git_status`
 - foreground watcher started and continued polling the branch without user interaction
 
-### Phase 6 — Controlled write mode
+### Phase 6 — Controlled comment-write PoC
 
-Status: **OUT OF SCOPE UNTIL READ-ONLY POC ACCEPTED**
+Status: **IN PROGRESS — primitives implemented; 47122 selection/review pending ChatGPT**
 
-Only after explicit approval, consider narrow write tools or workspace-write tasks. Do not enable arbitrary shell or unrestricted repo writes.
+The relay now exposes only four bounded project primitives: literal `project_text_search`, bounded `project_file_read`, exact `project_comment_replace`, and bounded `project_git_diff`. Comment replacement is restricted to a clean IoTMart file, an exact once-only same-line recognizable comment, and post-write diff verification; it never commits the target repository. Fixture tests cover traversal, dirty files, repeated text, and a successful replacement. No 47122 target candidate was selected or changed during implementation.
+
+After ChatGPT reviews the real 47122 diff, a separate task may introduce a similarly bounded deployment gate for Salesforce sandbox alias `ccdev01`. No deployment capability or Salesforce action is included in this phase.
 
 ## 7. Immediate next actions
 
 The next local-machine handoff should do only these things:
 
-1. use the GitHub relay for the next bounded read-only task; the foreground watcher polls `feature/chatgpt-codex-bridge`
+1. have ChatGPT issue 47122 search/read/review relay tasks, then one exact clean-file comment replacement and diff request
 2. preserve `codex exec --json` for future model-driven work; do not introduce `mcp-server` or `app-server`
-3. keep both target repositories read-only until explicit approval changes the plan
+3. do not commit, deploy, or otherwise modify target repositories beyond the separately reviewed one-comment IoTMart change
 
 Once Phase 0 succeeds, ChatGPT should review the result and design the MCP wrapper against the actual current Agent Bridge code.
 
