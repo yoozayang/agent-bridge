@@ -115,6 +115,8 @@ tunnel-client runtimes connect --alias agent-bridge --profile agent-bridge \
 
 Confirm `tunnel-client runtimes status agent-bridge --json` reports `process_running`, `healthy`, and `ready` as true. Only then create or verify the ChatGPT connector in Settings → Connectors, while the runtime remains running.
 
+If ChatGPT Settings shows only preconfigured apps and no custom-connector add action, do not enable an unrelated app. Record that observed UI blocker for ChatGPT or the workspace administrator to verify. Stop the managed runtime until connector access is confirmed.
+
 ## Safety
 
 Until `docs/IMPLEMENTATION_PLAN.md` says otherwise:
