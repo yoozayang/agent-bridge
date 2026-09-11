@@ -33,9 +33,10 @@ As of 2026-09-11:
 - bridge repo cloned to `/Users/yoozayang/Development/ChatGPT-CodexAgent-Bridge`
 - origin/upstream are configured
 - local branch exists
-- Codex CLI install is broken because its expected native binary is missing
+- Codex CLI is repaired at `/opt/homebrew/bin/codex` (`codex-cli 0.154.0`) and authenticated using ChatGPT
+- Current Codex CLI no longer exposes the upstream-required `codex mcp-server` command; ChatGPT must select a compatible supported transport before implementation
 - IoTMart3.0 is a valid Git repo and currently dirty; keep it read-only
-- `/Users/yoozayang/Magnolia` is not itself a Git repo; nested repo roots still need discovery
+- `/Users/yoozayang/Magnolia` is not itself a Git repo; its `base`, `light-modules`, and `light-modules` worktree roots have been identified and remain read-only
 
 ## MacBook B bootstrap target
 
@@ -68,7 +69,7 @@ MacBook A currently reports:
 
 ```text
 iotmart  -> /Users/yoozayang/Development/IoTMart3.0
-magnolia -> /Users/yoozayang/Magnolia  # workspace only; actual Git root unresolved
+magnolia -> select one of the read-only discovered roots: `base`, `light-modules`, or the `light-modules` worktree under `/Users/yoozayang/Magnolia`
 ```
 
 MacBook B should provide its own equivalents.

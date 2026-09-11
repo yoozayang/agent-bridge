@@ -69,8 +69,9 @@ Environment observed on 2026-09-11:
 | node | v25.5.0 |
 | npm | 11.8.0 |
 | GitHub auth | authenticated as `yoozayang` |
-| Codex CLI | BLOCKED: launcher exists but native binary is missing |
-| Codex auth | unknown until CLI repaired |
+| Codex CLI | repaired: `/opt/homebrew/bin/codex`, `codex-cli 0.154.0` |
+| Codex auth | logged in using ChatGPT |
+| Codex MCP server | BLOCKED: `codex mcp-server` is not a subcommand in 0.154.0 |
 | `agy` | not installed; optional and not needed for this PoC |
 
 Bridge working copy:
@@ -99,7 +100,10 @@ Magnolia:
 
 - workspace path: `/Users/yoozayang/Magnolia`
 - valid Git repository at that exact root: no
-- next investigation: identify repository/repositories beneath this workspace without modifying anything
+- discovered Git roots (read-only inventory):
+  - `/Users/yoozayang/Magnolia/base` — `main`, dirty (five untracked files), origin `ssh://git@gitlab.advantech.ap-southeast.magnolia-platform.asia:9022/magnolia/base.git`
+  - `/Users/yoozayang/Magnolia/light-modules` — `Matthew/bugfix/46919_Referral_Click_Tracking_UAT_Gap_A`, dirty (one modified file), origin `ssh://git@gitlab.advantech.ap-southeast.magnolia-platform.asia:9022/magnolia/light-modules.git`
+  - `/Users/yoozayang/Magnolia/.wt_PhushyaMithra_43494_Bundle_Product_Light_A` — `Matthew/deploy/PhushyaMithra_43494_Bundle_Product_Light_A`, clean worktree, origin `ssh://git@gitlab.advantech.ap-southeast.magnolia-platform.asia:9022/magnolia/light-modules.git`
 
 ### MacBook B
 
@@ -107,24 +111,13 @@ Not set up yet. It must be able to clone this fork and follow `docs/HANDOFF.md` 
 
 ## 5. Current blockers
 
-### Blocker A — Codex CLI installation is broken
+### Blocker A — Current Codex CLI no longer exposes `mcp-server`
 
-Observed missing path:
+The broken global `@openai/codex@0.77.0` install was repaired with the current official package, `@openai/codex@0.154.0`. `codex --version` works and `codex login status` reports ChatGPT authentication.
 
-`/opt/homebrew/lib/node_modules/@openai/codex/vendor/aarch64-apple-darwin/codex/codex`
+However, `codex --help` has no `mcp-server` command. Running `codex mcp-server` is treated as an interactive prompt rather than starting a stdio MCP server; it was stopped before trusting the repository and no process was left running. Upstream Agent Bridge currently depends on that command, so its Codex MCP transport cannot yet be validated with the repaired CLI.
 
-Until repaired we cannot validate:
-
-- `codex --version`
-- Codex login/authentication
-- `codex mcp-server`
-- Agent Bridge → Codex transport
-
-Repair should be treated as a local-machine task and verified before changing bridge source code.
-
-### Blocker B — Magnolia repo location is unresolved
-
-`/Users/yoozayang/Magnolia` is a workspace but not itself a Git repository. We need a read-only inventory of immediate/nested Git repos and then configure the actual repository roots.
+ChatGPT must decide the next architecture-compatible path (for example, a supported legacy Codex version or a documented adaptation to the current Codex interface) before bridge source changes begin.
 
 ### Non-blocker — `agy` missing
 
@@ -134,14 +127,14 @@ Antigravity is unrelated to the first ChatGPT ↔ Codex PoC. Do not install it m
 
 ### Phase 0 — Stabilize local prerequisites
 
-Status: **IN PROGRESS / BLOCKED**
+Status: **PARTIALLY COMPLETE / BLOCKED**
 
 Tasks:
 
-- repair Codex CLI on MacBook A
-- verify Codex account login without creating a new API key if existing ChatGPT/Codex account login works
-- verify `codex mcp-server` starts
-- identify Magnolia Git repo root(s)
+- repair Codex CLI on MacBook A — complete (`codex-cli 0.154.0`)
+- verify Codex account login without creating a new API key — complete (ChatGPT login)
+- verify `codex mcp-server` starts — blocked; removed from current CLI
+- identify Magnolia Git repo root(s) — complete; three roots recorded above
 - leave IoTMart3.0 untouched
 
 Exit criteria:
@@ -253,12 +246,10 @@ Only after explicit approval, consider narrow write tools or workspace-write tas
 
 The next local-machine handoff should do only these things:
 
-1. repair/reinstall the Codex CLI on MacBook A and verify the native binary actually exists
-2. verify `codex --version` and current login/auth state
-3. verify `codex mcp-server` can start
-4. perform a read-only search beneath `/Users/yoozayang/Magnolia` for Git roots and report them
-5. do not modify either target repo
-6. update this document with actual results before stopping
+1. have ChatGPT select a supported Codex transport compatible with Agent Bridge's durable ledger; the current CLI no longer provides `codex mcp-server`
+2. after that decision, validate the chosen transport with a read-only smoke test outside project repositories
+3. configure the appropriate discovered Magnolia Git root only after ChatGPT selects the target repository
+4. do not modify either target repo
 
 Once Phase 0 succeeds, ChatGPT should review the result and design the MCP wrapper against the actual current Agent Bridge code.
 
