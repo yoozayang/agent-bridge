@@ -12,131 +12,97 @@ Read first:
 
 ## Objective
 
-Start Phase 2 by implementing the smallest local ChatGPT-facing MCP server that wraps the existing Agent Bridge control plane.
+Connect the already-working local stdio ChatGPT-facing MCP server to ChatGPT using OpenAI Secure MCP Tunnel.
 
-The goal of this task is only to prove a **local MCP client -> Agent Bridge -> `codex exec --json` -> durable ledger** path. Do not configure OpenAI Secure MCP Tunnel yet.
+This task is about connectivity only. Do not modify IoTMart3.0 or Magnolia, do not add write-capable MCP tools, and do not investigate Azure work item 47122 yet.
 
-Do not modify IoTMart3.0 or Magnolia. They remain read-only targets.
+The desired first end-to-end proof is:
 
-## Required design
+`ChatGPT -> Secure MCP Tunnel -> local agent-bridge MCP -> bridge_ping()`
 
-Preserve the already-verified internal transport:
+Once that works, stop. ChatGPT will then drive the first real PoC (Azure work item 47122) through the connected bridge.
 
-`codex exec --json`
+## Current local MCP entrypoint
 
-Do not downgrade Codex. Do not add `codex mcp-server`. Do not migrate to `app-server` in this phase.
+Use the MCP server already implemented in this branch:
 
-The MCP server must reuse the existing Agent Bridge dispatcher/task-ledger/session modules wherever practical rather than duplicating task lifecycle logic.
+`bin/agent-bridge-mcp.js`
 
-Do not expose arbitrary shell execution.
+Preserve its current read-only tool surface and `codex exec --json` internal transport.
 
-## Initial MCP tool surface
+## Task A — Install / verify official tunnel client
 
-Implement only these tools unless the existing code structure makes a slightly smaller surface clearly preferable:
+Use the current official OpenAI Secure MCP Tunnel client and documentation. Do not invent flags from old examples if the installed version differs.
 
-- `bridge_ping()`
-- `bridge_projects()`
-- `bridge_run_readonly(project, prompt)`
-- `bridge_task_status(task_id)`
-- `bridge_task_result(task_id)`
+On macOS, prefer the official Homebrew installation path if not already installed:
 
-`bridge_run_readonly` must:
+`brew install openai/tools/tunnel-client`
 
-- accept a logical project ID, not an arbitrary filesystem path
-- force read-only execution
-- dispatch through the existing Agent Bridge task lifecycle
-- use the existing `codex exec --json` transport
-- return a task identifier / concise completion metadata
-- preserve the normal durable ledger
+Verify the installed version and inspect its current help/quickstart before configuring anything.
 
-Do not add write-capable tools.
+Do not commit credentials, tokens, tunnel IDs, generated secrets, or machine-local auth state.
 
-## Project mapping for MacBook A
+## Task B — Configure the local stdio MCP behind the tunnel
 
-Use machine-local configuration, not hard-coded source constants.
+Configure a tunnel/profile that launches this repository's stdio MCP entrypoint from the Agent Bridge working copy.
 
-Logical mappings for this machine:
+Working copy on MacBook A:
 
-- `iotmart` -> `/Users/yoozayang/Development/IoTMart3.0`
-- `magnolia` -> `/Users/yoozayang/Magnolia/light-modules`
+`/Users/yoozayang/Development/ChatGPT-CodexAgent-Bridge`
 
-Committed source should contain only an example/template or configuration loader. Do not commit user-specific secrets. If a local config file is needed, keep the actual machine-local file ignored by Git and commit only its example.
+MCP command should ultimately launch:
 
-## Implementation expectations
+`node /Users/yoozayang/Development/ChatGPT-CodexAgent-Bridge/bin/agent-bridge-mcp.js`
 
-Before editing, inspect the current source to identify:
+Use the current tunnel-client syntax discovered from its own help/current official documentation.
 
-- dispatcher/task creation entry points
-- fslog / task ledger APIs
-- existing project/workspace resolution behavior
-- current `exec --json` transport invocation
+If creating/authorizing the tunnel requires the user to perform an OpenAI/ChatGPT web UI action, STOP at that exact point and return the shortest possible user instruction: what screen/action is needed and what non-secret identifier (if any) must be provided back to the local agent. Do not try to bypass interactive authorization.
 
-Prefer a narrow adapter around those APIs.
+## Task C — Local diagnostics only
 
-Keep dependencies minimal. If the repo already has an MCP SDK/dependency, use it. If not, add only the minimum supported dependency needed for a stdio MCP server and document the reason.
+Before asking ChatGPT to connect, run the tunnel client's supported diagnostics/doctor checks and confirm:
 
-## Local validation
+- tunnel client can launch the local stdio MCP server
+- MCP initialization succeeds
+- `bridge_ping` is discoverable through the tunnel-facing MCP connection if the diagnostic tooling supports tool discovery
+- no target repository is modified
 
-Validate using a local MCP client or protocol-level stdio test only. Secure MCP Tunnel is explicitly out of scope for this task.
-
-Required checks:
-
-1. `bridge_ping()` responds successfully.
-2. `bridge_projects()` reports at least `iotmart` and `magnolia` logical IDs without exposing arbitrary path execution.
-3. `bridge_run_readonly("iotmart", <status-only prompt>)` completes through Agent Bridge.
-4. The resulting durable ledger contains the normal six files:
-   - `task.md`
-   - `status.md`
-   - `result.md`
-   - `events.jsonl`
-   - `telemetry.jsonl`
-   - `telemetry.json`
-5. IoTMart before/after Git state is identical and telemetry reports zero file changes.
-6. `bridge_task_status(task_id)` can read the created task.
-7. `bridge_task_result(task_id)` can return the created task result.
-
-If the MCP implementation itself needs test fixtures, use temporary directories or Agent Bridge repo-local test files only. Do not create or edit files in target repositories.
+Do not run a target-repository Codex task merely to validate the tunnel.
 
 ## Stop conditions
 
 Stop and report instead of improvising if:
 
-- existing Agent Bridge internals cannot be reused without a substantial redesign
-- adding the MCP layer would require weakening read-only guarantees
-- the MCP SDK/stdio transport conflicts with the current Node/runtime setup
-- a decision is needed about public tool semantics or security boundaries
+- ChatGPT/OpenAI account UI must create or authorize the tunnel
+- the user's current ChatGPT plan/account does not expose the required MCP/tunnel connection UI
+- tunnel-client reports an auth/reconnect loop
+- the current official tunnel flow differs materially from the expected stdio-local setup
+- any step would require exposing a credential or secret in Git
 
-Record the exact blocker and evidence in the repo before stopping.
+When stopped for an interactive action, return only the minimum action the user must perform. ChatGPT will decide the next step.
 
-## Before stopping
+## After successful local tunnel setup
 
-Update `docs/IMPLEMENTATION_PLAN.md` with:
+Do not start Azure 47122 yet.
 
-- Phase 2 implementation status
-- files/modules added or changed
-- MCP tool surface actually implemented
-- local MCP validation results
-- target-repo safety result
-- remaining blocker, if any
+Update:
 
-Update `docs/HANDOFF.md` with any new install/start/config steps needed for another Mac.
+- `docs/IMPLEMENTATION_PLAN.md` with tunnel setup/diagnostic status
+- `docs/HANDOFF.md` with reproducible MacBook-B setup steps, excluding secrets and machine-specific credentials
+- `docs/DECISIONS.md` only if a material architecture decision changed
 
-Update `docs/DECISIONS.md` only for material architecture decisions.
+Commit and push Agent Bridge documentation/config-template changes only if they are safe and portable. Keep generated local tunnel config/auth ignored/uncommitted.
 
-Commit and push Agent Bridge changes on:
+Then stop and return:
 
-`feature/chatgpt-codex-bridge`
+- tunnel-client version
+- tunnel/profile setup status
+- local diagnostic result
+- whether user UI action is required
+- exact next user action, if required
+- Agent Bridge commit SHA if anything was pushed
+- blocker, if any
 
-Do not commit or modify either target repository.
+## Safety
 
-## Final response
-
-Return only:
-
-- MCP server implementation result
-- tool surface implemented
-- local MCP validation result
-- IoTMart safety confirmation
-- files/modules changed in Agent Bridge
-- Agent Bridge commit SHA pushed
-- remaining blocker, if any
+IoTMart3.0 and Magnolia remain read-only and must be byte-for-byte untouched by this connectivity task.
