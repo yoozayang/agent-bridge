@@ -1,6 +1,8 @@
 {
   "id": "chatgpt-47122-search-wei-20260911",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-11T12:32:03.216Z",
-  "task_type": "project_text_search"
+  "task_type": "project_text_search",
+  "completed_at": "2026-09-11T12:32:13.495Z",
+  "ledger_task_id": "20260911123204-github-relay-deterministic-task-f625"
 }
