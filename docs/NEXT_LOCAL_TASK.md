@@ -18,18 +18,23 @@ Extend the already-working GitHub relay just enough for ChatGPT to complete Azur
 
 - title: `[Matthew][test] 註解簡體轉繁體`
 - description: `找出任何一個檔案，有簡體註解的，修改成繁體註解，不可影響任何其他程式碼`
+- final deployment target: **Salesforce sandbox alias `ccdev01`**
 
 The desired flow is:
 
-`ChatGPT -> relay search/read -> ChatGPT selects one safe candidate -> relay exact comment edit -> relay diff/status -> ChatGPT reviews`
+`ChatGPT -> relay search/read -> ChatGPT selects one safe candidate -> relay exact comment edit -> relay diff/status -> ChatGPT reviews -> deploy gate -> deploy only this change to ccdev01 -> verify deployment`
 
 This is the first intentionally write-capable target-repository PoC, but the write surface must be extremely narrow and deterministic.
+
+Important: this implementation task is still only to add the bounded search/read/edit/diff primitives. Do **not** deploy anything yet. After ChatGPT reviews the actual 47122 diff, ChatGPT will issue the next task to add/use a bounded Salesforce deployment capability for `ccdev01`.
 
 ## Human-interaction rule
 
 Do not ask the user anything except unavoidable authentication/login/SSO/MFA/permission actions.
 
-Do not ask the user to choose files, inspect diffs, decide implementation details, paste logs, or restart things manually unless there is no safe way for the local agent to do so. Record facts in the repo; ChatGPT will review them.
+Do not ask the user to choose files, inspect diffs, decide implementation details, paste logs, restart things manually, or decide deployment mechanics. Record facts in the repo; ChatGPT will review them.
+
+For the later `ccdev01` deployment phase, use existing authenticated Salesforce CLI state if valid. Only involve the user if Salesforce login/MFA/passkey/permission is actually required.
 
 ## Current relay
 
@@ -148,8 +153,12 @@ ChatGPT will drive the actual 47122 sequence through inbox tasks:
 3. select a clean, low-risk file that is not one of the two pre-existing modified IoTMart files
 4. issue one exact comment replacement
 5. request diff/status and review it
+6. only after review, perform a separate deploy phase targeting **`ccdev01`**
+7. verify the deployment result and report it back through the relay
 
-This separation is intentional: ChatGPT owns the engineering decision; the Mac worker is the deterministic execution layer.
+The deploy phase must be separately gated. Do not create a broad arbitrary-shell deployment path as part of this task.
+
+This separation is intentional: ChatGPT owns the engineering and deployment decision; the Mac worker is the deterministic execution layer.
 
 ## Security / validation
 
@@ -163,6 +172,7 @@ This separation is intentional: ChatGPT owns the engineering decision; the Mac w
 - existing dedup/claim behavior remains intact
 - preserve the two pre-existing IoTMart modified files byte-for-byte
 - do not commit/push IoTMart or Magnolia
+- do not deploy to `ccdev01` during this implementation task
 
 Add focused tests for validation, path traversal rejection, dirty-target rejection, exact-count rejection, and a successful comment-only fixture replacement.
 
@@ -171,7 +181,7 @@ Add focused tests for validation, path traversal rejection, dirty-target rejecti
 Update:
 
 - `relay/README.md` with the four new task contracts
-- `docs/IMPLEMENTATION_PLAN.md` with the controlled-write PoC status
+- `docs/IMPLEMENTATION_PLAN.md` with the controlled-write PoC status and the final 47122 deployment target `ccdev01`
 - `docs/HANDOFF.md` if watcher startup/restart instructions change
 - `docs/DECISIONS.md` only if a material architecture decision changed
 
@@ -191,4 +201,4 @@ Return only:
 - pushed Agent Bridge commit SHA
 - blocker, if any
 
-Then stop. ChatGPT will issue the actual 47122 search/edit/review tasks through the relay.
+Then stop. ChatGPT will issue the actual 47122 search/edit/review tasks through the relay, followed by a separately gated `ccdev01` deploy phase.
