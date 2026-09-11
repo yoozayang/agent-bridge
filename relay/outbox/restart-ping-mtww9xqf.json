@@ -1,0 +1,15 @@
+{
+  "id": "restart-ping-mtww9xqf",
+  "type": "bridge_ping",
+  "status": "done",
+  "created_at": "2026-09-11T11:50:26.823Z",
+  "completed_at": "2026-09-11T11:51:01.513Z",
+  "ledger_task_id": "20260911115101-github-relay-deterministic-task-2e62",
+  "result": {
+    "ok": true,
+    "worker_health": "ready",
+    "mode": "github-relay",
+    "version": "0.1.0",
+    "commit": "6a458dc5d72cfc7f710ca6e3a644bada98549db1"
+  }
+}
