@@ -1,6 +1,8 @@
 {
   "id": "smoke-azure-mtwtvb7k",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-11T10:43:32.835Z",
-  "task_type": "azure_work_item_read"
+  "task_type": "azure_work_item_read",
+  "completed_at": "2026-09-11T10:43:36.901Z",
+  "ledger_task_id": "20260911104333-github-relay-deterministic-task-880d"
 }
