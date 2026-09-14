@@ -1,0 +1,514 @@
+{
+  "id": "chatgpt-email-audit-getappsetting-20260914",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-14T13:25:40+08:00",
+  "completed_at": "2026-09-14T05:52:25.324Z",
+  "ledger_task_id": "20260914055219-github-relay-deterministic-task-fb4c",
+  "result": {
+    "project": "iotmart",
+    "query": "getAppSetting",
+    "results": [
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 1662,
+        "excerpt": "            String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 1732,
+        "excerpt": "            String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_GetOrderInfo.cls",
+        "line": 40,
+        "excerpt": "        String sSecretKey = Lib_Custom_Metadata.getAppSetting(storeName +'_PaymentCenter_Secret').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_GetOrderInfo.cls",
+        "line": 74,
+        "excerpt": "        String strategyClassName = Lib_Custom_Metadata.getAppSetting(storeName +'_PaymentGatewayStrategy').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_GetOrderInfoById.cls",
+        "line": 26,
+        "excerpt": "        String sSecretKey = Lib_Custom_Metadata.getAppSetting(storeName +'_PaymentCenter_Secret').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_GetOrderInfoById.cls",
+        "line": 83,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_GetOrderInfoById.cls",
+        "line": 84,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_GetOrderInfoById_test.cls",
+        "line": 110,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_GetOrderInfoById_test.cls",
+        "line": 111,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentInformation.cls",
+        "line": 263,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentInformation.cls",
+        "line": 264,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentInformation.cls",
+        "line": 317,
+        "excerpt": "        String clientId = Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_ClientID').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentReceiptForPaymentCenter.cls",
+        "line": 223,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentReceiptForPaymentCenter.cls",
+        "line": 224,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentReceiptForPaymentCenter_test.cls",
+        "line": 173,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentReceiptForPaymentCenter_test.cls",
+        "line": 174,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_AISearchService.cls",
+        "line": 322,
+        "excerpt": "        String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_AISearchService.cls",
+        "line": 409,
+        "excerpt": "        String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_AISearchService.cls",
+        "line": 758,
+        "excerpt": "        String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 153,
+        "excerpt": "        AppSetting__mdt bccSetting = Lib_Custom_Metadata.getAppSetting(storeName+'_CouponRedeemMailBccs');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_LWC_Referral_Order.cls",
+        "line": 113,
+        "excerpt": "        AppSetting__mdt ePointDelay = Lib_Custom_Metadata.getAppSetting(storeName + '_ePointPage_distribute_delay_mins');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_LWC_WireTransfer.cls",
+        "line": 43,
+        "excerpt": "        AppSetting__mdt MetadataObj = Lib_Custom_Metadata.getAppSetting(MetadataKey);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 401,
+        "excerpt": "            if(Lib_Custom_Metadata.getAppSetting(metaKey) != null && String.isNotBlank(Lib_Custom_Metadata.getAppSetting(metaKey).Value__c))"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 403,
+        "excerpt": "                ccToReceivers = Lib_Custom_Metadata.getAppSetting(metaKey).Value__c.split(';');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 410,
+        "excerpt": "                if(Lib_Custom_Metadata.getAppSetting(metaKey) != null && String.isNotBlank(Lib_Custom_Metadata.getAppSetting(metaKey).Value__c))"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 412,
+        "excerpt": "                    ccToReceivers = Lib_Custom_Metadata.getAppSetting(metaKey).Value__c.split(';');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 627,
+        "excerpt": "            if(Lib_Custom_Metadata.getAppSetting(metaKey) != null && String.isNotBlank(Lib_Custom_Metadata.getAppSetting(metaKey).Value__c))"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 629,
+        "excerpt": "                ccToReceivers = Lib_Custom_Metadata.getAppSetting(metaKey).Value__c.split(';');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 636,
+        "excerpt": "                if(Lib_Custom_Metadata.getAppSetting(metaKey) != null && String.isNotBlank(Lib_Custom_Metadata.getAppSetting(metaKey).Value__c))"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 638,
+        "excerpt": "                    ccToReceivers = Lib_Custom_Metadata.getAppSetting(metaKey).Value__c.split(';');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 40,
+        "excerpt": "                AppSetting__mdt toSetting = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_toList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 49,
+        "excerpt": "                    AppSetting__mdt ccSetting = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_TW_plantCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 53,
+        "excerpt": "                    AppSetting__mdt ccSetting = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_NL_plantCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 57,
+        "excerpt": "                    AppSetting__mdt ccSetting1 = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_NL_plantCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 58,
+        "excerpt": "                    AppSetting__mdt ccSetting2 = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_TW_plantCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/IoTMart_Registration_Handler.cls",
+        "line": 688,
+        "excerpt": "        if (Lib_Custom_Metadata.getAppSetting(metaKey) != null && String.isNotBlank(Lib_Custom_Metadata.getAppSetting(metaKey).Value__c)) {"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/IoTMart_Registration_Handler.cls",
+        "line": 689,
+        "excerpt": "            bccList = Lib_Custom_Metadata.getAppSetting(metaKey).Value__c.split(';');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 790,
+        "excerpt": "    public static AppSetting__mdt  getAppSetting(String key){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 805,
+        "excerpt": "    public static AppSetting__mdt  getAppSettingByLabel(String Label){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata_Test.cls",
+        "line": 32,
+        "excerpt": "        System.debug(Lib_Custom_Metadata.getAppSetting('en_PaymentCenter_ClientID'));"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata_Test.cls",
+        "line": 42,
+        "excerpt": "        System.debug(Lib_Custom_Metadata.getAppSettingByLabel('EU_PIS_System_Cred'));"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_LWC_AuraEnabled.cls",
+        "line": 146,
+        "excerpt": "        String clientId = Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_ClientID').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_LWC_AuraEnabled.cls",
+        "line": 2540,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_LWC_AuraEnabled.cls",
+        "line": 2541,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_LWC_AuraEnabled.cls",
+        "line": 2564,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_LWC_AuraEnabled.cls",
+        "line": 2565,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_CheckoutAddressComponent_Controller.cls",
+        "line": 133,
+        "excerpt": "        AppSetting__mdt metadataObj = Lib_Custom_Metadata.getAppSetting(storeName + CHECKOUT_US_COUNTRY_WHITELIST_SUFFIX);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_Payment_Controller.cls",
+        "line": 75,
+        "excerpt": "                    oOdr.OP_Mail__c = Lib_Custom_Metadata.getAppSetting('en_IotMart_IT_EmailAddress').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_Payment_Controller.cls",
+        "line": 76,
+        "excerpt": "                    oOdr.Sale_ID_Email__c = Lib_Custom_Metadata.getAppSetting('en_IotMart_IT_EmailAddress').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_Currency_Exchange_Rate.cls",
+        "line": 5,
+        "excerpt": "        String fromCurrencies = Lib_Custom_Metadata.getAppSetting(storeName +'_From_Currency_List').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_Currency_Exchange_Rate.cls",
+        "line": 6,
+        "excerpt": "        String toCurrencies = Lib_Custom_Metadata.getAppSetting(storeName +'_To_Currency_List').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 82,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 122,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 303,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 339,
+        "excerpt": "            AppSetting__mdt excludeSetting = Lib_Custom_Metadata.getAppSetting('EX_OrderGapExclusionList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 70,
+        "excerpt": "                Lib_Custom_Metadata.getAppSetting("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 74,
+        "excerpt": "                    Lib_Custom_Metadata.getAppSetting("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 80,
+        "excerpt": "                List<String> ccToReceivers = Lib_Custom_Metadata.getAppSetting("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 120,
+        "excerpt": "                Lib_Custom_Metadata.getAppSetting("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 124,
+        "excerpt": "                    Lib_Custom_Metadata.getAppSetting("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 130,
+        "excerpt": "                List<String> ccToReceivers = Lib_Custom_Metadata.getAppSetting("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/SchBatch_CC_OrderCouponReport_ANA.cls",
+        "line": 113,
+        "excerpt": "        if(String.isNotBlank(csv) && Lib_Custom_Metadata.getAppSetting(metaKey) != null && String.isNotBlank(Lib_Custom_Metadata.getAppSetting(metaKey).Value__c)) {"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/SchBatch_CC_OrderCouponReport_ANA.cls",
+        "line": 114,
+        "excerpt": "            List<String> receivers = Lib_Custom_Metadata.getAppSetting(metaKey).Value__c.split(';');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/SchBatch_CC_OrderItemCouponReport_ANA.cls",
+        "line": 125,
+        "excerpt": "        if(String.isNotBlank(csv) && Lib_Custom_Metadata.getAppSetting(metaKey) != null && String.isNotBlank(Lib_Custom_Metadata.getAppSetting(metaKey).Value__c)) {"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/SchBatch_CC_OrderItemCouponReport_ANA.cls",
+        "line": 126,
+        "excerpt": "            List<String> receivers = Lib_Custom_Metadata.getAppSetting(metaKey).Value__c.split(';');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/StatusPageIncidentModule.cls",
+        "line": 4,
+        "excerpt": "    private static final String API_KEY = Lib_Custom_Metadata.getAppSetting('en_StatusPage_Api_Key').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/StatusPageIncidentModule.cls",
+        "line": 7,
+        "excerpt": "    private static final String PAGE_ID = Lib_Custom_Metadata.getAppSetting('en_StatusPage_Page_Id').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/StatusPageIncidentModule.cls",
+        "line": 10,
+        "excerpt": "    private static final String URL_PREFIX = Lib_Custom_Metadata.getAppSetting('en_StatusPage_Url_Prefix').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/StatusPageIncidentModule.cls",
+        "line": 13,
+        "excerpt": "    private static final String INCIDENT_OWNER = Lib_Custom_Metadata.getAppSetting('en_StatusPage_Incident_Owner').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/StatusPageIncidentModule.cls",
+        "line": 20,
+        "excerpt": "    private static final String COMPONENT_ID_LABEL = Lib_Custom_Metadata.getAppSetting('en_StatusPage_Component_Id').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/StatusPageIncidentModule.cls",
+        "line": 21,
+        "excerpt": "    private static final String COMPONENT_STATUS_LABEL = Lib_Custom_Metadata.getAppSetting('en_StatusPage_Component_Status').Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Sync_ProductInfoController.cls",
+        "line": 1660,
+        "excerpt": "            String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Sync_ProductInfoController.cls",
+        "line": 1730,
+        "excerpt": "            String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/cc_Batch_Order_ePoint_Distribute.cls",
+        "line": 170,
+        "excerpt": "            AppSetting__mdt arrivedMailFlag = Lib_Custom_Metadata.getAppSetting(sOrder.StoreName__c + '_ePointPage_distribute_by_arrived_mail');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/cc_Batch_Order_ePoint_Distribute.cls",
+        "line": 187,
+        "excerpt": "                AppSetting__mdt ePointDelay = Lib_Custom_Metadata.getAppSetting(sOrder.StoreName__c + '_ePointPage_distribute_delay_mins');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/cc_Batch_Order_ePoint_Distribute_Test.cls",
+        "line": 213,
+        "excerpt": "        AppSetting__mdt arrivedFlag = Lib_Custom_Metadata.getAppSetting('kr_ePointPage_distribute_by_arrived_mail');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 25,
+        "excerpt": "            AppSetting__mdt excludeSetting = Lib_Custom_Metadata.getAppSetting('EX_OrderGapExclusionList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 362,
+        "excerpt": "                AppSetting__mdt ccSetting = Lib_Custom_Metadata.getAppSetting('OrderInventoryGapCCList');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_GetOrderInfo.cls",
+        "line": 40,
+        "excerpt": "        String sSecretKey = Lib_Custom_Metadata.getAppSetting(storeName +'_PaymentCenter_Secret').Value__c;"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_GetOrderInfo.cls",
+        "line": 74,
+        "excerpt": "        String strategyClassName = Lib_Custom_Metadata.getAppSetting(storeName +'_PaymentGatewayStrategy').Value__c;"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_GetOrderInfoById.cls",
+        "line": 26,
+        "excerpt": "        String sSecretKey = Lib_Custom_Metadata.getAppSetting(storeName +'_PaymentCenter_Secret').Value__c;"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_GetOrderInfoById.cls",
+        "line": 83,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_GetOrderInfoById.cls",
+        "line": 84,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_GetOrderInfoById_test.cls",
+        "line": 110,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_GetOrderInfoById_test.cls",
+        "line": 111,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_PaymentInformation.cls",
+        "line": 263,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_PaymentInformation.cls",
+        "line": 264,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_PaymentInformation.cls",
+        "line": 317,
+        "excerpt": "        String clientId = Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_ClientID').Value__c;"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_PaymentReceiptForPaymentCenter.cls",
+        "line": 223,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_PaymentReceiptForPaymentCenter.cls",
+        "line": 224,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_PaymentReceiptForPaymentCenter_test.cls",
+        "line": 173,
+        "excerpt": "        Blob aesKey = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_Key').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/API_PaymentReceiptForPaymentCenter_test.cls",
+        "line": 174,
+        "excerpt": "        Blob aesIv = Blob.valueOf(Lib_Custom_Metadata.getAppSetting(storeName + '_PaymentCenter_IV').Value__c);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_AISearchService.cls",
+        "line": 305,
+        "excerpt": "        String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_AISearchService.cls",
+        "line": 392,
+        "excerpt": "        String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_AISearchService.cls",
+        "line": 724,
+        "excerpt": "        String setting = Lib_Custom_Metadata.getAppSetting(CC_AISearchService.m_IdentityField).Value__c;"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 98,
+        "excerpt": "        AppSetting__mdt bccSetting = Lib_Custom_Metadata.getAppSetting(storeName+'_CouponRedeemMailBccs');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_LWC_Referral_Order.cls",
+        "line": 113,
+        "excerpt": "        AppSetting__mdt ePointDelay = Lib_Custom_Metadata.getAppSetting(storeName + '_ePointPage_distribute_delay_mins');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_LWC_WireTransfer.cls",
+        "line": 37,
+        "excerpt": "        AppSetting__mdt MetadataObj = Lib_Custom_Metadata.getAppSetting(MetadataKey);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_MailController.cls",
+        "line": 278,
+        "excerpt": "            if(Lib_Custom_Metadata.getAppSetting(metaKey) != null && String.isNotBlank(Lib_Custom_Metadata.getAppSetting(metaKey).Value__c))"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_MailController.cls",
+        "line": 280,
+        "excerpt": "                ccToReceivers = Lib_Custom_Metadata.getAppSetting(metaKey).Value__c.split(';');"
+      }
+    ]
+  }
+}
