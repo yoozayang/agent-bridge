@@ -1,6 +1,8 @@
 {
   "id": "postpush-launchagent-ping-mu0u10zf",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-14T05:59:05.297Z",
-  "task_type": "bridge_ping"
+  "task_type": "bridge_ping",
+  "completed_at": "2026-09-14T05:59:08.509Z",
+  "ledger_task_id": "20260914055906-github-relay-deterministic-task-785d"
 }
