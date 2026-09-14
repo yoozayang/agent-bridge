@@ -294,9 +294,16 @@ Acceptance evidence (2026-09-14):
 
 ### Phase 8 — ChatGPT-to-Codex CLI dispatch
 
-Status: **IN PROGRESS**
+Status: **COMPLETE**
 
 `codex_dispatch` is a bounded relay task for intentionally invoking the already-installed Codex CLI on a configured project. It has fixed `read_only` or `workspace_write` sandbox modes, captures before/after Git state, and preserves pre-existing dirty files. It is not a shell endpoint, deployment path, or session-management subsystem.
+
+Acceptance evidence (2026-09-14):
+
+- `codex-relay-readonly-smoke-20260914` was claimed automatically by the LaunchAgent watcher and ran `codex exec --json` on `iotmart` without a user-operated Codex conversation.
+- Codex returned branch `Matthew/feature/OPMailChange` and confirmed the read-only relay smoke; exit status was 0 in 26 seconds.
+- IoTMart Git status before and after was byte-identical, including its pre-existing untracked Excel temporary file; `preexisting_dirty_state_changed` was false.
+- Fixture coverage validates project/mode/payload allowlisting, bounded output, timeout/non-zero handling, read-only mutation detection, and workspace-write dirty-state protection.
 
 ## 7. Immediate next actions
 

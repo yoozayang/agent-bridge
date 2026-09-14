@@ -3,7 +3,9 @@
 Owner: local agent on `mac-cd134ffbc7aa2eb9`
 Planner/reviewer: ChatGPT
 
-Status: **READY**
+Status: **COMPLETE — 2026-09-14**
+
+Completion evidence: `codex-relay-readonly-smoke-20260914` was automatically claimed by the watcher on `mac-cd134ffbc7aa2eb9`, launched the local Codex CLI, and completed with exit status 0. The IoTMart Git status was identical before and after; no target-repository file changed. ChatGPT can now launch Codex CLI through the relay without the user opening or operating a Codex conversation. Codex remains a delegated local sub-agent; deterministic handlers remain preferred for fixed operations.
 
 ## Goal
 
