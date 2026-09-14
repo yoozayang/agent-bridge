@@ -1,0 +1,514 @@
+{
+  "id": "chatgpt-email-audit-countryinfo-20260914",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-14T13:26:10+08:00",
+  "completed_at": "2026-09-14T05:52:14.151Z",
+  "ledger_task_id": "20260914055213-github-relay-deterministic-task-6d37",
+  "result": {
+    "project": "iotmart",
+    "query": "Country_Info__mdt",
+    "results": [
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_RESTOutBound_SAP_ShippingTax.cls",
+        "line": 671,
+        "excerpt": "        List<Country_Info__mdt> deliveryCountryInfo = Lib_Custom_Metadata.getCountry_Info_L(storeName, scartDeliveryGroup.DeliverToCountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/B2BCartToOrderDraft.cls",
+        "line": 191,
+        "excerpt": "        List<Country_Info__mdt> CI_L = Lib_Custom_Metadata.getCountry_Info_L("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/B2BCartToOrderDraft.cls",
+        "line": 303,
+        "excerpt": "        List<Country_Info__mdt> CP_L;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_BaseSAPAccountModel.cls",
+        "line": 162,
+        "excerpt": "        List<Country_Info__mdt> Country_Info_L = Lib_Custom_Metadata.getCountry_Info_L(storeName, oRequest.countryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_BaseSAPAccountModel.cls",
+        "line": 164,
+        "excerpt": "            Country_Info__mdt CI = Country_Info_L[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_LWC_WireTransfer.cls",
+        "line": 50,
+        "excerpt": "        List<Country_Info__mdt>  countryInfoList = Lib_Custom_Metadata.getCountry_Info_L(storeName, cpa.CountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EU_IoTMart_Registration_Handler.cls",
+        "line": 300,
+        "excerpt": "            List<Country_Info__mdt> countryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, data.locale);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EU_IoTMart_Registration_Handler.cls",
+        "line": 303,
+        "excerpt": "            Country_Info__mdt countryInfo = countryInfos[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EU_IoTMart_Registration_Handler.cls",
+        "line": 641,
+        "excerpt": "        transient List<Country_Info__mdt> oCI_L=Lib_Custom_Metadata.getCountry_Info_L(sStoreName, sCountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EU_IoTMart_Registration_Handler.cls",
+        "line": 644,
+        "excerpt": "            Country_Info__mdt oCountry_Info = oCI_L[0] ;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/IoTMart_Registration_Handler.cls",
+        "line": 528,
+        "excerpt": "        transient List<Country_Info__mdt> oCI_L=Lib_Custom_Metadata.getCountry_Info_L(sStoreName, sCountryCode );"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/IoTMart_Registration_Handler.cls",
+        "line": 531,
+        "excerpt": "            Country_Info__mdt oCountry_Info = oCI_L[0] ;            "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/KR_IoTMart_Registration_Handler.cls",
+        "line": 319,
+        "excerpt": "            List<Country_Info__mdt> countryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, data.locale);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/KR_IoTMart_Registration_Handler.cls",
+        "line": 322,
+        "excerpt": "            Country_Info__mdt countryInfo = countryInfos[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/KR_IoTMart_Registration_Handler.cls",
+        "line": 661,
+        "excerpt": "        transient List<Country_Info__mdt> oCI_L=Lib_Custom_Metadata.getCountry_Info_L(sStoreName, sCountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/KR_IoTMart_Registration_Handler.cls",
+        "line": 664,
+        "excerpt": "            Country_Info__mdt oCountry_Info = oCI_L[0] ;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/KR_IoTMart_Registration_Handler.cls",
+        "line": 729,
+        "excerpt": "        transient List<Country_Info__mdt> countryInfoList = Lib_Custom_Metadata.getCountry_Info_L(storeName, country);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 22,
+        "excerpt": "    Lib_Custom_Metadata.Country_Info_M                          : 取回所有 Country_Info__mdt 的資料至MAP,並以 DeveloperName(=StoreName+'_'+ PartnerType)為key"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 23,
+        "excerpt": "    Lib_Custom_Metadata.getCountry_Info_L                       : 輸入國家(國家名稱或是國家代碼-SAP或DHL代碼 以及城市名稱取回相關 Country_Info__mdt 的資料至List "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 546,
+        "excerpt": "    static map<String , Country_Info__mdt>       pCountry_Info_M {get;set;}"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 548,
+        "excerpt": "     * 取回所有 Country_Info__mdt 的資料至MAP,並以 DeveloperName(=StoreName+'_'+ CountryName__c)為key"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 549,
+        "excerpt": "     * Country_Info__mdt => 國家資訊對應黨"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 555,
+        "excerpt": "    public static map<String,Country_Info__mdt>  Country_Info_M"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 559,
+        "excerpt": "                pCountry_Info_M= new map<String,Country_Info__mdt>();                                  "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 560,
+        "excerpt": "                for(Country_Info__mdt oMdt:[SELECT Id, Label, QualifiedApiName  , DeveloperName         , Region__c         , Language__c , CurrencyIsoCode__c  ,"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 567,
+        "excerpt": "                                        FROM Country_Info__mdt]){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 577,
+        "excerpt": "     * 輸入 StoreName 與國家(國家名稱或是國家代碼-SAP或DHL代碼 取回相關 Country_Info__mdt 的資料至List    "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 584,
+        "excerpt": "    public static List<Country_Info__mdt>  getCountry_Info_L(String sStoreName , String  sCountry   )"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 586,
+        "excerpt": "        transient List<Country_Info__mdt> ret_L=new List<Country_Info__mdt>();"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 587,
+        "excerpt": "        for(Country_Info__mdt oMdt:Country_Info_M.values()){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 674,
+        "excerpt": "     * 取得Country_Info__mdt 設定的CountryCode_SFDC__c對應的Checkout_Process__c"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 683,
+        "excerpt": "        for(Country_Info__mdt countryInfo : Country_Info_M.values()){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 692,
+        "excerpt": "     * 取得Country_Info__mdt 設定的CountryCode_SFDC__c對應的TaxTerm__c"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 701,
+        "excerpt": "        for(Country_Info__mdt countryInfo : Country_Info_M.values()){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Email.cls",
+        "line": 123,
+        "excerpt": "                    List<Country_Info__mdt>  Country_Info_L= Lib_Custom_Metadata.getCountry_Info_L( sStoreName , sCountry );"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_CheckoutAddressComponent_Controller.cls",
+        "line": 304,
+        "excerpt": "     * 取得Country_Info__mdt 設定的CountryCode對應的Checkout Process"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_CheckoutAddressComponent_Controller.cls",
+        "line": 330,
+        "excerpt": "     * 取得Country_Info__mdt 設定的CountryCode對應的Checkout Process"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_CheckoutAddressComponent_Controller.cls",
+        "line": 350,
+        "excerpt": "     * 取得Country_Info__mdt 設定的CountryCode對應的TaxTerm"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_Payment_Controller.cls",
+        "line": 70,
+        "excerpt": "            List<Country_Info__mdt> CI_L=Lib_Custom_Metadata.getCountry_Info_L(sStoreName, sCountryCode );"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_Payment_Controller.cls",
+        "line": 179,
+        "excerpt": "            List<Country_Info__mdt> CI_L=Lib_Custom_Metadata.getCountry_Info_L(sStoreName, sCountryCode );"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_Controller.cls",
+        "line": 16,
+        "excerpt": "  => 修改寄信機制, 除了抓 Remote_Site_Info__mdt 外,也抓 Country_Info__mdt"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_EU_Model.cls",
+        "line": 131,
+        "excerpt": "        List<Country_Info__mdt> soldToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, contactPointAddress.CountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_EU_Model.cls",
+        "line": 753,
+        "excerpt": "        List<Country_Info__mdt> Country_Info_L = Lib_Custom_Metadata.getCountry_Info_L(storeName, oRequest.countryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_EU_Model.cls",
+        "line": 783,
+        "excerpt": "            Country_Info__mdt CI = Country_Info_L[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model.cls",
+        "line": 112,
+        "excerpt": "        List<Country_Info__mdt> soldToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, contactPointAddress.CountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model.cls",
+        "line": 700,
+        "excerpt": "        List<Country_Info__mdt> Country_Info_L = Lib_Custom_Metadata.getCountry_Info_L(storeName, oRequest.countryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model.cls",
+        "line": 730,
+        "excerpt": "            Country_Info__mdt CI = Country_Info_L[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model_Test.cls",
+        "line": 73,
+        "excerpt": "        Lib_Custom_Metadata.Country_Info_M = new Map<String, Country_Info__mdt>{"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model_Test.cls",
+        "line": 74,
+        "excerpt": "            storeName + '_KR' => new Country_Info__mdt("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model_Test.cls",
+        "line": 405,
+        "excerpt": "        Map<String, Country_Info__mdt> ci = Lib_Custom_Metadata.Country_Info_M;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model_Test.cls",
+        "line": 408,
+        "excerpt": "            new Country_Info__mdt("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_Model.cls",
+        "line": 131,
+        "excerpt": "        List<Country_Info__mdt> soldToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, contactPointAddress.CountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_ANA_Model.cls",
+        "line": 129,
+        "excerpt": "        List<Country_Info__mdt> shipToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, order.ShippingCountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_ANA_Model.cls",
+        "line": 155,
+        "excerpt": "        List<Country_Info__mdt> soldToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, soldToCountry);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_ANA_Model.cls",
+        "line": 164,
+        "excerpt": "        List<Country_Info__mdt> billToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, order.BillingCountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_Controller.cls",
+        "line": 13,
+        "excerpt": "  => 修改寄信機制, 除了抓 Remote_Site_Info__mdt 外,也抓 Country_Info__mdt"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_EU_Model.cls",
+        "line": 210,
+        "excerpt": "        List<Country_Info__mdt> shipToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_EU_Model.cls",
+        "line": 215,
+        "excerpt": "        List<Country_Info__mdt> countryInfoList;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_EU_Model.cls",
+        "line": 278,
+        "excerpt": "        List<Country_Info__mdt> soldToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model.cls",
+        "line": 220,
+        "excerpt": "        List<Country_Info__mdt> countryInfoList;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model.cls",
+        "line": 279,
+        "excerpt": "        List<Country_Info__mdt> soldToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model_Test.cls",
+        "line": 2334,
+        "excerpt": "        Map<String, Country_Info__mdt> backupCountry = Lib_Custom_Metadata.Country_Info_M;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model_Test.cls",
+        "line": 2363,
+        "excerpt": "            Lib_Custom_Metadata.Country_Info_M = new Map<String, Country_Info__mdt>{"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model_Test.cls",
+        "line": 2364,
+        "excerpt": "                'kr_KR' => new Country_Info__mdt("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_Model.cls",
+        "line": 125,
+        "excerpt": "        List<Country_Info__mdt> shipToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, order.ShippingCountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_Model.cls",
+        "line": 160,
+        "excerpt": "        List<Country_Info__mdt> soldToCountryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, soldToCountry);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_ShippingTax_Model.cls",
+        "line": 187,
+        "excerpt": "        List<Country_Info__mdt> deliveryCountryInfo = Lib_Custom_Metadata.getCountry_Info_L(cart.WebStore.Name, cart.CartDeliveryGroups[0].DeliverToCountryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/REST_Registration.cls",
+        "line": 452,
+        "excerpt": "        List<Country_Info__mdt> countryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, countryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/REST_Registration.cls",
+        "line": 455,
+        "excerpt": "            Country_Info__mdt countryInfo = countryInfos[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/WireTransferCustomerReminderController_T.cls",
+        "line": 647,
+        "excerpt": "        Country_Info__mdt countryInfo = new Country_Info__mdt("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/WireTransferCustomerReminderController_T.cls",
+        "line": 654,
+        "excerpt": "        Lib_Custom_Metadata.Country_Info_M = new Map<String, Country_Info__mdt>{"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/WireTransferSalesReminderController.cls",
+        "line": 343,
+        "excerpt": "    private List<Country_Info__mdt> countryInfoList;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/WireTransferSalesReminderController.cls",
+        "line": 344,
+        "excerpt": "    public List<Country_Info__mdt> CountryInfo {"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/b2b_ContactPointAddressTriggerHandler.cls",
+        "line": 120,
+        "excerpt": "            List<Country_Info__mdt> countryInfos = Lib_Custom_Metadata.getCountry_Info_L(storeName, countryCode);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/b2b_ContactPointAddressTriggerHandler.cls",
+        "line": 123,
+        "excerpt": "            Country_Info__mdt countryInfo = countryInfos[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/lwc/checkoutAddressComponent/checkoutAddressComponent.js",
+        "line": 255,
+        "excerpt": "        // 取得Country_Info__mdt 設定的CountryCode對應的Checkout Process"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/lwc/checkoutOrderSummary/checkoutOrderSummary.js",
+        "line": 116,
+        "excerpt": "        // 取得Country_Info__mdt 設定的CountryCode對應的TaxTerm"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/lwc/checkoutShippingMethod/checkoutShippingMethod.js",
+        "line": 197,
+        "excerpt": "        // 取得Country_Info__mdt 設定的CountryCode_SFDC對應的Checkout Process"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/lwc/chekckoutShippingMethodUSIoTMart/chekckoutShippingMethodUSIoTMart.js",
+        "line": 208,
+        "excerpt": "        // 取得Country_Info__mdt 設定的CountryCode_SFDC對應的Checkout Process"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/lwc/enusCheckoutAddressComponent/enusCheckoutAddressComponent.js",
+        "line": 213,
+        "excerpt": "        // 取得Country_Info__mdt 設定的CountryCode對應的Checkout Process"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/lwc/enusCheckoutOrderSummary/enusCheckoutOrderSummary.js",
+        "line": 82,
+        "excerpt": "        // 取得Country_Info__mdt 設定的CountryCode對應的TaxTerm"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/lwc/enusCheckoutShippingMethod/enusCheckoutShippingMethod.js",
+        "line": 312,
+        "excerpt": "        // 取得Country_Info__mdt 設定的CountryCode_SFDC對應的Checkout Process"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1058,
+        "excerpt": "        <field>Country_Info__mdt.Checkout_Process__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1063,
+        "excerpt": "        <field>Country_Info__mdt.Checkout_Region__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1068,
+        "excerpt": "        <field>Country_Info__mdt.City__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1073,
+        "excerpt": "        <field>Country_Info__mdt.CountryCode_DHL__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1078,
+        "excerpt": "        <field>Country_Info__mdt.CountryCode_SAP__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1083,
+        "excerpt": "        <field>Country_Info__mdt.CountryCode_SFDC__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1088,
+        "excerpt": "        <field>Country_Info__mdt.CountryName__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1093,
+        "excerpt": "        <field>Country_Info__mdt.Industary__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1098,
+        "excerpt": "        <field>Country_Info__mdt.IsRequired_ZipCode__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1103,
+        "excerpt": "        <field>Country_Info__mdt.OP_ID__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1108,
+        "excerpt": "        <field>Country_Info__mdt.OP_Mail__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1113,
+        "excerpt": "        <field>Country_Info__mdt.PK__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1118,
+        "excerpt": "        <field>Country_Info__mdt.Region__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1123,
+        "excerpt": "        <field>Country_Info__mdt.Sale_ID_Email__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1128,
+        "excerpt": "        <field>Country_Info__mdt.Sale_ID_RBU__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1133,
+        "excerpt": "        <field>Country_Info__mdt.Sale_ID_Region__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1138,
+        "excerpt": "        <field>Country_Info__mdt.Sale_ID__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/Admin.profile-meta.xml",
+        "line": 1143,
+        "excerpt": "        <field>Country_Info__mdt.Siebel_Org__c</field>"
+      }
+    ]
+  }
+}
