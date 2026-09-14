@@ -17,19 +17,20 @@ const calls = [];
 const requested = task();
 const updated = relay.azureWorkItemUpdate(requested, (bin, args) => {
   calls.push([bin, args]);
-  if (args[2] === "show") return reads++ ? item({ "System.Title": requested.title, "System.Description": requested.description,
-    "Microsoft.VSTS.Common.AcceptanceCriteria": requested.acceptance_criteria }) : item();
+  if (args[2] === "show") return reads++ ? item({ "System.Title": requested.title, "System.Description": "<p>English description </p>",
+    "Microsoft.VSTS.Common.AcceptanceCriteria": "<ol><li>Verified </li></ol>" }) : item();
   return item();
 }, "https://dev.azure.com/fixture");
 assert(updated.verified && !updated.no_op);
 assert(calls.some(([, args]) => args[2] === "update" && args.includes("--title") && args.includes("--description") && args.includes("--fields")));
 
 reads = 0;
-const unchanged = task({ title: "Old", description: "<p>Old</p>", acceptance_criteria: "<ol><li>Old</li></ol>" });
+const unchanged = task({ title: "Old", description: "<p>Old </p>", acceptance_criteria: "<ol><li>Old </li></ol>" });
 const noOp = relay.azureWorkItemUpdate(unchanged, (bin, args) => {
   assert.equal(args[2], "show");
   reads++;
-  return item();
+  return item({ "System.Title": "Old", "System.Description": "<p>Old </p>",
+    "Microsoft.VSTS.Common.AcceptanceCriteria": "<ol><li>Old </li></ol>" });
 }, "https://dev.azure.com/fixture");
 assert(noOp.verified && noOp.no_op && reads === 2);
 

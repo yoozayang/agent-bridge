@@ -20,6 +20,16 @@ function command(args, allowFailure = false) {
   if (!allowFailure && result.status !== 0) throw new Error(result.stderr || result.stdout || `launchctl exited ${result.status}`);
   return result;
 }
+function pause(milliseconds) { Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, milliseconds); }
+function bootstrap() {
+  let result;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    result = command(["bootstrap", domain, plist], true);
+    if (result.status === 0) return;
+    pause(250);
+  }
+  throw new Error(result.stderr || result.stdout || `launchctl exited ${result.status}`);
+}
 function xml(value) { return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
 function content() {
   const args = [process.execPath, path.join(root, "bin", "agent-bridge-relay.js"), "--interval", "30"];
@@ -32,7 +42,7 @@ function install() {
   fs.mkdirSync(path.dirname(log), { recursive: true });
   command(["bootout", service], true);
   fs.writeFileSync(plist, content());
-  command(["bootstrap", domain, plist]);
+  bootstrap();
   command(["kickstart", "-k", service]);
   console.log(JSON.stringify({ status: "installed", label, plist, log }));
 }
