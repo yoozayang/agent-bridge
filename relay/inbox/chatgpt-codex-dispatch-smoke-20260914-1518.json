@@ -1,0 +1,10 @@
+{
+  "id": "chatgpt-codex-dispatch-smoke-20260914-1518",
+  "type": "codex_dispatch",
+  "project": "iotmart",
+  "instruction": "Read-only smoke test. Inspect only the current Git repository state and report the current branch name plus whether there are any pre-existing uncommitted or untracked files. Do not modify any file, do not run tests, do not access external services, and do not change Git state.",
+  "mode": "read_only",
+  "timeout_seconds": 120,
+  "machine_id": "mac-cd134ffbc7aa2eb9",
+  "created_at": "2026-09-14T15:18:00+08:00"
+}
