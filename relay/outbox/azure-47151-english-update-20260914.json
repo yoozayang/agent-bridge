@@ -1,0 +1,27 @@
+{
+  "id": "azure-47151-english-update-20260914",
+  "type": "azure_work_item_update",
+  "status": "error",
+  "created_at": "2026-09-14T06:56:46.504Z",
+  "completed_at": "2026-09-14T06:57:28.795Z",
+  "ledger_task_id": "20260914065722-github-relay-deterministic-task-dd13",
+  "result": {
+    "work_item_id": 47151,
+    "project": "IoTMart 3.0",
+    "before": {
+      "title": "[EU][mail] 移除系統信收件人寫死問題，改由後台設定管理 (Manage system email recipients via Custom Metadata)",
+      "description": "<h3>背景與現況 </h3>\n<p>目前系統中部分自動發送的通知信（例如：低庫存通知信、付款成功通知信），收件人 Email 是直接「寫死」在 Apex 程式碼或 Flow 流程中 </p>\n<p>這會導致嚴重的維運問題：當同仁離職或業務輪調時，系統管理員無法直接在後台調整名單，每次換人都必須開單找工程師改程式、跑測試、發 PR 並且重新部署到正式環境，流程冗長且極易產生遺漏（例如離職同仁持續收到信件） </p>\n\n<h3>改善方案 </h3>\n<p>將系統通知信的收件人名單與程式碼徹底脫鉤，改由後台設定管理： </p>\n<ol>\n  <li>使用 Salesforce 既有的應用程式設定中繼資料（<code>AppSetting__mdt</code>）來儲存各系統信的收件人清單（To / CC） </li>\n  <li>修改相關 Apex 程式碼（如 <code>BatchEUH1LowInventoryEmail</code>、<code>EmailTemplate_LowInventory</code>），改為動態讀取後台設定，拔除寫死的個人 Email 字串 </li>\n  <li>修改相關 Flow 流程（如 <code>Payment_Success_Notification</code>），移除寫死的個人 Email </li>\n  <li>未來人員異動時，管理員直接在 Salesforce 後台介面修改即可立即生效，無需任何工程師介入或程式碼部署 </li>\n</ol>\n",
+      "acceptance_criteria": "<ol>\n  <li><strong>無程式寫死個人信箱：</strong>所有目標系統通知信之 Apex 程式碼與 Flow 流程中，不得再包含任何寫死的個人 Email 地址 </li>\n  <li><strong>後台設定動態讀取：</strong>系統通知信之正本（To）與副本（CC）收件名單，皆能正確由 <code>AppSetting__mdt</code> 設定檔動態讀取並成功發信 </li>\n  <li><strong>管理員後台自主維護：</strong>系統管理員可於 Salesforce 後台（Custom Metadata）直接新增、修改或刪除收件人，儲存後即時生效，無需工程師開單部署程式碼 </li>\n  <li><strong>發信功能正常維持：</strong>低庫存通知信、付款成功通知信等在 UAT 與 PROD 環境皆能正常發送給設定的有效收件人 </li>\n  <li><strong>程式碼品質與測試：</strong>相關 Apex 單元測試 100% 綠燈通過，並具備符合規範之測試覆蓋率 </li>\n</ol>\n"
+    },
+    "after": {
+      "title": "[EU][Mail] Remove hard-coded system email recipients and manage them via backend configuration (Manage system email recipients via Custom Metadata)",
+      "description": "<h3>Background and Current State </h3>\n<p>Currently, the recipient email addresses for some automatically generated system notifications (for example, low-inventory notifications and payment-success notifications) are hard-coded directly in Apex code or Flow. </p>\n<p>This creates significant maintenance issues. When employees leave the company or responsibilities are reassigned, system administrators cannot update the recipient list directly from the backend. Each personnel change requires an engineering ticket, code changes, testing, a pull request, and redeployment to Production. This process is lengthy and can easily result in omissions, such as former employees continuing to receive system emails. </p>\n\n<h3>Proposed Improvement </h3>\n<p>Fully decouple system-notification recipient lists from executable code and manage them through backend configuration: </p>\n<ol>\n  <li>Use the existing Salesforce application-setting Custom Metadata (<code>AppSetting__mdt</code>) to store the recipient lists (To / CC) for each type of system email. </li>\n  <li>Update the related Apex code (such as <code>BatchEUH1LowInventoryEmail</code> and <code>EmailTemplate_LowInventory</code>) to dynamically read the backend configuration and remove hard-coded personal email addresses. </li>\n  <li>Update the related Flows (such as <code>Payment_Success_Notification</code>) to remove hard-coded personal email addresses. </li>\n  <li>For future personnel changes, administrators can update the recipient configuration directly in Salesforce, with the changes taking effect immediately and without engineering involvement or code deployment. </li>\n</ol>",
+      "acceptance_criteria": "<ol>\n  <li><strong>No hard-coded personal email addresses:</strong> The target system-notification Apex code and Flows must not contain any hard-coded personal email addresses. </li>\n  <li><strong>Dynamic backend configuration:</strong> Both To and CC recipient lists for system notifications must be dynamically read from <code>AppSetting__mdt</code>, and emails must be sent successfully to the configured recipients. </li>\n  <li><strong>Administrator self-service maintenance:</strong> System administrators must be able to add, modify, or remove recipients directly in Salesforce Custom Metadata. Saved changes must take effect without requiring an engineering ticket or code deployment. </li>\n  <li><strong>Email functionality remains operational:</strong> Low-inventory notifications, payment-success notifications, and other targeted system emails must continue to be delivered successfully to valid configured recipients in both UAT and PROD. </li>\n  <li><strong>Code quality and testing:</strong> All related Apex unit tests must pass, with test coverage meeting the required standards. </li>\n</ol>"
+    },
+    "verified": false,
+    "no_op": false,
+    "web_url": "https://dev.azure.com/advantech-curation/IoTMart%203.0/_workitems/edit/47151",
+    "machine_id": "mac-cd134ffbc7aa2eb9"
+  },
+  "error": "Azure work item update verification failed"
+}
