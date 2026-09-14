@@ -1,6 +1,8 @@
 {
   "id": "chatgpt-email-audit-getappsetting-20260914",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-14T05:52:18.205Z",
-  "task_type": "project_text_search"
+  "task_type": "project_text_search",
+  "completed_at": "2026-09-14T05:52:27.303Z",
+  "ledger_task_id": "20260914055219-github-relay-deterministic-task-fb4c"
 }
