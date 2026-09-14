@@ -1,0 +1,294 @@
+{
+  "id": "chatgpt-email-audit-appsetting-20260914",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-14T13:26:00+08:00",
+  "completed_at": "2026-09-14T05:52:01.131Z",
+  "ledger_task_id": "20260914055150-github-relay-deterministic-task-3e0f",
+  "result": {
+    "project": "iotmart",
+    "query": "AppSetting__mdt",
+    "results": [
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_AISearchService.cls",
+        "line": 763,
+        "excerpt": "        customMetadata.fullName = 'AppSetting__mdt.' + m_IdentityField;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 153,
+        "excerpt": "        AppSetting__mdt bccSetting = Lib_Custom_Metadata.getAppSetting(storeName+'_CouponRedeemMailBccs');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_LWC_Referral_Order.cls",
+        "line": 113,
+        "excerpt": "        AppSetting__mdt ePointDelay = Lib_Custom_Metadata.getAppSetting(storeName + '_ePointPage_distribute_delay_mins');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_LWC_WireTransfer.cls",
+        "line": 43,
+        "excerpt": "        AppSetting__mdt MetadataObj = Lib_Custom_Metadata.getAppSetting(MetadataKey);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 40,
+        "excerpt": "                AppSetting__mdt toSetting = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_toList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 49,
+        "excerpt": "                    AppSetting__mdt ccSetting = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_TW_plantCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 53,
+        "excerpt": "                    AppSetting__mdt ccSetting = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_NL_plantCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 57,
+        "excerpt": "                    AppSetting__mdt ccSetting1 = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_NL_plantCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 58,
+        "excerpt": "                    AppSetting__mdt ccSetting2 = Lib_Custom_Metadata.getAppSetting('eu_OrderGap_TW_plantCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 789,
+        "excerpt": "    private static map<String , AppSetting__mdt> AppSettings_M {get; set;}"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 790,
+        "excerpt": "    public static AppSetting__mdt  getAppSetting(String key){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 792,
+        "excerpt": "            AppSettings_M = new map<String , AppSetting__mdt>(); "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 796,
+        "excerpt": "            List<AppSetting__mdt> items = [SELECT Key__c, Value__c FROM AppSetting__mdt WHERE Key__c = :key];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 805,
+        "excerpt": "    public static AppSetting__mdt  getAppSettingByLabel(String Label){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 807,
+        "excerpt": "            AppSettings_M = new map<String , AppSetting__mdt>(); "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 811,
+        "excerpt": "            List<AppSetting__mdt> items = [SELECT Key__c, Value__c FROM AppSetting__mdt WHERE Label = :Label];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_CheckoutAddressComponent_Controller.cls",
+        "line": 133,
+        "excerpt": "        AppSetting__mdt metadataObj = Lib_Custom_Metadata.getAppSetting(storeName + CHECKOUT_US_COUNTRY_WHITELIST_SUFFIX);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_MyOrders_Controller.cls",
+        "line": 25,
+        "excerpt": "        List<AppSetting__mdt> settings = ["
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_MyOrders_Controller.cls",
+        "line": 26,
+        "excerpt": "            SELECT Id, Label, Key__c, Value__c FROM AppSetting__mdt WHERE Label LIKE '%OrderSummary%' "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_MyOrders_Controller.cls",
+        "line": 29,
+        "excerpt": "        for(AppSetting__mdt setting : settings){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_MyOrders_Controller_Test.cls",
+        "line": 175,
+        "excerpt": "        List<AppSetting__mdt> settings = ["
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lwc_MyOrders_Controller_Test.cls",
+        "line": 176,
+        "excerpt": "            SELECT Id, Label, Key__c, Value__c FROM AppSetting__mdt WHERE Label LIKE '%OrderSummary%' "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 82,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 122,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 303,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 339,
+        "excerpt": "            AppSetting__mdt excludeSetting = Lib_Custom_Metadata.getAppSetting('EX_OrderGapExclusionList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/cc_Batch_Order_ePoint_Distribute.cls",
+        "line": 170,
+        "excerpt": "            AppSetting__mdt arrivedMailFlag = Lib_Custom_Metadata.getAppSetting(sOrder.StoreName__c + '_ePointPage_distribute_by_arrived_mail');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/cc_Batch_Order_ePoint_Distribute.cls",
+        "line": 187,
+        "excerpt": "                AppSetting__mdt ePointDelay = Lib_Custom_Metadata.getAppSetting(sOrder.StoreName__c + '_ePointPage_distribute_delay_mins');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/cc_Batch_Order_ePoint_Distribute_Test.cls",
+        "line": 213,
+        "excerpt": "        AppSetting__mdt arrivedFlag = Lib_Custom_Metadata.getAppSetting('kr_ePointPage_distribute_by_arrived_mail');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 25,
+        "excerpt": "            AppSetting__mdt excludeSetting = Lib_Custom_Metadata.getAppSetting('EX_OrderGapExclusionList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 362,
+        "excerpt": "                AppSetting__mdt ccSetting = Lib_Custom_Metadata.getAppSetting('OrderInventoryGapCCList');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/en_us Profile.profile-meta.xml",
+        "line": 1366,
+        "excerpt": "        <field>AppSetting__mdt.Key__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/en_us Profile.profile-meta.xml",
+        "line": 1371,
+        "excerpt": "        <field>AppSetting__mdt.Value__c</field>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/profiles/en_us Profile.profile-meta.xml",
+        "line": 2815,
+        "excerpt": "        <layout>AppSetting__mdt-AppSettings Layout</layout>"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8183,
+        "excerpt": "        \"CustomField__AppSetting__mdt.Value__c\": {"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_AISearchService.cls",
+        "line": 729,
+        "excerpt": "        customMetadata.fullName = 'AppSetting__mdt.' + m_IdentityField;"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 98,
+        "excerpt": "        AppSetting__mdt bccSetting = Lib_Custom_Metadata.getAppSetting(storeName+'_CouponRedeemMailBccs');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_LWC_Referral_Order.cls",
+        "line": 113,
+        "excerpt": "        AppSetting__mdt ePointDelay = Lib_Custom_Metadata.getAppSetting(storeName + '_ePointPage_distribute_delay_mins');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_LWC_WireTransfer.cls",
+        "line": 37,
+        "excerpt": "        AppSetting__mdt MetadataObj = Lib_Custom_Metadata.getAppSetting(MetadataKey);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 787,
+        "excerpt": "    private static map<String , AppSetting__mdt> AppSettings_M {get; set;}"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 788,
+        "excerpt": "    public static AppSetting__mdt  getAppSetting(String key){"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 790,
+        "excerpt": "            AppSettings_M = new map<String , AppSetting__mdt>(); "
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 794,
+        "excerpt": "            List<AppSetting__mdt> items = [SELECT Key__c, Value__c FROM AppSetting__mdt WHERE Key__c = :key];"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lwc_MyOrders_Controller.cls",
+        "line": 25,
+        "excerpt": "        List<AppSetting__mdt> settings = ["
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lwc_MyOrders_Controller.cls",
+        "line": 26,
+        "excerpt": "            SELECT Id, Label, Key__c, Value__c FROM AppSetting__mdt WHERE Label LIKE '%OrderSummary%' "
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lwc_MyOrders_Controller.cls",
+        "line": 29,
+        "excerpt": "        for(AppSetting__mdt setting : settings){"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lwc_MyOrders_Controller_Test.cls",
+        "line": 175,
+        "excerpt": "        List<AppSetting__mdt> settings = ["
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lwc_MyOrders_Controller_Test.cls",
+        "line": 176,
+        "excerpt": "            SELECT Id, Label, Key__c, Value__c FROM AppSetting__mdt WHERE Label LIKE '%OrderSummary%' "
+      },
+      {
+        "relative_path": "force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 82,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 122,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/RESTOutBound_SAP_Inventroy_Model.cls",
+        "line": 334,
+        "excerpt": "            AppSetting__mdt storageSetting = Lib_Custom_Metadata.getAppSetting(webStoreName + '_ePointPage_StorageLocation');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/cc_Batch_Order_ePoint_Distribute.cls",
+        "line": 175,
+        "excerpt": "                AppSetting__mdt ePointDelay = Lib_Custom_Metadata.getAppSetting(sOrder.StoreName__c + '_ePointPage_distribute_delay_mins');"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 329,
+        "excerpt": "                AppSetting__mdt ccSetting = Lib_Custom_Metadata.getAppSetting('OrderInventoryGapCCList');"
+      },
+      {
+        "relative_path": "force-app/main/default/profiles/en_us Profile.profile-meta.xml",
+        "line": 1366,
+        "excerpt": "        <field>AppSetting__mdt.Key__c</field>"
+      },
+      {
+        "relative_path": "force-app/main/default/profiles/en_us Profile.profile-meta.xml",
+        "line": 1371,
+        "excerpt": "        <field>AppSetting__mdt.Value__c</field>"
+      },
+      {
+        "relative_path": "force-app/main/default/profiles/en_us Profile.profile-meta.xml",
+        "line": 2815,
+        "excerpt": "        <layout>AppSetting__mdt-AppSettings Layout</layout>"
+      }
+    ]
+  }
+}
