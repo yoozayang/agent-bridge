@@ -1,0 +1,21 @@
+{
+  "id": "codex-relay-readonly-smoke-20260914",
+  "type": "codex_dispatch",
+  "status": "done",
+  "created_at": "2026-09-14T07:13:50.740Z",
+  "completed_at": "2026-09-14T07:15:22.660Z",
+  "ledger_task_id": "20260914071455-github-relay-deterministic-task-0510",
+  "result": {
+    "project": "iotmart",
+    "mode": "read_only",
+    "machine_id": "mac-cd134ffbc7aa2eb9",
+    "exit_status": 0,
+    "elapsed_ms": 26355,
+    "timed_out": false,
+    "summary": "目前Git branch：`Matthew/feature/OPMailChange`\n\n這是唯讀Codex CLI relay smoke test，未修改任何檔案或Git狀態",
+    "git_status_before": "## Matthew/feature/OPMailChange...origin/Matthew/feature/OPMailChange\n?? \"tools/~$2022_\\346\\227\\227\\350\\211\\246\\347\\253\\231\\346\\225\\264\\347\\220\\206.xlsx\"",
+    "git_status_after": "## Matthew/feature/OPMailChange...origin/Matthew/feature/OPMailChange\n?? \"tools/~$2022_\\346\\227\\227\\350\\211\\246\\347\\253\\231\\346\\225\\264\\347\\220\\206.xlsx\"",
+    "preexisting_dirty_state_changed": false,
+    "ok": true
+  }
+}
