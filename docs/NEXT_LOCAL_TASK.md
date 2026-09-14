@@ -1,111 +1,210 @@
-# Next Local Task — Azure 47151 English Update
+# Next Local Task — Add ChatGPT → Codex CLI Dispatch
 
 Owner: local agent on `mac-cd134ffbc7aa2eb9`
-Planner/translator/reviewer: ChatGPT
+Planner/reviewer: ChatGPT
 
-Status: **COMPLETE — 2026-09-14**
+Status: **READY**
 
-Completion evidence: `azure-47151-english-update-20260914` applied the English metadata update. Azure DevOps canonicalized close-tag whitespace in the HTML fields; the follow-up `azure-47151-english-verify-20260914` completed with `verified: true` and `no_op: true`. Do not rerun this work item update.
+## Goal
 
-## Context
+Remove the remaining human relay between ChatGPT and Codex.
 
-This Mac is already bootstrapped and its GitHub relay health check has passed.
+After this task is complete, normal usage must be:
 
-Do not revisit MCP Tunnel, custom connectors, or relay architecture. Do not modify IoTMart/Magnolia target repositories.
+```text
+User → ChatGPT → GitHub relay inbox → Mac LaunchAgent watcher
+                                  → deterministic handler, when sufficient
+                                  → Codex CLI, when local AI reasoning/editing is required
+                                  → relay outbox → ChatGPT review
+```
 
-Azure work item 47151 has already been read through the relay. ChatGPT has authored the English translation below.
+The user must **not** need to open a Codex conversation, paste prompts, or tell Codex to read `NEXT_LOCAL_TASK.md` for ordinary future work.
+
+The existing GitHub relay, machine routing, LaunchAgent, Azure handlers, and bounded project tools are already working. Do not redesign transport, MCP, tunnel, or connectors.
 
 ## Objective
 
-Add the smallest safe deterministic Azure DevOps write capability needed to update an existing work item, then use it once to update work item **47151** with the exact English title, description, and acceptance criteria supplied by ChatGPT.
+Add one bounded relay task that lets ChatGPT deliberately launch the already-installed local Codex CLI on a known configured project.
 
-This is an Azure work-item metadata update only. It is NOT a source-code task and must not touch any target repo.
+Preferred task name: `codex_dispatch`.
 
-## Human interaction
+This is a controlled Codex entry point, **not** an arbitrary shell endpoint.
 
-Do not ask the user anything except unavoidable login/SSO/MFA/permission actions.
+## Required contract
 
-Use the existing authenticated Azure CLI/session if valid.
+`codex_dispatch` must accept only bounded structured fields such as:
 
-## Add one bounded relay task
+- `project`: known logical project ID only (`iotmart`, `magnolia`, optionally `agent-bridge` if useful for self-maintenance)
+- `instruction`: bounded UTF-8 natural-language task from ChatGPT
+- `mode`: `read_only` or `workspace_write`
+- optional bounded execution timeout / effort field only if the existing Codex CLI supports it safely
+- `machine_id`: existing routing field
 
-Add `azure_work_item_update` with these fields:
+Do **not** accept:
 
-- `work_item_id`: positive integer
-- optional `title`: bounded UTF-8 string
-- optional `description`: bounded UTF-8 / HTML string
-- optional `acceptance_criteria`: bounded UTF-8 / HTML string
-- `machine_id`: normal relay routing field
+- absolute paths
+- arbitrary cwd
+- arbitrary executable/command/shell strings
+- environment-variable injection
+- arbitrary Codex CLI flags
+- deployment target
+- secrets/tokens
+- `danger-full-access` or an equivalent unrestricted mode
 
-Safety requirements:
+Use the configured logical project root from local ignored config. Never trust a path from the relay payload.
 
-1. only update an existing Azure DevOps work item in the already-configured IoTMart 3.0 project/org context
-2. no arbitrary shell/command payloads
-3. allow only the three fields above; reject unknown write fields
-4. do not change state, assignee, tags, iteration, area, priority, links, attachments, or any other field
-5. before writing, read and record the current values of the three target fields
-6. apply the update using the authenticated Azure CLI/API
-7. read the work item back after writing and verify the three stored values exactly match the requested values
-8. return a bounded result containing work_item_id, before/after target fields, verification status, web_url, and machine_id
-9. no Codex model turn is needed for the Azure update itself once the deterministic handler exists
+## Codex execution
 
-Add focused tests for field allowlisting, missing/invalid work item IDs, bounded payloads, and no-op/verification behavior. Update `relay/README.md` and handoff docs if the contract changed materially.
+Use the currently installed official Codex CLI. Inspect the local `codex --help` / `codex exec --help` and use the supported non-interactive JSON/event mode; do not downgrade Codex and do not restore the removed `codex mcp-server` path.
 
-## Exact update for work item 47151
+The existing known-good direction is `codex exec --json` (or the current equivalent if CLI help shows a renamed supported form).
 
-### Title
+The worker must spawn Codex itself. No Terminal UI and no separate Codex conversation may be required.
 
-`[EU][Mail] Remove hard-coded system email recipients and manage them via backend configuration (Manage system email recipients via Custom Metadata)`
+For `read_only`:
 
-### Description
+- Codex must not modify project files.
+- Capture git status before and after and fail verification if Codex introduced a project change.
 
-```html
-<h3>Background and Current State</h3>
-<p>Currently, the recipient email addresses for some automatically generated system notifications (for example, low-inventory notifications and payment-success notifications) are hard-coded directly in Apex code or Flow.</p>
-<p>This creates significant maintenance issues. When employees leave the company or responsibilities are reassigned, system administrators cannot update the recipient list directly from the backend. Each personnel change requires an engineering ticket, code changes, testing, a pull request, and redeployment to Production. This process is lengthy and can easily result in omissions, such as former employees continuing to receive system emails.</p>
+For `workspace_write`:
 
-<h3>Proposed Improvement</h3>
-<p>Fully decouple system-notification recipient lists from executable code and manage them through backend configuration:</p>
-<ol>
-  <li>Use the existing Salesforce application-setting Custom Metadata (<code>AppSetting__mdt</code>) to store the recipient lists (To / CC) for each type of system email.</li>
-  <li>Update the related Apex code (such as <code>BatchEUH1LowInventoryEmail</code> and <code>EmailTemplate_LowInventory</code>) to dynamically read the backend configuration and remove hard-coded personal email addresses.</li>
-  <li>Update the related Flows (such as <code>Payment_Success_Notification</code>) to remove hard-coded personal email addresses.</li>
-  <li>For future personnel changes, administrators can update the recipient configuration directly in Salesforce, with the changes taking effect immediately and without engineering involvement or code deployment.</li>
-</ol>
+- Codex may edit files under the selected configured project root only.
+- Preserve all pre-existing dirty/untracked state.
+- Do not run git reset/clean/stash/checkout/switch/rebase.
+- Do not commit or push the target project.
+- Do not deploy to Salesforce, Azure, Magnolia, Production, UAT, or any remote environment.
+- Record git status/diff before and after so ChatGPT can review the actual local result.
+- Existing unrelated dirty files must remain untouched. If reliable enforcement is possible without overengineering, compare before/after hashes or diffs for pre-existing dirty files and return an error if Codex altered them.
+
+Deployment remains a separate explicitly approved capability and must **not** be smuggled through `codex_dispatch`.
+
+## Result contract
+
+Write the normal `relay/outbox/<task-id>.json` with a bounded result containing at least:
+
+- task id / status
+- project
+- mode
+- machine_id
+- Codex exit status
+- bounded final Codex response/summary
+- elapsed time
+- git status before
+- git status after
+- bounded project diff after execution (for `workspace_write`; preferably only changes attributable to this run)
+- whether pre-existing dirty state changed
+- error/blocker details when execution fails
+
+Do not put secrets or full environment dumps in the result.
+
+If Codex times out or exits non-zero, preserve the working tree as-is, report the failure clearly, and do not try destructive recovery.
+
+## Multi-turn behavior
+
+A persistent interactive Codex chat is **not required** for this milestone.
+
+It is acceptable and preferred initially for ChatGPT to orchestrate multiple bounded turns:
+
+```text
+ChatGPT → codex_dispatch #1 → outbox → review
+ChatGPT → codex_dispatch #2 → outbox → review
 ```
 
-### Acceptance Criteria
+If the current Codex CLI provides a safe stable resume/thread identifier essentially for free, you may return it and optionally accept a bounded `resume_id` in a later dispatch. Do not delay the task or introduce a large session-management subsystem just to support this.
 
-```html
-<ol>
-  <li><strong>No hard-coded personal email addresses:</strong> The target system-notification Apex code and Flows must not contain any hard-coded personal email addresses.</li>
-  <li><strong>Dynamic backend configuration:</strong> Both To and CC recipient lists for system notifications must be dynamically read from <code>AppSetting__mdt</code>, and emails must be sent successfully to the configured recipients.</li>
-  <li><strong>Administrator self-service maintenance:</strong> System administrators must be able to add, modify, or remove recipients directly in Salesforce Custom Metadata. Saved changes must take effect without requiring an engineering ticket or code deployment.</li>
-  <li><strong>Email functionality remains operational:</strong> Low-inventory notifications, payment-success notifications, and other targeted system emails must continue to be delivered successfully to valid configured recipients in both UAT and PROD.</li>
-  <li><strong>Code quality and testing:</strong> All related Apex unit tests must pass, with test coverage meeting the required standards.</li>
-</ol>
-```
+## Safety / compatibility requirements
 
-## Execution sequence
+1. Keep all existing relay task types working unchanged.
+2. Respect existing `machine_id` routing and atomic claim behavior.
+3. Do not expose arbitrary shell execution.
+4. Do not expose arbitrary filesystem paths.
+5. Do not expose unrestricted Codex sandbox modes.
+6. No source deployment, commit, push, branch switch, reset, clean, or stash through this task.
+7. No target repo modification while implementing this Bridge capability itself.
+8. Do not modify IoTMart/Magnolia as part of implementation testing; use read-only smoke or a safe temporary/fixture project for write-mode tests.
+9. Do not ask the user anything except unavoidable login/SSO/MFA/permission actions.
 
-1. implement and test `azure_work_item_update`
-2. restart/reload the LaunchAgent watcher yourself so it uses the new code
-3. verify watcher health
-4. perform the 47151 update above
-5. read 47151 back and verify the exact stored title/description/acceptance criteria
-6. do not modify source repos
-7. commit and push only Agent Bridge changes on `feature/chatgpt-codex-bridge`
+## Tests
+
+Add focused automated/fixture coverage for at least:
+
+- valid read-only dispatch
+- invalid project rejected
+- invalid mode rejected
+- oversized instruction rejected
+- unknown fields / command-injection-shaped fields rejected as contract violations
+- machine routing still respected
+- read-only post-run mutation detection
+- timeout/non-zero result handling
+- bounded output
+- write-mode safety contract without touching the real target repos
+
+Run the existing relay tests plus the new tests.
+
+## Documentation
+
+Update at least:
+
+- `relay/README.md` — document `codex_dispatch` contract and explicit non-goals
+- `docs/HANDOFF.md` / `docs/IMPLEMENTATION_PLAN.md` / `docs/DECISIONS.md` as appropriate
+- this file with completion evidence
+
+The docs must state clearly:
+
+> ChatGPT can now launch Codex CLI through the relay without the user opening or operating a Codex conversation. Codex remains a delegated local sub-agent; deterministic handlers remain preferred for fixed operations.
+
+## LaunchAgent reload
+
+After implementation:
+
+1. commit and push Agent Bridge changes to `feature/chatgpt-codex-bridge`
+2. reload/restart the existing user LaunchAgent yourself so it runs the new handler
+3. verify watcher health on `mac-cd134ffbc7aa2eb9`
+
+Do not require the user to reopen Terminal.
+
+## Acceptance smoke — prove ChatGPT can launch Codex without a Codex conversation
+
+After the new handler is live, create/execute a safe `codex_dispatch` smoke task targeted at `mac-cd134ffbc7aa2eb9`:
+
+- `project`: `iotmart`
+- `mode`: `read_only`
+- instruction: inspect the repository at a very high level and return the current Git branch plus a short statement that this was a read-only Codex CLI relay smoke test; do not modify any file
+
+Acceptance requires:
+
+- watcher receives it automatically
+- local worker launches Codex CLI automatically
+- no user interaction / separate Codex conversation
+- outbox reports success
+- IoTMart git state before and after is unchanged
+- existing dirty/untracked files are preserved exactly
+
+Then stop. Do not perform any unrelated business-code task.
 
 ## Completion report
 
-Return only:
+Record and push:
 
-- Agent Bridge commit SHA
-- `azure_work_item_update` implemented/tested status
-- watcher reload/health status
-- Azure 47151 update result
-- read-back verification result
+- implementation commit SHA
+- exact supported `codex_dispatch` contract
+- tests run/result
+- LaunchAgent reload/health result
+- smoke task ID
+- Codex execution success/result summary
+- before/after git-state verification
 - confirmation no target repo was modified
 - blocker, if any
 
-Then stop. ChatGPT will inspect GitHub and provide the user with the final translated content and the full operational flow.
+Once this is complete, future workflow should be:
+
+```text
+User: "你幫我改這個"
+ChatGPT decides whether deterministic tools are enough.
+If local AI work is needed, ChatGPT sends `codex_dispatch` itself.
+Codex CLI runs locally and writes the result to relay outbox.
+User may later ask ChatGPT "改完了嗎？"
+ChatGPT reads/reviews the result.
+```
+
+No additional Codex conversation should be required for ordinary work.
