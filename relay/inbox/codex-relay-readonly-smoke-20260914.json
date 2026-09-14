@@ -1,0 +1,10 @@
+{
+  "id": "codex-relay-readonly-smoke-20260914",
+  "type": "codex_dispatch",
+  "project": "iotmart",
+  "mode": "read_only",
+  "timeout_seconds": 300,
+  "machine_id": "mac-cd134ffbc7aa2eb9",
+  "instruction": "Inspect the repository at a very high level and return the current Git branch plus a short statement that this was a read-only Codex CLI relay smoke test. Do not modify any file.",
+  "created_at": "2026-09-14T07:13:50.740Z"
+}
