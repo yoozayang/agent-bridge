@@ -1,0 +1,514 @@
+{
+  "id": "chatgpt-email-audit-at-sign-20260914",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-14T13:26:30+08:00",
+  "completed_at": "2026-09-14T05:52:08.058Z",
+  "ledger_task_id": "20260914055208-github-relay-deterministic-task-c498",
+  "result": {
+    "project": "iotmart",
+    "query": "@",
+    "results": [
+      {
+        "relative_path": ".agents/skills/cavecrew/SKILL.md",
+        "line": 49,
+        "excerpt": "verified: <re-read OK | mismatch @ path:line>."
+      },
+      {
+        "relative_path": ".agents/skills/caveman-compress/scripts/detect.py",
+        "line": 36,
+        "excerpt": "    re.compile(r\"^\\s*@\\w+\"),  # decorators/annotations"
+      },
+      {
+        "relative_path": ".codex/config.toml",
+        "line": 3,
+        "excerpt": "args = [\"-y\", \"@salesforce/mcp\", \"--toolsets\", \"orgs,metadata,data\", \"--no-telemetry\"]"
+      },
+      {
+        "relative_path": ".codex/config.toml",
+        "line": 10,
+        "excerpt": "args = [\"-y\", \"@upstash/context7-mcp\"]"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 16,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 19,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 22,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 25,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 28,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 33,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 36,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 39,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 42,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 45,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 48,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 51,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 54,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 57,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 60,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 63,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 66,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 69,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 74,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 77,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 80,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 246,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 251,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 371,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 485,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 490,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 540,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 545,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 699,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 704,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 825,
+        "excerpt": "        email.setTargetObjectId(GetUserId('vicky.xiong@merkle.com'));"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 828,
+        "excerpt": "        email.setReplyTo('IoTMart.NoReplay@advantech.com');"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 845,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 1070,
+        "excerpt": "    @AuraEnabled(cacheable = false)"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 16,
+        "excerpt": " * The @isTest class annotation indicates this class only contains test"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 17,
+        "excerpt": " * methods. Classes defined with the @isTest annotation do not count against"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 22,
+        "excerpt": "@isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 25,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 50,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 58,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 74,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 107,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 125,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 158,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 172,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 183,
+        "excerpt": "    @IsTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 195,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 201,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 207,
+        "excerpt": "    @IsTest"
+      },
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController_Test.cls",
+        "line": 257,
+        "excerpt": "    @isTest"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/API_UpdateListPrice.cls",
+        "line": 1,
+        "excerpt": "@RestResource(urlMapping='/UpdateListPrice')"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/API_UpdateListPrice.cls",
+        "line": 33,
+        "excerpt": "     @HttpPost"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 16,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 19,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 22,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 25,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 28,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 33,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 36,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 39,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 42,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 45,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 48,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 51,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 54,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 57,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 60,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 63,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 66,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 69,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 74,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 77,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 80,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 246,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 251,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 371,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 485,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 490,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 540,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 545,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 679,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 684,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 805,
+        "excerpt": "        email.setTargetObjectId(GetUserId('vicky.xiong@merkle.com'));"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 808,
+        "excerpt": "        email.setReplyTo('IoTMart.NoReplay@advantech.com');"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 825,
+        "excerpt": "    @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 1050,
+        "excerpt": "    @AuraEnabled(cacheable = false)"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 4,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 7,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 10,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 13,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 16,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 22,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 25,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 28,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 31,
+        "excerpt": "        @AuraEnabled"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 34,
+        "excerpt": "        @AuraEnabled"
+      }
+    ]
+  }
+}
