@@ -1,6 +1,8 @@
 {
   "id": "smoke-ping-mu0tsrdh",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-14T05:52:56.251Z",
-  "task_type": "bridge_ping"
+  "task_type": "bridge_ping",
+  "completed_at": "2026-09-14T05:52:58.726Z",
+  "ledger_task_id": "20260914055257-github-relay-deterministic-task-a946"
 }
