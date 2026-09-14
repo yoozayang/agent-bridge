@@ -1,6 +1,8 @@
 {
   "id": "codex-relay-readonly-smoke-20260914",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-14T07:14:54.768Z",
-  "task_type": "codex_dispatch"
+  "task_type": "codex_dispatch",
+  "completed_at": "2026-09-14T07:15:25.317Z",
+  "ledger_task_id": "20260914071455-github-relay-deterministic-task-0510"
 }
