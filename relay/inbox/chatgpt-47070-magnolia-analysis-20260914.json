@@ -1,0 +1,10 @@
+{
+  "id": "chatgpt-47070-magnolia-analysis-20260914",
+  "type": "codex_dispatch",
+  "project": "magnolia",
+  "instruction": "Read-only analysis for Azure work item 47070. Inspect the existing Magnolia codebase and identify the current implementation paths relevant to adding a configurable Contact Information section on PDP. Specifically: (1) find the existing Homepage Footer contact-information configuration and trace its dialog/YAML or app config, template/FTL/JS rendering, content retrieval, and multilingual behavior; (2) find the current PDP template/component structure and determine the safest insertion point for an independent configurable Contact Information area; (3) identify any existing multilingual/i18n fallback pattern used in Magnolia for KR/EN and EU languages, especially fallback when only one language value is maintained; (4) determine whether the implementation should live in a shared/common template layer such as advantech-templates versus region-specific modules; (5) return exact relative file paths, key snippets or symbols, current branch/repo observations, and a concrete implementation plan with likely files to change. Do not modify any file. Do not commit, push, deploy, switch branches, reset, clean, or stash.",
+  "mode": "read_only",
+  "timeout_seconds": 900,
+  "machine_id": "mac-cd134ffbc7aa2eb9",
+  "created_at": "2026-09-14T15:40:00+08:00"
+}
