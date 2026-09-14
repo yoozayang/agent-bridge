@@ -1,0 +1,254 @@
+{
+  "id": "chatgpt-email-audit-setto-20260914",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-14T13:25:20+08:00",
+  "completed_at": "2026-09-14T05:52:47.515Z",
+  "ledger_task_id": "20260914055241-github-relay-deterministic-task-14d0",
+  "result": {
+    "project": "iotmart",
+    "query": "setToAddresses",
+    "results": [
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Batch_SetProductInventoryWarehouse.cls",
+        "line": 206,
+        "excerpt": "        mail.setToAddresses(toAddresses);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/BatchEUH1LowInventoryEmail.cls",
+        "line": 107,
+        "excerpt": "                notificationEmail.setToAddresses(new List<String>{'szymon.lapacz@advantech.pl'});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_SetProductInventoryWarehouse.cls",
+        "line": 205,
+        "excerpt": "        mail.setToAddresses(toAddresses);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 142,
+        "excerpt": "            email.setToAddresses(new String[] { contact.Email, 'Adam.Jasik@advantech.pl' });"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 145,
+        "excerpt": "            email.setToAddresses(new String[] { contact.Email });"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 298,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 396,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 499,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 625,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_PaymentSuccess_ExceptionHandler.cls",
+        "line": 23,
+        "excerpt": "        mail.setToAddresses(mailto);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_Sch_InvoiceMissingAlert.cls",
+        "line": 102,
+        "excerpt": "        mail.setToAddresses(setting.MailTo);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_Sch_SyncInvoice.cls",
+        "line": 34,
+        "excerpt": "            mail.setToAddresses(mailTo);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_LowInventory.cls",
+        "line": 127,
+        "excerpt": "        notificationEmail.setToAddresses(new List<String>{"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 47,
+        "excerpt": "                email.setToAddresses(toAddresses);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/IoTMart_Registration_Handler.cls",
+        "line": 697,
+        "excerpt": "        email.setToAddresses(new List<String>{usermail});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RMAData.cls",
+        "line": 363,
+        "excerpt": "        email.setToAddresses(new List<String>{'patti.feehan@advantech.com'});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RMAData.cls",
+        "line": 426,
+        "excerpt": "        email.setToAddresses(new List<String>{recipientEmail});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 115,
+        "excerpt": "                mail.setToAddresses(new List<String>{ saleIdEmail });"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/SAPApi.cls",
+        "line": 362,
+        "excerpt": "            email.setToAddresses(new List<String>{recipientEmail});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/SAPApi.cls",
+        "line": 398,
+        "excerpt": "            email.setToAddresses(new List<String>{recipientEmail});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/SchBatch_CC_OrderCouponReport_ANA.cls",
+        "line": 117,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/SchBatch_CC_OrderItemCouponReport_ANA.cls",
+        "line": 129,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/b2b_ExcelAsEmailAttachment.cls",
+        "line": 43,
+        "excerpt": "        mail.setToAddresses(toAddresses);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 356,
+        "excerpt": "                    email.setToAddresses(new List<String>{'abcd@admin.com'});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 359,
+        "excerpt": "                    email.setToAddresses(new List<String>{order.OP_Mail__c});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/BatchEUH1LowInventoryEmail.cls",
+        "line": 107,
+        "excerpt": "                notificationEmail.setToAddresses(new List<String>{'szymon.lapacz@advantech.pl'});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Batch_SetProductInventoryWarehouse.cls",
+        "line": 205,
+        "excerpt": "        mail.setToAddresses(toAddresses);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 93,
+        "excerpt": "        email.setToAddresses(new String[] { contact.Email });"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_MailController.cls",
+        "line": 194,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_MailController.cls",
+        "line": 273,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_MailController.cls",
+        "line": 370,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_MailController.cls",
+        "line": 480,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_PaymentSuccess_ExceptionHandler.cls",
+        "line": 23,
+        "excerpt": "        mail.setToAddresses(mailto);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_Sch_InvoiceMissingAlert.cls",
+        "line": 102,
+        "excerpt": "        mail.setToAddresses(setting.MailTo);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_Sch_SyncInvoice.cls",
+        "line": 34,
+        "excerpt": "            mail.setToAddresses(mailTo);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/EmailTemplate_LowInventory.cls",
+        "line": 127,
+        "excerpt": "        notificationEmail.setToAddresses(new List<String>{"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/IoTMart_Registration_Handler.cls",
+        "line": 697,
+        "excerpt": "        email.setToAddresses(new List<String>{usermail});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/RMAData.cls",
+        "line": 363,
+        "excerpt": "        email.setToAddresses(new List<String>{'patti.feehan@advantech.com'});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/RMAData.cls",
+        "line": 426,
+        "excerpt": "        email.setToAddresses(new List<String>{recipientEmail});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/ReminderMailController.cls",
+        "line": 115,
+        "excerpt": "                mail.setToAddresses(new List<String>{ saleIdEmail });"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/SAPApi.cls",
+        "line": 362,
+        "excerpt": "            email.setToAddresses(new List<String>{recipientEmail});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/SAPApi.cls",
+        "line": 398,
+        "excerpt": "            email.setToAddresses(new List<String>{recipientEmail});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/SchBatch_CC_OrderCouponReport_ANA.cls",
+        "line": 117,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/SchBatch_CC_OrderItemCouponReport_ANA.cls",
+        "line": 129,
+        "excerpt": "            mail.setToAddresses(receivers);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/b2b_ExcelAsEmailAttachment.cls",
+        "line": 43,
+        "excerpt": "        mail.setToAddresses(toAddresses);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 323,
+        "excerpt": "                    email.setToAddresses(new List<String>{'abcd@admin.com'});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 326,
+        "excerpt": "                    email.setToAddresses(new List<String>{order.OP_Mail__c});"
+      },
+      {
+        "relative_path": "tmp/ccdev02_pp_mdapi/unpackaged/unpackaged/classes/Batch_SetProductInventoryWarehouse.cls",
+        "line": 206,
+        "excerpt": "        mail.setToAddresses(toAddresses);"
+      }
+    ]
+  }
+}
