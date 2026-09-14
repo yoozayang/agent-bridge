@@ -281,9 +281,16 @@ After ChatGPT reviews the real 47122 diff, a separate task may introduce a simil
 
 ### Phase 7 — Controlled Azure work-item metadata update
 
-Status: **IN PROGRESS — 47151 English update authorized**
+Status: **COMPLETE — 47151 English update verified**
 
 The relay adds `azure_work_item_update` for the already-configured `IoTMart 3.0` Azure DevOps project. It accepts only a work item ID and one or more of title, description, and acceptance criteria. The handler reads the existing item, records the three target fields, writes only supplied values with Azure CLI, then reads it back for exact verification. It cannot modify workflow state, ownership, tags, links, attachments, or any target repository.
+
+Acceptance evidence (2026-09-14):
+
+- `azure-47151-english-update-20260914` wrote the ChatGPT-authored English title, description, and acceptance criteria to work item 47151.
+- Azure DevOps canonicalized whitespace immediately before HTML closing `h3`, `p`, and `li` tags. The bounded handler records this explicitly and compares the known canonical representation on read-back.
+- `azure-47151-english-verify-20260914` completed as a verified no-op: before and after fields were identical, `verified: true`, and the result links to the IoTMart 3.0 work item.
+- No IoTMart or Magnolia repository operation occurred.
 
 ## 7. Immediate next actions
 

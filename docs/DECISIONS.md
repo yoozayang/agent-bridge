@@ -98,4 +98,4 @@ Each Mac keeps an ignored `config/machine.json` with a stable opaque ID. `bridge
 
 Status: Accepted
 
-`azure_work_item_update` is a deterministic Azure DevOps write surface only for an existing `IoTMart 3.0` work item. Its payload can contain title, description, and acceptance criteria only. It reads before writing and reads again afterwards; an exact mismatch is an error result. It cannot update state, assignment, tags, area/iteration, priority, links, attachments, or source code.
+`azure_work_item_update` is a deterministic Azure DevOps write surface only for an existing `IoTMart 3.0` work item. Its payload can contain title, description, and acceptance criteria only. It reads before writing and reads again afterwards; HTML is compared using Azure DevOps's known close-tag whitespace canonical form, and a mismatch is an error result. It cannot update state, assignment, tags, area/iteration, priority, links, attachments, or source code.

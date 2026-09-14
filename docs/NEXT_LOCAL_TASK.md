@@ -3,6 +3,10 @@
 Owner: local agent on `mac-cd134ffbc7aa2eb9`
 Planner/translator/reviewer: ChatGPT
 
+Status: **COMPLETE — 2026-09-14**
+
+Completion evidence: `azure-47151-english-update-20260914` applied the English metadata update. Azure DevOps canonicalized close-tag whitespace in the HTML fields; the follow-up `azure-47151-english-verify-20260914` completed with `verified: true` and `no_op: true`. Do not rerun this work item update.
+
 ## Context
 
 This Mac is already bootstrapped and its GitHub relay health check has passed.
