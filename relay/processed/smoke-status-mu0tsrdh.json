@@ -1,6 +1,8 @@
 {
   "id": "smoke-status-mu0tsrdh",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-14T05:53:33.982Z",
-  "task_type": "project_git_status"
+  "task_type": "project_git_status",
+  "completed_at": "2026-09-14T05:53:36.502Z",
+  "ledger_task_id": "20260914055334-github-relay-deterministic-task-c079"
 }
