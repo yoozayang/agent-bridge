@@ -1,0 +1,16 @@
+{
+  "id": "postpush-launchagent-ping-mu0u10zf",
+  "type": "bridge_ping",
+  "status": "done",
+  "created_at": "2026-09-14T05:58:36.603Z",
+  "completed_at": "2026-09-14T05:59:06.461Z",
+  "ledger_task_id": "20260914055906-github-relay-deterministic-task-785d",
+  "result": {
+    "ok": true,
+    "worker_health": "ready",
+    "mode": "github-relay",
+    "version": "0.1.0",
+    "commit": "e8b5f973d83c28254b0897265e8ae71c76afb88d",
+    "machine_id": "mac-cd134ffbc7aa2eb9"
+  }
+}
