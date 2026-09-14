@@ -1,0 +1,514 @@
+{
+  "id": "chatgpt-email-audit-advantech-20260914",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-14T13:25:00+08:00",
+  "completed_at": "2026-09-14T05:51:43.381Z",
+  "ledger_task_id": "20260914055143-github-relay-deterministic-task-f2c8",
+  "result": {
+    "project": "iotmart",
+    "query": "@advantech",
+    "results": [
+      {
+        "relative_path": ".codex_tmp/45022-ccdev02/mdapi-main/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 828,
+        "excerpt": "        email.setReplyTo('IoTMart.NoReplay@advantech.com');"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Lwc_Sync_ProductInfoController.cls",
+        "line": 808,
+        "excerpt": "        email.setReplyTo('IoTMart.NoReplay@advantech.com');"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 504,
+        "excerpt": "        email.setTargetObjectId(GetUserId('ming.yang@advantech.com.tw'));"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/Sync_ProductInfoController.cls",
+        "line": 507,
+        "excerpt": "        email.setReplyTo('IoTMart.NoReplay@advantech.com');"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/enus_Synch_ProductInfoController.cls",
+        "line": 456,
+        "excerpt": "        email.setTargetObjectId(GetUserId('ming.yang@advantech.com.tw'));"
+      },
+      {
+        "relative_path": ".codex_tmp/nqa_mdapi_20260616/unpackaged/classes/enus_Synch_ProductInfoController.cls",
+        "line": 459,
+        "excerpt": "        email.setReplyTo('IoTMart.NoReplay@advantech.com');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/authproviders/IotMart_OAuth_eu.authprovider-meta.xml",
+        "line": 5,
+        "excerpt": "    <executionUser>sfdc.acl.it.team@advantech.com.ccdev03</executionUser>"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCampaign_test.cls",
+        "line": 10,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"eQ\",    \"Name\": \"sunnytestwhateverIv\",    \"Owner_Email\": \"victorky.wang@advantech.com.tw\",    \"IsActive\": true,    \"ParentId\":\"\",    \"Type\": \"Acquisition\",    \"Status\": \"In Planning\",    \"StartDate\": \"2021-06-21T00:27:55\",    \"EndDate\": \"2021-06-21T00:27:55\",    \""
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCampaign_test.cls",
+        "line": 28,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"\",    \"Name\": \"sunnytestwhateverIv\",    \"Owner_Email\": \"victorky.wang@advantech.com.tw\",    \"IsActive\": true,    \"ParentId\":\"\",    \"Type\": \"Acquisition\",    \"Status\": \"In Planning\",    \"StartDate\": \"2021-06-21T00:27:55\",    \"EndDate\": \"2021-06-21T00:27:55\",    \"De"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCampaign_test.cls",
+        "line": 46,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"eQ\",    \"Name\": \"\",    \"Owner_Email\": \"victorky.wang@advantech.com.tw\",    \"IsActive\": true,    \"ParentId\":\"\",    \"Type\": \"Acquisition\",    \"Status\": \"In Planning\",    \"StartDate\": \"2021-06-21T00:27:55\",    \"EndDate\": \"2021-06-21T00:27:55\",    \"Description\": \"lili"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCampaign_test.cls",
+        "line": 100,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"eQ\",    \"Name\": \"123\",    \"Owner_Email\": \"victorky.wang@advantech.com.tw\",    \"IsActive\": true,    \"ParentId\":\"\",    \"Type\": \"Acquisition\",    \"Status\": \"In Planning\",    \"StartDate\": \"2021-06-24T00:27:55\",    \"EndDate\": \"2021-06-21T00:27:55\",    \"Description\": \"l"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCurationActivity_test.cls",
+        "line": 10,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"EDM\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"2002-10-10T07:00:00Z\",    \"Email\": \"gogoro@gamil.com\",    \"Country\": \"Taiwan\",    \"Type\": \"\",    \"Sector\": \"IAG\",    \"Interested_Product\": \"AI Jetson Platforms;Arm-Based Computing Platforms\",  "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCurationActivity_test.cls",
+        "line": 27,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"2002-10-10T07:00:00Z\",    \"Email\": \"gogoro@gamil.com\",    \"Country\": \"Taiwan\",    \"Type\": \"\",    \"Sector\": \"IAG\",    \"Interested_Product\": \"AI Jetson Platforms;Arm-Based Computing Platforms\",    \""
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCurationActivity_test.cls",
+        "line": 61,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"EDM\",    \"Owner_Email\": \"it.team@advantech.com\",    \"Times\": \"2002-10-10T07:00:00Z\",    \"Email\": \"gogoro@gamil.com\",    \"Country\": \"Taiwan\",    \"Type\": \"\",    \"Sector\": \"IAG\",    \"Interested_Product\": \"AI Jetson Platforms;Arm-Based Computing Platforms\",    \"Descri"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCurationActivity_test.cls",
+        "line": 78,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"EDM\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"2002-10-10T07:00:00Z\",    \"Email\": \"gogoro@gamil.com\",    \"Country\": \"Taiwan\",    \"Type\": \"\",    \"Sector\": \"IAG\",    \"Interested_Product\": \"AI Jetson Platforms;Arm-Based Computing Platforms\",  "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCurationActivity_test.cls",
+        "line": 95,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"EDM\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"2002-10-10T07:00:00Z\",    \"Email\": \"gogoro@gamil.com\",    \"Country\": \"Taiwan\",    \"Type\": \"\",    \"Sector\": \"IAG\",    \"Interested_Product\": \"AI Jetson Platforms;Arm-Based Computing Platforms\",  "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCurationActivity_test.cls",
+        "line": 112,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"EDM\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"2002-10-10T07:00:00Z\",    \"Email\": \"gogoro@gamil.com\",    \"Country\": \"Taiwan\",    \"Type\": \"\",    \"Sector\": \"IAG\",    \"Interested_Product\": \"AI Jetson Platforms;Arm-Based Computing Platforms\",  "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddCurationActivity_test.cls",
+        "line": 130,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"EDM\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"2002-10-10T07:00:00Z\",    \"Email\": \"gogoro@gamil.com\",    \"Country\": \"Taiwan\",    \"Type\": \"\",    \"Sector\": \"123\",    \"Interested_Product\": \"AI Jetson Platforms;Arm-Based Computing Platforms\",  "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddLead_test.cls",
+        "line": 10,
+        "excerpt": "        rest.requestBody = Blob.valueof('{    \"Source\": \"MTL\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"RecordType\": \"Sales Created Leads\",    \"Salutation\": \"Mr.\",    \"FirstName\": \"SunnytestAmos129\",    \"LastName\": \"Test\",    \"Company\": \"Test129 Ltd.\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advertis"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddLead_test.cls",
+        "line": 26,
+        "excerpt": "        rest.requestBody = Blob.valueof('{ \"Source\": \"MTL\",    \"Owner_Email\": \"admin@advantech.com.tw\",    \"RecordType\": \"Sales Created Leads\",    \"Salutation\": \"Mr.\",    \"FirstName\": \"Amos129\",    \"LastName\": \"\",    \"Company\": \"Test129 Ltd.\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advertisement\",    \"Title\": \"Pur"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddLead_test.cls",
+        "line": 41,
+        "excerpt": "        rest.requestBody = Blob.valueof('{ \"Source\": \"MTL\",    \"Owner_Email\": \"admin@advantech.com.tw\",    \"RecordType\": \"Sales Created Leads\",    \"Salutation\": \"Mr.\",    \"FirstName\": \"Amos129\",    \"LastName\": \"Test\",    \"Company\": \"\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advertisement\",    \"Title\": \"Purchase\", "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddLead_test.cls",
+        "line": 56,
+        "excerpt": "        rest.requestBody = Blob.valueof('{ \"Source\": \"MTL\",    \"Owner_Email\": \"admin@advantech.com.tw\",    \"RecordType\": \"Sales Created Leads\",    \"Salutation\": \"Mr.\",    \"FirstName\": \"Amos129\",    \"LastName\": \"Test\",    \"Company\": \"Test129 Ltd.\",    \"Lead_Status\": \"\",    \"Lead_Source\": \"Advertisement\",    \"Title\": \"Pu"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddLead_test.cls",
+        "line": 70,
+        "excerpt": "        rest.requestBody = Blob.valueof('{ \"Source\": \"\",    \"Owner_Email\": \"admin@advantech.com.tw\",    \"RecordType\": \"Sales Created Leads\",    \"Salutation\": \"Mr.\",    \"FirstName\": \"Amos129\",    \"LastName\": \"123\",    \"Company\": \"Test129 Ltd.\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advertisement\",    \"Title\": \"Pur"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddLead_test.cls",
+        "line": 85,
+        "excerpt": "        rest.requestBody = Blob.valueof('{ \"Source\": \"MTL\",    \"Owner_Email\": \"admin@advantech.com.tw\",    \"RecordType\": \"\",    \"Salutation\": \"Mr.\",    \"FirstName\": \"Amos129\",    \"LastName\": \"123\",    \"Company\": \"Test129 Ltd.\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advertisement\",    \"Title\": \"Purchase\",    \"Phon"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddLead_test.cls",
+        "line": 99,
+        "excerpt": "        rest.requestBody = Blob.valueof('{ \"Source\": \"MTL\",    \"Owner_Email\": \"admin@advantech.com.tw\",    \"RecordType\": \"123\",    \"Salutation\": \"Mr.\",    \"FirstName\": \"Amos129\",    \"LastName\": \"123\",    \"Company\": \"Test129 Ltd.\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advertisement\",    \"Title\": \"Purchase\",    \"P"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddTask_test.cls",
+        "line": 10,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"eQ\",    \"Subject\": \"Visit Running II\",    \"Priority\": \"3-Medium\",    \"Status\": \"Open\",    \"Owner_Email\": \"michael.kreft@advantech.de\",    \"Purpose\": \"Relationship Maintenance\",    \"Type\": \"Customer Visit Report\",    \"Due_Date\": \"2022-06-10T00:27:55\",    \"Related_T"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddTask_test.cls",
+        "line": 28,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"\",    \"Subject\": \"Visit Running II\",    \"Priority\": \"3-Medium\",    \"Status\": \"Open\",    \"Owner_Email\": \"michael.kreft@advantech.de\",    \"Purpose\": \"Relationship Maintenance\",    \"Type\": \"Customer Visit Report\",    \"Due_Date\": \"2022-06-10T00:27:55\",    \"Related_To\""
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddTask_test.cls",
+        "line": 46,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"eQ\",    \"Subject\": \"\",    \"Priority\": \"3-Medium\",    \"Status\": \"Open\",    \"Owner_Email\": \"michael.kreft@advantech.de\",    \"Purpose\": \"Relationship Maintenance\",    \"Type\": \"Customer Visit Report\",    \"Due_Date\": \"2022-06-10T00:27:55\",    \"Related_To\": \"0019D00000L"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddTask_test.cls",
+        "line": 64,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"eQ\",    \"Subject\": \"Visit Running II\",    \"Priority\": \"\",    \"Status\": \"Open\",    \"Owner_Email\": \"michael.kreft@advantech.de\",    \"Purpose\": \"Relationship Maintenance\",    \"Type\": \"Customer Visit Report\",    \"Due_Date\": \"2022-06-10T00:27:55\",    \"Related_To\": \"001"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddTask_test.cls",
+        "line": 82,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"eQ\",    \"Subject\": \"Visit Running II\",    \"Priority\": \"3-Medium\",    \"Status\": \"\",    \"Owner_Email\": \"michael.kreft@advantech.de\",    \"Purpose\": \"Relationship Maintenance\",    \"Type\": \"Customer Visit Report\",    \"Due_Date\": \"2022-06-10T00:27:55\",    \"Related_To\": "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_AddTask_test.cls",
+        "line": 136,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"eQ\",    \"Subject\": \"Visit Running II\",    \"Priority\": \"3-Medium\",    \"Status\": \"Open\",    \"Owner_Email\": \"michael.kreft@advantech.de\",    \"Purpose\": \"Relationship Maintenance\",    \"Type\": \"Customer Visit Report\",    \"Due_Date\": \"2022-06-10T00:27:55\",    \"Related_T"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_GetSalesCode_test.cls",
+        "line": 10,
+        "excerpt": "        req.requestURI = '/services/apexrest/GetSalesCode/sfdc.acl.it.team@advantech.com'; "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_OrderInvoiceLink_Test.cls",
+        "line": 26,
+        "excerpt": "                Email = 'test@advantech.com.tw'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_OrderTracking_Test.cls",
+        "line": 26,
+        "excerpt": "                Email = 'test@advantech.com.tw'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentInformation_test.cls",
+        "line": 102,
+        "excerpt": "                Email = 'test@advantech.com.tw'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_PaymentReceiptForPaymentCenter_test.cls",
+        "line": 28,
+        "excerpt": "                Email = 'test@advantech.com.tw'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_RESTOutBound_SAP_ShippingTax_test.cls",
+        "line": 47,
+        "excerpt": "                Email = 'test@advantech.com.tw'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_SAP_Order_Taxt_Simulation_test.cls",
+        "line": 47,
+        "excerpt": "                Email = 'test@advantech.com.tw'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCampaign_test.cls",
+        "line": 10,
+        "excerpt": "        req.requestBody = Blob.valueof('{   \"Id\":\"7012y000000YPTWAA4\", \"Source\": \"eQ\",    \"Name\": \"sunnytestwhateverIv\",    \"Owner_Email\": \"victorky.wang@advantech.com.tw\",    \"IsActive\": true,    \"ParentId\":\"\",    \"Type\": \"Acquisition\",    \"Status\": \"In Planning\",    \"StartDate\": \"2021-06-21T00:27:55\",    \"EndDate\": \""
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCampaign_test.cls",
+        "line": 28,
+        "excerpt": "        req.requestBody = Blob.valueof('{   \"Id\":\"7012y000000YPTWAA4\", \"Source\": \"\",    \"Name\": \"sunnytestwhateverIv\",    \"Owner_Email\": \"victorky.wang@advantech.com.tw\",    \"IsActive\": true,    \"ParentId\":\"\",    \"Type\": \"Acquisition\",    \"Status\": \"In Planning\",    \"StartDate\": \"2021-06-21T00:27:55\",    \"EndDate\": \"20"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCurationActivity_test.cls",
+        "line": 10,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"a042y00000EZIzZAAX\",    \"Source\": \"eStore\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"\",    \"Email\": \"toya123@gamil.com\",    \"Country\": \"\",    \"Type\": \"\",    \"Sector\": \"\",    \"Interested_Product\": \"\",    \"Description\": \"\",    \"Score\": \"78\",    \"U"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCurationActivity_test.cls",
+        "line": 27,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"\",    \"Source\": \"eStore\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"\",    \"Email\": \"toya123@gamil.com\",    \"Country\": \"\",    \"Type\": \"\",    \"Sector\": \"\",    \"Interested_Product\": \"\",    \"Description\": \"\",    \"Score\": \"78\",    \"URL\": \"\",    \"IsUse"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCurationActivity_test.cls",
+        "line": 44,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"123\",    \"Source\": \"eStore\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"\",    \"Email\": \"toya123@gamil.com\",    \"Country\": \"\",    \"Type\": \"\",    \"Sector\": \"\",    \"Interested_Product\": \"\",    \"Description\": \"\",    \"Score\": \"78\",    \"URL\": \"\",    \"Is"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCurationActivity_test.cls",
+        "line": 61,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"a042y00000EZIzZAAX\",    \"Source\": \"eStore\",    \"Owner_Email\": \"it.team@advantech.com\",    \"Times\": \"\",    \"Email\": \"toya123@gamil.com\",    \"Country\": \"\",    \"Type\": \"\",    \"Sector\": \"\",    \"Interested_Product\": \"\",    \"Description\": \"\",    \"Score\": \"78\",    \"URL\": \"\", "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCurationActivity_test.cls",
+        "line": 78,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"a042y00000EZIzZAAX\",    \"Source\": \"eStore\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"\",    \"Email\": \"toya123@gamil.com\",    \"Country\": \"\",    \"Type\": \"\",    \"Sector\": \"\",    \"Interested_Product\": \"\",    \"Description\": \"\",    \"Score\": \"78\",    \"U"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCurationActivity_test.cls",
+        "line": 95,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"a042y00000EZIzZAAX\",    \"Source\": \"eStore\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"\",    \"Email\": \"toya123@gamil.com\",    \"Country\": \"\",    \"Type\": \"\",    \"Sector\": \"\",    \"Interested_Product\": \"\",    \"Description\": \"\",    \"Score\": \"78\",    \"U"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCurationActivity_test.cls",
+        "line": 112,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"a042y00000EZIzZAAX\",    \"Source\": \"eStore\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"\",    \"Email\": \"toya123@gamil.com\",    \"Country\": \"\",    \"Type\": \"\",    \"Sector\": \"\",    \"Interested_Product\": \"\",    \"Description\": \"\",    \"Score\": \"78\",    \"U"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateCurationActivity_test.cls",
+        "line": 129,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"a042y00000EZIzZAAX\",    \"Source\": \"eStore\",    \"Owner_Email\": \"sfdc.acl.it.team@advantech.com\",    \"Times\": \"123\",    \"Email\": \"toya123@gamil.com\",    \"Country\": \"\",    \"Type\": \"\",    \"Sector\": \"\",    \"Interested_Product\": \"\",    \"Description\": \"\",    \"Score\": \"78\",   "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateLead_test.cls",
+        "line": 28,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"\",    \"Id\": \"00Q9D0000032nwTUAQ\",        \"Owner_Email\": \"crm.acl@advantech.com\",    \"RecordType\": \"Sales Created Leads\",    \"Salutation\": \"123\",    \"FirstName\": \"123\",    \"LastName\": \"123\",    \"Company\": \"123\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advertise"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateLead_test.cls",
+        "line": 46,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"MTL\",    \"Id\": \"\",        \"Owner_Email\": \"crm.acl@advantech.com\",    \"RecordType\": \"Sales Created Leads\",    \"Salutation\": \"123\",    \"FirstName\": \"123\",    \"LastName\": \"123\",    \"Company\": \"123\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advertisement\",    \"Titl"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateLead_test.cls",
+        "line": 64,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Source\": \"MTL\",    \"Id\": \"00Q9D0000032nwTUAB\",        \"Owner_Email\": \"crm.acl@advantech.com\",    \"RecordType\": \"Sales Created Leads\",    \"Salutation\": \"123\",    \"FirstName\": \"123\",    \"LastName\": \"123\",    \"Company\": \"123\",    \"Lead_Status\": \"New\",    \"Lead_Source\": \"Advert"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateTask_test.cls",
+        "line": 10,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"00T2y000014zwnSEAQ\",    \"Source\": \"eQ\",    \"Subject\": \"\",    \"Priority\": \"3-Medium\",    \"Status\": \"\",    \"Owner_Email\": \"michael.kreft@advantech.de\",    \"Purpose\": \"\",    \"Type\": \"\",    \"Due_Date\": \"\",    \"Related_To\": \"\",    \"Name\": \"\",    \"IsReminderSet\": true,    \"R"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/API_UpdateTask_test.cls",
+        "line": 27,
+        "excerpt": "        req.requestBody = Blob.valueof('{    \"Id\":\"00T2y000014zwnSEAQ\",    \"Source\": \"\",    \"Subject\": \"\",    \"Priority\": \"3-Medium\",    \"Status\": \"\",    \"Owner_Email\": \"michael.kreft@advantech.de\",    \"Purpose\": \"\",    \"Type\": \"\",    \"Due_Date\": \"\",    \"Related_To\": \"\",    \"Name\": \"\",    \"IsReminderSet\": true,    \"Rem"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/BatchEUH1LowInventoryEmail.cls",
+        "line": 101,
+        "excerpt": "                    WHERE Address = 'aeu-iotmart-no-reply@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/BatchEUH1LowInventoryEmail.cls",
+        "line": 107,
+        "excerpt": "                notificationEmail.setToAddresses(new List<String>{'szymon.lapacz@advantech.pl'});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/BatchEUH1LowInventoryEmail.cls",
+        "line": 116,
+        "excerpt": "                    'iotmart.it@advantech.com','Enling.Hsu@advantech.com.tw','cliff.yu@advantech.com.tw','BO.Iotmart@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 16,
+        "excerpt": "        c1.CC_Company_Email__c = 'test@advantech.com';"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 25,
+        "excerpt": "            Email = 'mail.notify@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 47,
+        "excerpt": "        c2.CC_Company_Email__c = 'test@advantech.com';"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 96,
+        "excerpt": "        c1.CC_Company_Email__c = 'test@advantech.com';"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 105,
+        "excerpt": "            Email = 'mail.notify@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 133,
+        "excerpt": "        c1.CC_Company_Email__c = 'test@advantech.com';"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 142,
+        "excerpt": "            Email = 'mail.notify@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 205,
+        "excerpt": "        c1.CC_Company_Email__c = 'test@advantech.com';"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Batch_ServiceRequestFromFile_test.cls",
+        "line": 214,
+        "excerpt": "            Email = 'mail.notify@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 142,
+        "excerpt": "            email.setToAddresses(new String[] { contact.Email, 'Adam.Jasik@advantech.pl' });"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 161,
+        "excerpt": "            orgWideEmails = [SELECT Id, Address, DisplayName FROM OrgWideEmailAddress WHERE Address = 'aeu-iotmart-no-reply@advantech.com'];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 163,
+        "excerpt": "            orgWideEmails = [SELECT Id, Address, DisplayName FROM OrgWideEmailAddress WHERE Address = 'akr-iotmart-no-reply@advantech.com'];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_CouponMail.cls",
+        "line": 165,
+        "excerpt": "            orgWideEmails = [SELECT Id, Address, DisplayName FROM OrgWideEmailAddress WHERE Address = 'iotmart-no-reply@advantech.com'];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 209,
+        "excerpt": "                List<OrgWideEmailAddress> orgWideEmails = [SELECT Id, Address, DisplayName FROM OrgWideEmailAddress WHERE Address = 'iotmart-no-reply@advantech.com'];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 229,
+        "excerpt": "                List<OrgWideEmailAddress> orgWideEmails = [SELECT Id, Address, DisplayName FROM OrgWideEmailAddress WHERE Address = 'aeu-iotmart-no-reply@advantech.com'];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 249,
+        "excerpt": "                List<OrgWideEmailAddress> orgWideEmails = [SELECT Id, Address, DisplayName FROM OrgWideEmailAddress WHERE Address = 'akr-iotmart-no-reply@advantech.com'];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 381,
+        "excerpt": "                    receivers.add('Adam.Jasik@advantech.pl');"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController_Test.cls",
+        "line": 242,
+        "excerpt": "                    'iotmart-no-reply@advantech.com',"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController_Test.cls",
+        "line": 243,
+        "excerpt": "                    'aeu-iotmart-no-reply@advantech.com',"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController_Test.cls",
+        "line": 244,
+        "excerpt": "                    'akr-iotmart-no-reply@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController_Test.cls",
+        "line": 247,
+        "excerpt": "            if (owa.Address == 'iotmart-no-reply@advantech.com') {"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController_Test.cls",
+        "line": 249,
+        "excerpt": "            } else if (owa.Address == 'aeu-iotmart-no-reply@advantech.com') {"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController_Test.cls",
+        "line": 251,
+        "excerpt": "            } else if (owa.Address == 'akr-iotmart-no-reply@advantech.com') {"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_Sch_InvoiceMissingAlert.cls",
+        "line": 13,
+        "excerpt": "        enSetting.MailTo = new List<String>{'service.iotmart@advantech.com'};"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_Sch_InvoiceMissingAlert.cls",
+        "line": 14,
+        "excerpt": "        enSetting.CC = new List<String>{'iotmart.it@advantech.com'};"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_Sch_InvoiceMissingAlert.cls",
+        "line": 19,
+        "excerpt": "        euSetting.MailTo = new List<String>{'service.aeuiotmart@advantech.com'};"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_Sch_InvoiceMissingAlert.cls",
+        "line": 20,
+        "excerpt": "        euSetting.CC = new List<String>{'iotmart.it@advantech.com'};"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_Sch_SyncInvoice.cls",
+        "line": 4,
+        "excerpt": "            return new List<String>{'iotmart.it@advantech.com'};"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CPQGPControl.cls",
+        "line": 137,
+        "excerpt": "                        api.message = 'API token expired, please contact crm.acl@advantech.com.'; "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CPQGPControl.cls",
+        "line": 142,
+        "excerpt": "                        api.message = 'Internal transfer price API unhandled exception \"' + responseITP.getStatusCode() + ': ' + responseITP.getStatus() + '\", please contact crm.acl@advantech.com.'; "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CPQGPControl.cls",
+        "line": 209,
+        "excerpt": "                        api.message = 'API token expired, please contact crm.acl@advantech.com.'; "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CPQGPControl.cls",
+        "line": 214,
+        "excerpt": "                        api.message = 'SAP employee API unhandled exception \"' + responseITP.getStatusCode() + ': ' + responseITP.getStatus() + '\", please contact crm.acl@advantech.com.'; "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CPQGPControl.cls",
+        "line": 243,
+        "excerpt": "                            api.message = String.valueOf(approvalResult.getErrors()) + ' please contact crm.acl@advantech.com.';    "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CPQGPControl.cls",
+        "line": 261,
+        "excerpt": "                api.message = 'Failed to update GP level, please contact crm.acl@advantech.com.';     "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CPQGPControl.cls",
+        "line": 267,
+        "excerpt": "            api.message = 'Unhandled exception \"'+ + e.getmessage() +'\", please contact crm.acl@advantech.com.';"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Check_EZ_UID_Test.cls",
+        "line": 37,
+        "excerpt": "    \tEZr.user_email = 'you@advantech.com';"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Commerce_Activate_Order_Test.cls",
+        "line": 44,
+        "excerpt": "            Email = 'test@advantech.com.tw'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CostUtil.cls",
+        "line": 142,
+        "excerpt": "                response.message = 'API token expired, please contact crm.acl@advantech.com.'; "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EU_IoTMart_Registration_Handler.cls",
+        "line": 287,
+        "excerpt": "            if (String.isBlank(mAc.PersonEmail) || mAc.PersonEmail.contains('@advantech')) return mAc;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EU_IoTMart_Registration_Handler.cls",
+        "line": 292,
+        "excerpt": "                                WHERE ExId__c = 'szymon.lapacz@advantech.pl'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_LowInventory.cls",
+        "line": 121,
+        "excerpt": "            WHERE Address = 'aeu-iotmart-no-reply@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_LowInventory.cls",
+        "line": 128,
+        "excerpt": "            'szymon.lapacz@advantech.pl' "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_LowInventory.cls",
+        "line": 138,
+        "excerpt": "            'iotmart.it@advantech.com','Enling.Hsu@advantech.com.tw','cliff.yu@advantech.com.tw','BO.Iotmart@advantech.com'"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 4,
+        "excerpt": "    private static final String ORG_WIDE_SENDER = 'aeu-iotmart-no-reply@advantech.com';"
+      }
+    ]
+  }
+}
