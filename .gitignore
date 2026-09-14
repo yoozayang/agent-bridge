@@ -4,3 +4,4 @@ relay.db*
 .agent-bridge/
 .demo*/
 config/projects.json
+config/machine.json

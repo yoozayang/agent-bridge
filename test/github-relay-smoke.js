@@ -33,9 +33,13 @@ put(ctx, status);
 assert(relay.runOnce().results.some((result) => result.id === status.id && result.status === "done"));
 assert.equal(outbox(ctx, status.id).result.project, "iotmart");
 
-const azure = task(`smoke-azure-${suffix}`, "azure_work_item_read", { work_item_id: 47122 });
-put(ctx, azure);
-assert(relay.runOnce().results.some((result) => result.id === azure.id && result.status === "done"));
-assert.equal(outbox(ctx, azure.id).result.id, 47122);
+const workItemId = Number(process.env.AGENT_BRIDGE_SMOKE_AZURE_WORK_ITEM || 0);
+if (workItemId) {
+  assert(Number.isSafeInteger(workItemId) && workItemId > 0, "AGENT_BRIDGE_SMOKE_AZURE_WORK_ITEM must be a positive integer");
+  const azure = task(`smoke-azure-${suffix}`, "azure_work_item_read", { work_item_id: workItemId });
+  put(ctx, azure);
+  assert(relay.runOnce().results.some((result) => result.id === azure.id && result.status === "done"));
+  assert.equal(outbox(ctx, azure.id).result.id, workItemId);
+}
 assert.equal(git(iotmart), before);
-console.log(JSON.stringify({ ping: ping.id, project_status: status.id, azure: azure.id, result: "PASS" }));
+console.log(JSON.stringify({ ping: ping.id, project_status: status.id, ...(workItemId ? { azure_work_item_id: workItemId } : {}), result: "PASS" }));

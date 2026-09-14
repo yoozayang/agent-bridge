@@ -9,8 +9,10 @@ const temp = fs.mkdtempSync(path.join(os.tmpdir(), "agent-bridge-relay-write-"))
 const project = path.join(temp, "fixture");
 process.env.AGENT_BRIDGE_HOME = path.join(temp, "ledger");
 process.env.AGENT_BRIDGE_PROJECTS_FILE = path.join(temp, "projects.json");
+process.env.AGENT_BRIDGE_MACHINE_FILE = path.join(temp, "machine.json");
 fs.mkdirSync(project);
 fs.writeFileSync(process.env.AGENT_BRIDGE_PROJECTS_FILE, JSON.stringify({ projects: { iotmart: project, magnolia: project } }));
+fs.writeFileSync(process.env.AGENT_BRIDGE_MACHINE_FILE, JSON.stringify({ id: "mac-fixture" }));
 const relay = require("../lib/github-relay");
 
 function run(args) {
@@ -54,4 +56,7 @@ const repeatBefore = fs.readFileSync(path.join(project, "repeat.txt"));
 assert.equal(outcome(task("project_comment_replace", { project: "iotmart", relative_path: "repeat.txt", old_text: "// 简体重复", new_text: "// 繁體重複", expected_count: 1 })).status, "error");
 assert(fs.readFileSync(path.join(project, "repeat.txt")).equals(repeatBefore));
 assert.throws(() => relay.validate("fixture-task.json", task("project_comment_replace", { project: "iotmart", relative_path: "comments.txt", old_text: "// a", new_text: "// b", expected_count: 2 })));
+assert(relay.matchesMachine(task("bridge_ping", { machine_id: "mac-fixture" })));
+assert(!relay.matchesMachine(task("bridge_ping", { machine_id: "mac-other" })));
+assert.equal(relay.validate("fixture-task.json", task("bridge_ping", { machine_id: "mac-fixture" })).machine_id, "mac-fixture");
 console.log("github relay controlled-write fixture: PASS");

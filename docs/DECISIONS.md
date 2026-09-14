@@ -85,3 +85,11 @@ The current ChatGPT account does not expose the custom connector UI needed to fi
 Status: Accepted
 
 The first target-repository write is not a generic edit tool. `project_comment_replace` accepts one exact, complete same-line recognizable comment replacement on a clean IoTMart file only. The worker proves path containment, rejects symlinks and pre-existing target-file dirtiness, requires exactly one old-text occurrence, verifies a single-file diff, and restores only its own bytes if verification fails. The actual candidate and wording remain ChatGPT's decision. Commit and deployment, including the later `ccdev01` sandbox deployment, require separately gated work.
+
+## ADR-013 — Run the GitHub relay as a per-user LaunchAgent with optional opaque routing
+
+Status: Accepted
+
+The GitHub relay watcher is a user-level macOS LaunchAgent, not a foreground terminal process. Its generated plist contains only the local Node executable, bridge path, fixed 30-second interval, and local log path; it contains no credential or target-repository path. `RunAtLoad` starts it after login and `KeepAlive.SuccessfulExit=false` restarts unexpected exits.
+
+Each Mac keeps an ignored `config/machine.json` with a stable opaque ID. `bridge_ping` reports it. A task may include this ID as `machine_id`; nonmatching watchers skip the task before claiming it, and tasks without one retain the normal GitHub first-claimer behavior.

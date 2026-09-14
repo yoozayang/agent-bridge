@@ -1,6 +1,6 @@
 # ChatGPT ↔ Agent Bridge ↔ Codex Implementation Plan
 
-Last updated: 2026-09-11
+Last updated: 2026-09-14
 
 ## 1. Goal
 
@@ -201,7 +201,7 @@ Implementation:
 
 ### Phase 3 — Cross-machine configuration
 
-Status: **PENDING**
+Status: **COMPLETE**
 
 Introduce machine-local project path configuration with committed examples only.
 
@@ -216,9 +216,11 @@ Create a bootstrap/doctor path that checks local dependencies and project mappin
 
 Acceptance criteria:
 
-- MacBook B can clone the fork
-- configure only local paths/auth
-- run the same read-only tests without code edits
+- MacBook B can clone the fork — complete
+- configure only local paths/auth — complete through ignored `config/projects.json` and `config/machine.json`
+- run the same read-only tests without code edits — complete; the default relay smoke uses only `bridge_ping` and `project_git_status`
+
+The local machine identity is an opaque, non-secret ID. It is returned by `bridge_ping` and may be supplied as `machine_id` to route a task to one watcher without changing the untargeted claim behavior.
 
 ### Phase 4 — Secure MCP Tunnel / ChatGPT connection
 
@@ -266,7 +268,8 @@ Acceptance evidence (2026-09-11):
 - smoke tasks for all three types produced one outbox result each; a second worker pass skipped the already-completed ping task
 - `azure_work_item_read(47122)` succeeded through the relay with existing Azure CLI authentication and returned its ID, title, `Task` type, `To Do` state, and description
 - no Codex model turn was used, and IoTMart Git status was byte-identical before and after `project_git_status`
-- foreground watcher started and continued polling the branch without user interaction
+- a per-user macOS LaunchAgent runs the existing watcher at login and restarts it after an unexpected exit
+- the default relay smoke no longer reads Azure DevOps; testing `azure_work_item_read` requires an explicitly approved `AGENT_BRIDGE_SMOKE_AZURE_WORK_ITEM`
 
 ### Phase 6 — Controlled comment-write PoC
 

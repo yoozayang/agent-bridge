@@ -21,8 +21,10 @@ Recommended local path:
 Read, in order:
 
 1. `AGENTS.md`
-2. `docs/IMPLEMENTATION_PLAN.md`
-3. `docs/DECISIONS.md`
+2. `docs/HANDOFF.md`
+3. `docs/IMPLEMENTATION_PLAN.md`
+4. `docs/DECISIONS.md`
+5. `docs/NEXT_LOCAL_TASK.md`
 
 Do not assume another machine has the same absolute project paths.
 
@@ -60,9 +62,16 @@ gh --version
 node --version
 npm --version
 codex --version
+codex login status
 ```
 
 Do not create API keys merely to satisfy setup. If Codex requires login, prefer the user's existing supported ChatGPT/Codex account login path unless the implementation plan explicitly changes.
+
+If the installed `codex` launcher exists but cannot start its native executable, repair the standard CLI package and rerun the two Codex checks:
+
+```bash
+npm install --global @openai/codex@latest
+```
 
 ## Project paths
 
@@ -75,14 +84,14 @@ iotmart  -> /Users/yoozayang/Development/IoTMart3.0
 magnolia -> select one of the read-only discovered roots: `base`, `light-modules`, or the `light-modules` worktree under `/Users/yoozayang/Magnolia`
 ```
 
-MacBook B should provide its own equivalents.
+MacBook B should provide its own equivalents in the ignored `config/projects.json`; do not put machine paths in source or commit this file.
 
 ## Local MCP PoC
 
 Install dependencies, then create the ignored machine-local mapping from the committed example:
 
 ```bash
-npm install
+npm ci
 cp config/projects.json.example config/projects.json
 # edit the two paths for this Mac
 node bin/agent-bridge-mcp.js
@@ -117,18 +126,46 @@ Confirm `tunnel-client runtimes status agent-bridge --json` reports `process_run
 
 If ChatGPT Settings shows only preconfigured apps and no custom-connector add action, do not enable an unrelated app. Record that observed UI blocker for ChatGPT or the workspace administrator to verify. Stop the managed runtime until connector access is confirmed.
 
-## GitHub relay PoC
+## GitHub relay (current transport)
 
-The current ChatGPT-to-Mac transport is GitHub relay, not the optional MCP tunnel. With `gh auth status`, Azure DevOps authentication (only for work-item reads), and `config/projects.json` ready, start the foreground worker:
+The current ChatGPT-to-Mac transport is GitHub relay, not the optional MCP tunnel. Set a stable, opaque, non-secret identity in the ignored config before installing the watcher:
 
 ```bash
-node bin/agent-bridge-relay.js --interval 30
+cp config/machine.json.example config/machine.json
+# replace the example value with a unique opaque ID, e.g. mac-<random-hex>
+```
+
+ChatGPT may include an optional `machine_id` in a relay task. Only the watcher whose local `config/machine.json` matches it claims the task; untargeted tasks retain the existing first-claimer behavior. `bridge_ping` returns the active `machine_id`.
+
+Install the required per-user macOS LaunchAgent. It uses the existing watcher and fixed 30-second interval, starts at login, and restarts after an unexpected exit:
+
+```bash
+node bin/agent-bridge-relay-service.js install
+node bin/agent-bridge-relay-service.js status
+```
+
+The installer derives its own repository path and Node executable, writes `~/Library/LaunchAgents/com.agentbridge.github-relay.plist`, and logs to `.agent-bridge/relay-watcher.log`. It does not store credentials in the plist.
+
+Diagnose or remove it with:
+
+```bash
+node bin/agent-bridge-relay-service.js status
+launchctl print gui/$(id -u)/com.agentbridge.github-relay
+tail -n 100 .agent-bridge/relay-watcher.log
+node bin/agent-bridge-relay-service.js uninstall
 ```
 
 ChatGPT writes bounded files under `relay/inbox/`; the worker creates `relay/processed/` claim records and `relay/outbox/` results through authenticated GitHub commits. Run the real smoke check with an isolated local ledger:
 
 ```bash
 AGENT_BRIDGE_HOME="$(mktemp -d)/ledger" node test/github-relay-smoke.js
+```
+
+The default smoke uses only `bridge_ping` and read-only project status. It never reads Azure DevOps. Azure smoke coverage requires an explicitly approved work item:
+
+```bash
+AGENT_BRIDGE_SMOKE_AZURE_WORK_ITEM=<approved-id> \
+  AGENT_BRIDGE_HOME="$(mktemp -d)/ledger" node test/github-relay-smoke.js
 ```
 
 The allowlist is `bridge_ping`, read-only `project_git_status`/`azure_work_item_read`, plus bounded `project_text_search`, `project_file_read`, `project_git_diff`, and the IoTMart-only `project_comment_replace`. The latter requires a clean regular file below the configured project root, an exact once-only same-line comment replacement, and post-write diff verification; it never commits the target repository. Validate the write gates without touching a target repo:
