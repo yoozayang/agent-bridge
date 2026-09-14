@@ -1,0 +1,139 @@
+{
+  "id": "chatgpt-email-audit-setcc-20260914",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-14T13:25:30+08:00",
+  "completed_at": "2026-09-14T05:52:42.568Z",
+  "ledger_task_id": "20260914055233-github-relay-deterministic-task-49da",
+  "result": {
+    "project": "iotmart",
+    "query": "setCcAddresses",
+    "results": [
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/BatchEUH1LowInventoryEmail.cls",
+        "line": 115,
+        "excerpt": "                notificationEmail.setCcAddresses(new List<String>{"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 420,
+        "excerpt": "                mail.setCcAddresses(ccToReceiversList);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_MailController.cls",
+        "line": 645,
+        "excerpt": "                mail.setCcAddresses(ccToReceiversList);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/CC_Sch_InvoiceMissingAlert.cls",
+        "line": 103,
+        "excerpt": "        mail.setCcAddresses(setting.CC);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_LowInventory.cls",
+        "line": 137,
+        "excerpt": "        notificationEmail.setCcAddresses(new List<String>{"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 50,
+        "excerpt": "                    email.setCcAddresses(ccSetting.Value__c.split(','));"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 54,
+        "excerpt": "                    email.setCcAddresses(ccSetting.Value__c.split(','));            "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/EmailTemplate_OrderInventoryGap.cls",
+        "line": 66,
+        "excerpt": "                    email.setCcAddresses(ccAddresses);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RMAData.cls",
+        "line": 364,
+        "excerpt": "       //email.setCcAddresses(new List<String>{'tumarisalmas@gmail.com'});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RMAData.cls",
+        "line": 365,
+        "excerpt": "        //email.setCcAddresses(new List<String>{'schen@advantech.com'});"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 84,
+        "excerpt": "                mail.setCcAddresses(ccToReceivers);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/ReminderMailController.cls",
+        "line": 134,
+        "excerpt": "                mail.setCcAddresses(ccToReceivers);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/b2b_ExcelAsEmailAttachment.cls",
+        "line": 50,
+        "excerpt": "            if(!ccAddresses.isEmpty()) mail.setCcAddresses(ccAddresses);"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 364,
+        "excerpt": "                    email.setCcAddresses(ccSetting.Value__c.split(';'));"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/BatchEUH1LowInventoryEmail.cls",
+        "line": 115,
+        "excerpt": "                notificationEmail.setCcAddresses(new List<String>{"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_MailController.cls",
+        "line": 297,
+        "excerpt": "                mail.setCcAddresses(ccToReceiversList);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_MailController.cls",
+        "line": 500,
+        "excerpt": "                mail.setCcAddresses(ccToReceiversList);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/CC_Sch_InvoiceMissingAlert.cls",
+        "line": 103,
+        "excerpt": "        mail.setCcAddresses(setting.CC);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/EmailTemplate_LowInventory.cls",
+        "line": 137,
+        "excerpt": "        notificationEmail.setCcAddresses(new List<String>{"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/RMAData.cls",
+        "line": 364,
+        "excerpt": "       //email.setCcAddresses(new List<String>{'tumarisalmas@gmail.com'});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/RMAData.cls",
+        "line": 365,
+        "excerpt": "        //email.setCcAddresses(new List<String>{'schen@advantech.com'});"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/ReminderMailController.cls",
+        "line": 84,
+        "excerpt": "                mail.setCcAddresses(ccToReceivers);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/ReminderMailController.cls",
+        "line": 134,
+        "excerpt": "                mail.setCcAddresses(ccToReceivers);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/b2b_ExcelAsEmailAttachment.cls",
+        "line": 50,
+        "excerpt": "            if(!ccAddresses.isEmpty()) mail.setCcAddresses(ccAddresses);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/trigger_Order_Controller.cls",
+        "line": 331,
+        "excerpt": "                    email.setCcAddresses(ccSetting.Value__c.split(';'));"
+      }
+    ]
+  }
+}
