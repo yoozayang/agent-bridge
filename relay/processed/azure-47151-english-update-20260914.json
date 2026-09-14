@@ -1,6 +1,8 @@
 {
   "id": "azure-47151-english-update-20260914",
-  "status": "claimed",
+  "status": "error",
   "claimed_at": "2026-09-14T06:57:20.802Z",
-  "task_type": "azure_work_item_update"
+  "task_type": "azure_work_item_update",
+  "completed_at": "2026-09-14T06:57:30.962Z",
+  "ledger_task_id": "20260914065722-github-relay-deterministic-task-dd13"
 }
