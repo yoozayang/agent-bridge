@@ -292,6 +292,12 @@ Acceptance evidence (2026-09-14):
 - `azure-47151-english-verify-20260914` completed as a verified no-op: before and after fields were identical, `verified: true`, and the result links to the IoTMart 3.0 work item.
 - No IoTMart or Magnolia repository operation occurred.
 
+### Phase 8 — ChatGPT-to-Codex CLI dispatch
+
+Status: **IN PROGRESS**
+
+`codex_dispatch` is a bounded relay task for intentionally invoking the already-installed Codex CLI on a configured project. It has fixed `read_only` or `workspace_write` sandbox modes, captures before/after Git state, and preserves pre-existing dirty files. It is not a shell endpoint, deployment path, or session-management subsystem.
+
 ## 7. Immediate next actions
 
 The next local-machine handoff should do only these things:

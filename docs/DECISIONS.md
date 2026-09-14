@@ -99,3 +99,9 @@ Each Mac keeps an ignored `config/machine.json` with a stable opaque ID. `bridge
 Status: Accepted
 
 `azure_work_item_update` is a deterministic Azure DevOps write surface only for an existing `IoTMart 3.0` work item. Its payload can contain title, description, and acceptance criteria only. It reads before writing and reads again afterwards; HTML is compared using Azure DevOps's known close-tag whitespace canonical form, and a mismatch is an error result. It cannot update state, assignment, tags, area/iteration, priority, links, attachments, or source code.
+
+## ADR-015 — Codex CLI dispatch is bounded by project and sandbox
+
+Status: Accepted
+
+`codex_dispatch` is the GitHub relay entry point for local AI work that deterministic handlers cannot perform. It invokes only the installed `codex exec --json` binary with a configured logical project root and one of two fixed sandboxes: read-only or workspace-write. It accepts no executable, path, environment, arbitrary flags, unrestricted sandbox, deployment target, or credentials. It records Git state before/after and treats a read-only mutation or a changed pre-existing dirty file as an error. Codex is delegated by ChatGPT; it is not a separately operated user conversation.

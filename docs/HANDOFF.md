@@ -168,11 +168,12 @@ AGENT_BRIDGE_SMOKE_AZURE_WORK_ITEM=<approved-id> \
   AGENT_BRIDGE_HOME="$(mktemp -d)/ledger" node test/github-relay-smoke.js
 ```
 
-The allowlist is `bridge_ping`, read-only `project_git_status`/`azure_work_item_read`, the constrained `azure_work_item_update`, plus bounded `project_text_search`, `project_file_read`, `project_git_diff`, and the IoTMart-only `project_comment_replace`. Azure update accepts only title, description, and acceptance criteria for an existing work item in the configured `IoTMart 3.0` project; it records the before values, reads back after the update, and requires exact verification against Azure DevOps's deterministic HTML close-tag whitespace canonical form. It cannot alter state, ownership, tags, links, attachments, or source repositories. Comment replacement requires a clean regular file below the configured project root, an exact once-only same-line comment replacement, and post-write diff verification; it never commits the target repository. Validate the write gates without touching a target repo:
+The allowlist is `bridge_ping`, read-only `project_git_status`/`azure_work_item_read`, the constrained `azure_work_item_update`, `codex_dispatch`, plus bounded `project_text_search`, `project_file_read`, `project_git_diff`, and the IoTMart-only `project_comment_replace`. Azure update accepts only title, description, and acceptance criteria for an existing work item in the configured `IoTMart 3.0` project; it records the before values, reads back after the update, and requires exact verification against Azure DevOps's deterministic HTML close-tag whitespace canonical form. `codex_dispatch` lets ChatGPT launch the local Codex CLI through the relay for a configured project only; it allows only `read_only` or `workspace_write`, fixed CLI flags, bounded instruction/timeout, and pre/post Git verification. It never accepts a shell command, path, environment, deployment target, unrestricted sandbox, commit, push, branch switch, reset, clean, or stash. Codex remains a delegated local sub-agent; use deterministic handlers for fixed operations. Comment replacement requires a clean regular file below the configured project root, an exact once-only same-line comment replacement, and post-write diff verification; it never commits the target repository. Validate the write gates without touching a target repo:
 
 ```bash
 node test/github-relay-write.test.js
 node test/github-relay-azure-update.test.js
+node test/github-relay-codex-dispatch.test.js
 ```
 
 No payload may contain absolute paths, shell commands, or secrets. Salesforce deployment is separately gated and is not part of the relay comment-edit primitive.
