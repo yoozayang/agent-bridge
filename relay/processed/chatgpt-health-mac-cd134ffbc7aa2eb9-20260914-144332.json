@@ -1,6 +1,8 @@
 {
   "id": "chatgpt-health-mac-cd134ffbc7aa2eb9-20260914-144332",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-14T06:44:09.917Z",
-  "task_type": "bridge_ping"
+  "task_type": "bridge_ping",
+  "completed_at": "2026-09-14T06:44:12.708Z",
+  "ledger_task_id": "20260914064410-github-relay-deterministic-task-949b"
 }
