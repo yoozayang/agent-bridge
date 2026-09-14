@@ -1,0 +1,514 @@
+{
+  "id": "chatgpt-email-audit-opmapping-20260914",
+  "type": "project_text_search",
+  "status": "done",
+  "created_at": "2026-09-14T13:26:20+08:00",
+  "completed_at": "2026-09-14T05:52:33.852Z",
+  "ledger_task_id": "20260914055230-github-relay-deterministic-task-adda",
+  "result": {
+    "project": "iotmart",
+    "query": "OP_ID_Mapping__mdt",
+    "results": [
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/B2BCartToOrderDraft.cls",
+        "line": 296,
+        "excerpt": "        Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = Lib_Custom_Metadata.getCountry_OpId("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/B2BCartToOrderDraft.cls",
+        "line": 302,
+        "excerpt": "        List<OP_ID_Mapping__mdt> OP_L;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 605,
+        "excerpt": "    static map<String , OP_ID_Mapping__mdt>       op_Country_Info_M {get;set;}"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 608,
+        "excerpt": "    public static map<String,OP_ID_Mapping__mdt>  Country_OP_ID_Mapping"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 612,
+        "excerpt": "                op_Country_Info_M= new map<String,OP_ID_Mapping__mdt>();                                  "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 613,
+        "excerpt": "                for(OP_ID_Mapping__mdt oMdt:[Select Codes__c,Country_Code__c,Country_Name__c,CountryCode_DHL__c,CountryCode_SAP__c,CountryCode_SFDC__c,DeveloperName,Id,Industry__c,Label,MasterLabel,OP_ID__c,OP_ID_EUH1__c,OP_ID_TWH1__c,OP_Mail__c,OP_Mail_EUH1__c,OP_Mail_TWH1__c,Sale_ID__c,Sale_ID_Email__c,Sale_ID_Email_"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 616,
+        "excerpt": "                System.debug('**** Lib_Custom_Metadata.OP_ID_Mapping__mdt op_Country_Info_M.size()='+op_Country_Info_M.size() );"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 623,
+        "excerpt": "    public static Map<Boolean,List<OP_ID_Mapping__mdt>>  getCountry_OpId(String sStoreName , String  sCountry  , String zipCodeStart )"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 627,
+        "excerpt": "        List<OP_ID_Mapping__mdt> ret_L=new List<OP_ID_Mapping__mdt>();"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 630,
+        "excerpt": "            Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = new Map<Boolean, List<OP_ID_Mapping__mdt>>();"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 634,
+        "excerpt": "        for(OP_ID_Mapping__mdt oMdt:Country_OP_ID_Mapping.values()){"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 667,
+        "excerpt": "        Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = new Map<Boolean, List<OP_ID_Mapping__mdt>>();"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_EU_Model.cls",
+        "line": 135,
+        "excerpt": "        Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_EU_Model.cls",
+        "line": 142,
+        "excerpt": "        List<OP_ID_Mapping__mdt> opInfoList;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_EU_Model.cls",
+        "line": 754,
+        "excerpt": "        List<OP_ID_Mapping__mdt> op_Info= new List<OP_ID_Mapping__mdt>();"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_EU_Model.cls",
+        "line": 755,
+        "excerpt": "        Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = Lib_Custom_Metadata.getCountry_OpId(storeName,oRequest.countryCode,String.valueOf(oRequest.PostalCode).substring(0, 1));"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_EU_Model.cls",
+        "line": 762,
+        "excerpt": "            OP_ID_Mapping__mdt CI = op_Info[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model.cls",
+        "line": 116,
+        "excerpt": "        Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = "
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model.cls",
+        "line": 123,
+        "excerpt": "        List<OP_ID_Mapping__mdt> opInfoList;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model.cls",
+        "line": 701,
+        "excerpt": "        List<OP_ID_Mapping__mdt> op_Info= new List<OP_ID_Mapping__mdt>();"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model.cls",
+        "line": 702,
+        "excerpt": "        Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = Lib_Custom_Metadata.getCountry_OpId(storeName,oRequest.countryCode,String.valueOf(oRequest.PostalCode).substring(0, 1));"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model.cls",
+        "line": 709,
+        "excerpt": "            OP_ID_Mapping__mdt CI = op_Info[0];"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model_Test.cls",
+        "line": 89,
+        "excerpt": "        Lib_Custom_Metadata.Country_OP_ID_Mapping = new Map<String, OP_ID_Mapping__mdt>{"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Account_KR_Model_Test.cls",
+        "line": 90,
+        "excerpt": "            storeName + '_KR_OP' => new OP_ID_Mapping__mdt("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_EU_Model.cls",
+        "line": 216,
+        "excerpt": "        List<OP_ID_Mapping__mdt> opInfoList;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_EU_Model.cls",
+        "line": 217,
+        "excerpt": "        Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = Lib_Custom_Metadata.getCountry_OpId("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model.cls",
+        "line": 221,
+        "excerpt": "        List<OP_ID_Mapping__mdt> opInfoList;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model.cls",
+        "line": 222,
+        "excerpt": "        Map<Boolean, List<OP_ID_Mapping__mdt>> resultMap = Lib_Custom_Metadata.getCountry_OpId("
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model_Test.cls",
+        "line": 2333,
+        "excerpt": "        Map<String, OP_ID_Mapping__mdt> backupOpMap = Lib_Custom_Metadata.Country_OP_ID_Mapping;"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model_Test.cls",
+        "line": 2348,
+        "excerpt": "            Lib_Custom_Metadata.Country_OP_ID_Mapping = new Map<String, OP_ID_Mapping__mdt>{"
+      },
+      {
+        "relative_path": ".codex_tmp/prod_deploy_dev_20260615/force-app/main/default/classes/RESTOutBound_SAP_Order_KR_Model_Test.cls",
+        "line": 2349,
+        "excerpt": "                'kr_KR' => new OP_ID_Mapping__mdt("
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8507,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8513,
+        "excerpt": "        \"Layout__OP_ID_Mapping__mdt-OP ID Mapping Layout\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8519,
+        "excerpt": "        \"CustomObject__OP_ID_Mapping__mdt\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8525,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8531,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8537,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8543,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8549,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8555,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Industry__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8561,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Codes__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8567,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8573,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Country_Code__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8579,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8585,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8591,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8597,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Country_Name__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8603,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8633,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8639,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Store__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8645,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_SFDC__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8651,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_DHL__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000002CU2o2AG/maxRevision.json",
+        "line": 8657,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_SAP__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8507,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8513,
+        "excerpt": "        \"Layout__OP_ID_Mapping__mdt-OP ID Mapping Layout\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8519,
+        "excerpt": "        \"CustomObject__OP_ID_Mapping__mdt\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8525,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8531,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8537,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8543,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8549,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8555,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Industry__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8561,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Codes__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8567,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8573,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Country_Code__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8579,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8585,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8591,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8597,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Country_Name__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8603,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8633,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8639,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Store__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8645,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_SFDC__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8651,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_DHL__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DBK000004Fv5K2AS/maxRevision.json",
+        "line": 8657,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_SAP__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8201,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Codes__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8207,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_DHL__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8213,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_SAP__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8219,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.CountryCode_SFDC__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8225,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Country_Code__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8231,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Country_Name__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8237,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Industry__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8243,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8249,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8255,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_ID__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8261,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8267,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8273,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.OP_Mail__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8279,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8285,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email_EUH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8291,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8297,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_Email__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8303,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID_TWH1__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8309,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Sale_ID__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8315,
+        "excerpt": "        \"CustomField__OP_ID_Mapping__mdt.Store__c\": {"
+      },
+      {
+        "relative_path": ".sf/orgs/00DIm000000LNY3MAO/maxRevision.json",
+        "line": 8783,
+        "excerpt": "        \"CustomObject__OP_ID_Mapping__mdt\": {"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/B2BCartToOrderDraft.cls",
+        "line": 130,
+        "excerpt": "            Map<Boolean,List<OP_ID_Mapping__mdt>> resultMap = Lib_Custom_Metadata.getCountry_OpId(cart.WebStore.Name, cartDeliveryGroups[0].DeliverToCountryCode, zipCodeStart);"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/B2BCartToOrderDraft.cls",
+        "line": 132,
+        "excerpt": "            List<OP_ID_Mapping__mdt> OP_L; "
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 603,
+        "excerpt": "    static map<String , OP_ID_Mapping__mdt>       op_Country_Info_M {get;set;}"
+      },
+      {
+        "relative_path": "force-app/main/default/classes/Lib_Custom_Metadata.cls",
+        "line": 606,
+        "excerpt": "    public static map<String,OP_ID_Mapping__mdt>  Country_OP_ID_Mapping"
+      }
+    ]
+  }
+}
