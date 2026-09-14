@@ -1,6 +1,8 @@
 {
   "id": "chatgpt-email-audit-countryinfo-20260914",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-14T05:52:12.318Z",
-  "task_type": "project_text_search"
+  "task_type": "project_text_search",
+  "completed_at": "2026-09-14T05:52:15.992Z",
+  "ledger_task_id": "20260914055213-github-relay-deterministic-task-6d37"
 }
