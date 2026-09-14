@@ -93,3 +93,9 @@ Status: Accepted
 The GitHub relay watcher is a user-level macOS LaunchAgent, not a foreground terminal process. Its generated plist contains only the local Node executable, bridge path, fixed 30-second interval, and local log path; it contains no credential or target-repository path. `RunAtLoad` starts it after login and `KeepAlive.SuccessfulExit=false` restarts unexpected exits.
 
 Each Mac keeps an ignored `config/machine.json` with a stable opaque ID. `bridge_ping` reports it. A task may include this ID as `machine_id`; nonmatching watchers skip the task before claiming it, and tasks without one retain the normal GitHub first-claimer behavior.
+
+## ADR-014 — Azure metadata writes are limited to three verified fields
+
+Status: Accepted
+
+`azure_work_item_update` is a deterministic Azure DevOps write surface only for an existing `IoTMart 3.0` work item. Its payload can contain title, description, and acceptance criteria only. It reads before writing and reads again afterwards; an exact mismatch is an error result. It cannot update state, assignment, tags, area/iteration, priority, links, attachments, or source code.

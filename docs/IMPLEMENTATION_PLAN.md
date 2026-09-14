@@ -279,6 +279,12 @@ The relay now exposes only four bounded project primitives: literal `project_tex
 
 After ChatGPT reviews the real 47122 diff, a separate task may introduce a similarly bounded deployment gate for Salesforce sandbox alias `ccdev01`. No deployment capability or Salesforce action is included in this phase.
 
+### Phase 7 — Controlled Azure work-item metadata update
+
+Status: **IN PROGRESS — 47151 English update authorized**
+
+The relay adds `azure_work_item_update` for the already-configured `IoTMart 3.0` Azure DevOps project. It accepts only a work item ID and one or more of title, description, and acceptance criteria. The handler reads the existing item, records the three target fields, writes only supplied values with Azure CLI, then reads it back for exact verification. It cannot modify workflow state, ownership, tags, links, attachments, or any target repository.
+
 ## 7. Immediate next actions
 
 The next local-machine handoff should do only these things:
