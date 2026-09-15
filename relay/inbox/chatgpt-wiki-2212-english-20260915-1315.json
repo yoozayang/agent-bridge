@@ -1,0 +1,10 @@
+{
+  "id": "chatgpt-wiki-2212-english-20260915-1315",
+  "type": "codex_dispatch",
+  "project": "iotmart",
+  "instruction": "Directly update Azure DevOps Wiki page ID 2212 in project IoTMart 3.0, wiki IoTMart-3.0.wiki, page path /System and Project Home/05. Tools/IoTMart OP&Sales data update tool_backend LWC  version. First read the current page content using the authenticated Azure DevOps CLI/API available on this Mac. Preserve the useful existing Chinese content. Add a concise English version that explains the tool in natural, plain engineering English. Do not translate or repeat low-value Chinese checklist/verification wording; omit that material from the English section. Keep the English simple and human-written, not polished/verbose AI-style prose. Formatting requirement: where Chinese and English appear adjacent, include a space between them; every English sentence must end with a period. Make only the requested wiki-content adjustment. Do not modify IoTMart source files, do not change branches, commit, push, deploy, reset, clean, or stash. After updating, read the wiki page back and return the exact English section added plus a concise summary of where it was inserted and confirmation that existing useful Chinese content was preserved.",
+  "mode": "read_only",
+  "timeout_seconds": 900,
+  "machine_id": "mac-cd134ffbc7aa2eb9",
+  "created_at": "2026-09-15T13:15:00+08:00"
+}
