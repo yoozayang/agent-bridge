@@ -1,0 +1,21 @@
+{
+  "id": "chatgpt-wiki-2212-english-20260915-1315",
+  "type": "codex_dispatch",
+  "status": "done",
+  "created_at": "2026-09-15T13:15:00+08:00",
+  "completed_at": "2026-09-15T23:54:20.004Z",
+  "ledger_task_id": "20260915235312-github-relay-deterministic-task-5df3",
+  "result": {
+    "project": "iotmart",
+    "mode": "read_only",
+    "machine_id": "mac-cd134ffbc7aa2eb9",
+    "exit_status": 0,
+    "elapsed_ms": 66498,
+    "timed_out": false,
+    "summary": "無法完成Wiki更新：唯讀沙箱禁止Azure CLI建立必要的工作階段快取，導致無法讀取或更新頁面2212\n\n未修改任何IoTMart原始檔、Git狀態或Wiki內容\n\n請在可寫入Azure CLI設定目錄的執行環境重試，我即可依要求完成讀取、最小更新與回讀確認",
+    "git_status_before": "## Matthew/feature/OPMailChange...origin/Matthew/feature/OPMailChange",
+    "git_status_after": "## Matthew/feature/OPMailChange...origin/Matthew/feature/OPMailChange",
+    "preexisting_dirty_state_changed": false,
+    "ok": true
+  }
+}
