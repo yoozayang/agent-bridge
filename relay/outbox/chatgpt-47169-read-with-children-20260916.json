@@ -1,0 +1,21 @@
+{
+  "id": "chatgpt-47169-read-with-children-20260916",
+  "type": "codex_dispatch",
+  "status": "done",
+  "created_at": "2026-09-16T13:15:00+08:00",
+  "completed_at": "2026-09-16T05:17:54.011Z",
+  "ledger_task_id": "20260916051645-github-relay-deterministic-task-2ab4",
+  "result": {
+    "project": "iotmart",
+    "mode": "read_only",
+    "machine_id": "mac-cd134ffbc7aa2eb9",
+    "exit_status": 0,
+    "elapsed_ms": 68175,
+    "timed_out": false,
+    "summary": "無法完成摘要，Azure CLI在載入登入session時被sandbox阻擋寫入`~/.azure/az.sess`，查詢未送達Azure DevOps\n\n請讓執行環境可使用既有Azure CLI session快取後重試，或提供工作項目47169與其子項目的JSON輸出。我未修改任何本機檔案、Azure DevOps資料、Git或部署設定",
+    "git_status_before": "## Matthew/feature/EmailConfigGovernance...origin/feature/EmailConfigGovernance\n M force-app/main/default/lwc/emailConfigGovernance/emailCatalogData.js\n M force-app/main/default/lwc/emailConfigGovernance/i18n.js",
+    "git_status_after": "## Matthew/feature/EmailConfigGovernance...origin/feature/EmailConfigGovernance\n M force-app/main/default/lwc/emailConfigGovernance/emailCatalogData.js\n M force-app/main/default/lwc/emailConfigGovernance/i18n.js",
+    "preexisting_dirty_state_changed": false,
+    "ok": true
+  }
+}
