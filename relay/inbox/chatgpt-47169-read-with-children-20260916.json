@@ -1,0 +1,10 @@
+{
+  "id": "chatgpt-47169-read-with-children-20260916",
+  "type": "codex_dispatch",
+  "project": "iotmart",
+  "instruction": "Read-only Azure DevOps analysis for work item 47169 in project IoTMart 3.0. Use the already authenticated Azure CLI/API available on this Mac. Read work item 47169 in full, then identify and read all directly linked child/subtask work items. Return a concise structured summary containing: parent ID/type/title/state/description/acceptance criteria; for each child/subtask ID/type/title/state/description/acceptance criteria; and a synthesized 2-slide presentation outline focused on business problem/objective on slide 1 and solution scope/implementation breakdown on slide 2. Do not modify Azure DevOps, local repositories, files, branches, commits, or deployments. Do not ask the user for information unless authentication is genuinely blocked.",
+  "mode": "read_only",
+  "timeout_seconds": 900,
+  "machine_id": "mac-cd134ffbc7aa2eb9",
+  "created_at": "2026-09-16T13:15:00+08:00"
+}
