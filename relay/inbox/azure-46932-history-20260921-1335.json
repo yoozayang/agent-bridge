@@ -1,0 +1,7 @@
+{
+  "id": "azure-46932-history-20260921-1335",
+  "type": "codex_dispatch",
+  "created_at": "2026-09-21T13:35:00+08:00",
+  "project": "iotmart",
+  "prompt": "Read Azure DevOps work item 46932 and retrieve/analyze its assignment context, Discussion/comments, History/revisions, and updates by Manoj. Do not modify any code or Azure data. Return chronological facts: who assigned/requested what, exact/near-exact update text where available, dates/authors, and what Manoj's updates appear to mean relative to the original request. Distinguish ticket description/AC from later discussion/history."
+}
