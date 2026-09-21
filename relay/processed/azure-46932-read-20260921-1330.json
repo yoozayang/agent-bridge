@@ -1,6 +1,8 @@
 {
   "id": "azure-46932-read-20260921-1330",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-09-21T05:32:13.791Z",
-  "task_type": "azure_work_item_read"
+  "task_type": "azure_work_item_read",
+  "completed_at": "2026-09-21T05:32:22.106Z",
+  "ledger_task_id": "20260921053215-github-relay-deterministic-task-1afb"
 }
