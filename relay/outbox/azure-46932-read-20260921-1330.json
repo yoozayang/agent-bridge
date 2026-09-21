@@ -1,0 +1,19 @@
+{
+  "id": "azure-46932-read-20260921-1330",
+  "type": "azure_work_item_read",
+  "status": "done",
+  "created_at": "2026-09-21T13:30:00+08:00",
+  "completed_at": "2026-09-21T05:32:19.900Z",
+  "ledger_task_id": "20260921053215-github-relay-deterministic-task-1afb",
+  "result": {
+    "id": 46932,
+    "title": "[KR][Task] Update Currency Display Format Based on Selected Language",
+    "state": "In Progress",
+    "work_item_type": "Task",
+    "project": "IoTMart 3.0",
+    "description": "<h3>Background<span></span> </h3><p>The KR notification emails have already been updated to use the Korean currency format:&nbsp;<span>000 원</span> </p><p>The remaining currency displays on the Magnolia storefront still need to be adjusted based on the selected site language. </p><h3>Requirement </h3><p>The KR site currency format should change dynamically according to the <b>selected language:</b> </p><ul><li><strong>EN:</strong> <code>KRW 000</code> </li><li><strong>KO:</strong> <code>000 원</code> </li> </ul><p>This rule should be applied consistently across all Magnolia storefront pages and components that display KRW amounts. </p><div style=\"margin-top:14px;margin-bottom:14px;\"><img src=\"https://advantech-curation.visualstudio.com/fba1009c-5ccd-4fc8-bbb6-d23ba5ffa143/_apis/wit/attachments/0132da3d-caed-48ed-99b0-d8b3b1c9e4e3?fileName=Screenshot%202026-09-01%20at%204.57.15%E2%80%AFPM.png\" alt=Image><br> </div><h3>Scope </h3><p>Please update the currency display format on the following areas: </p><ul><li>\nHomepage\n</li><li>\nPLP\n</li><li>\nPDP\n</li><li>\nSector Hub Page\n</li><li>\nCampaign Page\n</li><li>\nChat\n</li><li>\nCheckout Page\n</li><li>\nOrder List\n</li><li>\nOrder Detail Page\n</li> </ul><h3>Expected Behavior </h3><h4><ul><li>English </li><ul><li><span style=\"font-weight:normal;\">When the selected language is EN:</span> </li><li><code style=\"font-weight:normal;\">KRW 100,000</code> </li> </ul><li>Korean </li><ul><li><span style=\"font-weight:normal;\">When the selected language is KO:</span> </li><li><code style=\"font-weight:normal;\">100,000 원</code> </li> </ul> </ul> </h4><h3> </h3><div>cc <a href=\"#\" data-vss-mention=\"version:2.0,f4164264-d9fa-67c4-a598-c45865044fd7\">@EricBA.Huang</a>&nbsp;<a href=\"#\" data-vss-mention=\"version:2.0,951e29f9-8e2d-6fae-ae9b-b0c659895c5f\">@Manoj.Kumar</a> </div><br>",
+    "acceptance_criteria": "<div><ol><li><span>When KR site language is EN, all KRW amounts are displayed as <b>KRW {amount}</b></span> </li><li>When KR site language is KO, all KRW amounts are displayed as<b> {amount} 원</b> </li><li>The format is applied consistently across Homepage, PLP, PDP, Sector Hub, Campaign Page, Chat, Checkout, Order List, and Order Detail Page. </li><li>&nbsp;Switching language updates the currency format accordingly. </li><li>&nbsp;Currency value/calculation is not changed; only the display format is updated. </li><li>&nbsp;Other currencies and other sites are not affected. </li><li><span>&nbsp;Existing KR notification email format remains unchanged.</span> </li> </ol> </div>",
+    "api_url": "https://advantech-curation.visualstudio.com/fba1009c-5ccd-4fc8-bbb6-d23ba5ffa143/_apis/wit/workItems/46932",
+    "web_url": "https://dev.azure.com/advantech-curation/IoTMart%203.0/_workitems/edit/46932"
+  }
+}
