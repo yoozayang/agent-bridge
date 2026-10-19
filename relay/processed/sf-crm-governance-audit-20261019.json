@@ -1,6 +1,8 @@
 {
   "id": "sf-crm-governance-audit-20261019",
-  "status": "claimed",
+  "status": "done",
   "claimed_at": "2026-10-19T03:38:01.068Z",
-  "task_type": "codex_dispatch"
+  "task_type": "codex_dispatch",
+  "completed_at": "2026-10-19T03:44:02.479Z",
+  "ledger_task_id": "20261019033802-github-relay-deterministic-task-85e1"
 }
