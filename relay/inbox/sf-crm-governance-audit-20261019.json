@@ -1,0 +1,10 @@
+{
+  "id": "sf-crm-governance-audit-20261019",
+  "type": "codex_dispatch",
+  "created_at": "2026-10-19T11:35:00+08:00",
+  "machine_id": "mac-cd134ffbc7aa2eb9",
+  "project": "iotmart",
+  "mode": "read_only",
+  "timeout_seconds": 1500,
+  "instruction": "Read-only evidence-based audit for IoTMart joint CRM/Salesforce Commerce Git repo, org and deployment strategy meeting. Inspect local IoTMart3.0 Git structure branches, metadata and deployment/config scripts, sfdx project layout, Azure-related automation if present, and Salesforce orgs using ONLY authenticated read-only commands/queries if currently available (never retrieve into repo or alter org). Identify actual cross-cloud ownership overlap and Production drift risk, what can and cannot be verified, and evaluate feature -> uat -> staging -> main and Sandbox mapping. CRM is currently function-oriented and has no consistent Git discipline. Return concise Chinese report: (1) evidence with actual relative file paths, current branches and org alias/type when safely verifiable, (2) concrete risks anchored in real samples, (3) 3-5 prioritized actionable recommendations and precise meeting questions, (4) unknowns. No writes, deployments, Git state changes, secrets, full config dumps or overbroad metadata exports."
+}
